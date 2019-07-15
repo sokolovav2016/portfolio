@@ -4,11 +4,66 @@
 <head>
   <meta name="description" content="Карманный справочник по HTML">
   <title>HTML</title>
-  <include src="source/html-blocks/head.html"></include>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/style.min.css">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m, e, t, r, i, k, a) {
+    m[i] = m[i] || function() {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(53815708, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true
+  });
+</script>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/53815708" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
 </head>
 
 <body>
-  <include src="source/html-blocks/header.html"></include>
+  <header class="header header--nojs" id="header">
+  <div class="header__wrapper">
+
+    <div class="header__top">
+      <a class="header__logo" href="index.html">AS</a>
+
+      <button class="toggle" type="button" name="button">
+        <span class="toggle__bar"></span>
+      </button>
+    </div>
+
+    <ul class="header__list">
+      <li class="header__item header__item--open-inner">
+        <a class="header__link" href="notes.html">Конспекты</a>
+        <ul class="header__inner-list">
+          <li><a href="notes.html#html">HTML</a></li>
+          <li><a href="notes.html#css">CSS</a></li>
+          <li><a href="notes.html#javascript">JavaScript</a></li>
+        </ul>
+      </li>
+
+      <li class="header__item">
+        <a class="header__link" href="https://sokolovav2016.github.io/useful-links-adaptive/" target="_blank">Ресурсы</a>
+      </li>
+    </ul>
+
+  </div>
+</header>
+
 
   <main class="main-handbook">
     <div class="heading heading--handbook heading--html heading--margin">
@@ -17,7 +72,7 @@
           <svg class="card__icon" width="53" height="60">
             <use xlink:href="img/sprite.svg#html"></use>
           </svg>
-        </h1>
+        
       </div>
     </div>
 
@@ -714,8 +769,44 @@
     </div>
   </main>
 
-  <include src="source/html-blocks/footer.html"></include>
-  <include src="source/html-blocks/js.html"></include>
+  <footer class="footer">
+  <ul class="footer__list">
+    <li class="footer__item">
+      <a class="footer__link" href="https://github.com/sokolovav2016">
+        <svg width="32" height="32">
+          <use xlink:href="img/sprite.svg#github-logo"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="footer__item">
+      <a class="footer__link" href="https://htmlacademy.ru/profile/id853603">
+        <svg width="26.943" height="34.09">
+          <use xlink:href="img/sprite.svg#html-academy-logo"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="footer__item">
+      <a class="footer__link" href="https://vk.com/sokolovav2016">
+        <svg width="34" height="19">
+          <use xlink:href="img/sprite.svg#vk-logo"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</footer>
+
+  <script src="js/svg4everybody.js"></script>
+<script>
+  svg4everybody();
+</script>
+<script src="js/toggle.js"></script>
+<script src="js/drag.js"></script>
+<script src="js/canvas.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/site.js"></script>
+
 </body>
 
 </html>

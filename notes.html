@@ -4,11 +4,66 @@
 <head>
   <meta name="description" content="Карманный справочник по JavaScript">
   <title>JavaScript</title>
-  <include src="source/html-blocks/head.html"></include>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/style.min.css">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m, e, t, r, i, k, a) {
+    m[i] = m[i] || function() {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(53815708, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true
+  });
+</script>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/53815708" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
 </head>
 
 <body>
-  <include src="source/html-blocks/header.html"></include>
+  <header class="header header--nojs" id="header">
+  <div class="header__wrapper">
+
+    <div class="header__top">
+      <a class="header__logo" href="index.html">AS</a>
+
+      <button class="toggle" type="button" name="button">
+        <span class="toggle__bar"></span>
+      </button>
+    </div>
+
+    <ul class="header__list">
+      <li class="header__item header__item--open-inner">
+        <a class="header__link" href="notes.html">Конспекты</a>
+        <ul class="header__inner-list">
+          <li><a href="notes.html#html">HTML</a></li>
+          <li><a href="notes.html#css">CSS</a></li>
+          <li><a href="notes.html#javascript">JavaScript</a></li>
+        </ul>
+      </li>
+
+      <li class="header__item">
+        <a class="header__link" href="https://sokolovav2016.github.io/useful-links-adaptive/" target="_blank">Ресурсы</a>
+      </li>
+    </ul>
+
+  </div>
+</header>
+
 
   <main class="main-handbook">
     <div class="heading heading--handbook heading--js heading--margin">
@@ -180,26 +235,17 @@
         <h3 class="text__title">Глобальные объекты</h3>
 
         <div class="text__block">
-          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects"
-              target="_blank">MDN.Стандартные встроенные объекты</a></p>
+          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN.Стандартные встроенные объекты</a></p>
         </div>
 
         <div class="text__block">
           <h4>Значения</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Infinity"
-                target="_blank">Infinity</a> — является числовым значением, представляющим бесконечность.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN"
-                target="_blank">NaN</a> — является значением, представляющим не-число (Not-A-Number).</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/undefined"
-                target="_blank">undefined</a> — представляет примитивное значение <a
-                href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/undefined"
-                target="_blank">undefined</a>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/null"
-                target="_blank">null</a> — представляет примитивное значение <a
-                href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Null"
-                target="_blank">Null</a>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Infinity" target="_blank">Infinity</a> — является числовым значением, представляющим бесконечность.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN" target="_blank">NaN</a> — является значением, представляющим не-число (Not-A-Number).</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank">undefined</a> — представляет примитивное значение <a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/undefined" target="_blank">undefined</a>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank">null</a> — представляет примитивное значение <a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Null" target="_blank">Null</a>.</li>
           </ul>
         </div>
 
@@ -207,8 +253,7 @@
           <h4>Числа и даты</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math"
-                target="_blank">Math</a> — является встроенным объектом, хранящим в своих свойствах и методах различные
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math</a> — является встроенным объектом, хранящим в своих свойствах и методах различные
               математические константы и функции.
             </li>
           </ul>
@@ -218,36 +263,22 @@
           <h4>Обработка текста</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String"
-                target="_blank">String</a> — является конструктором строк, или, последовательностей символов.
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a> — является конструктором строк, или, последовательностей символов.
               <ul class="text__list">
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length"
-                    target="_blank">length</a> — представляет длину строки.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat"
-                    target="_blank">concat()</a> — объединяет текст из двух или более строк и возвращает новую строку.
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length" target="_blank">length</a> — представляет длину строки.</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/concat" target="_blank">concat()</a> — объединяет текст из двух или более строк и возвращает новую строку.
                 </li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf"
-                    target="_blank">indexOf()</a> — возвращает индекс первого вхождения указанного значения в
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf" target="_blank">indexOf()</a> — возвращает индекс первого вхождения указанного значения в
                   <b>String</b>.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf"
-                    target="_blank">lastIndexOf()</a> — возвращает индекс последнего вхождения указанного значения
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf" target="_blank">lastIndexOf()</a> — возвращает индекс последнего вхождения указанного значения
                   <b>String</b>.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase"
-                    target="_blank">toLowerCase()</a> — возвращает значение строки, на которой он был вызван,
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase" target="_blank">toLowerCase()</a> — возвращает значение строки, на которой он был вызван,
                   преобразованное в нижний регистр.
                 </li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"
-                    target="_blank">toUpperCase()</a> — возвращает значение строки, на которой он был вызван,
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase" target="_blank">toUpperCase()</a> — возвращает значение строки, на которой он был вызван,
                   преобразованное в верхний
                   регистр.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split"
-                    target="_blank">split()</a> — разбивает объект <b>String</b> на массив строк путём разделения строки
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank">split()</a> — разбивает объект <b>String</b> на массив строк путём разделения строки
                   указанной подстрокой.</li>
               </ul>
             </li>
@@ -259,22 +290,18 @@
         <h3 class="text__title">Инструкции и объявления</h3>
 
         <div class="text__block">
-          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements"
-              target="_blank">MDN.Инструкции и объявления</a></p>
+          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements" target="_blank">MDN.Инструкции и объявления</a></p>
         </div>
 
         <div class="text__block">
           <h4>Переменные и константы</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var"
-                target="_blank">var</a> — объявляет переменную, инициализируя ее, при необходимости.
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var" target="_blank">var</a> — объявляет переменную, инициализируя ее, при необходимости.
             </li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
-                target="_blank">let</a> — объявляет переменную с блочной областью видимости с возможностью
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let" target="_blank">let</a> — объявляет переменную с блочной областью видимости с возможностью
               инициализировать её значением.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const"
-                target="_blank">const</a> — значение констант не может быть изменено новым присваиванием, а также не
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const" target="_blank">const</a> — значение констант не может быть изменено новым присваиванием, а также не
               может быть переопределено.</li>
           </ul>
           <p>Способы записи названия переменной:</p>
@@ -289,17 +316,13 @@
           <h4>Управление потоком выполнения</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else"
-                target="_blank">if...else</a> — выполняет инструкцию, если указанное условие выполняется (истинно). Если
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">if...else</a> — выполняет инструкцию, если указанное условие выполняется (истинно). Если
               условие не выполняется (ложно), то
               может быть выполнена другая инструкция.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch"
-                target="_blank">switch</a> — сравнивает выражение со случаями, перечисленными внутри неё, а затем
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">switch</a> — сравнивает выражение со случаями, перечисленными внутри неё, а затем
               выполняет соответствующие инструкции.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/throw"
-                target="_blank">throw</a> — позволяет генерировать исключения, определяемые пользователем.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/try...catch"
-                target="_blank">try...catch</a> — помечает блок инструкций как <b>try</b>, и в зависимости от того,
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/throw" target="_blank">throw</a> — позволяет генерировать исключения, определяемые пользователем.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank">try...catch</a> — помечает блок инструкций как <b>try</b>, и в зависимости от того,
               произошла ошибка или нет, вызывает
               дополнительный блок инструкций <b>catch</b>.</li>
           </ul>
@@ -309,19 +332,15 @@
           <h4>Циклы и Итерации</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for"
-                target="_blank">for</a> — создаёт цикл, состоящий из 3 необязательных выражений в круглых скобках,
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for" target="_blank">for</a> — создаёт цикл, состоящий из 3 необязательных выражений в круглых скобках,
               разделённых точками с запятой.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/while"
-                target="_blank">while</a> — создает цикл, выполняющий заданную инструкцию, пока истинно проверяемое
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/while" target="_blank">while</a> — создает цикл, выполняющий заданную инструкцию, пока истинно проверяемое
               условие.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/break"
-                target="_blank">break</a> — прерывает выполнение текущего <b>цикла</b>, переключателя <b>switch</b>, или
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/break" target="_blank">break</a> — прерывает выполнение текущего <b>цикла</b>, переключателя <b>switch</b>, или
               метки (<b>label</b>) блочного выражения
               и переносит
               выполнение программы к оператору, следующему за прерванным.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/continue"
-                target="_blank">continue</a> — прерывает выполнение текущей итерации текущего или отмеченного цикла, и
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/continue" target="_blank">continue</a> — прерывает выполнение текущей итерации текущего или отмеченного цикла, и
               продолжает его выполнение на следующей
               итерации.</li>
           </ul>
@@ -331,8 +350,7 @@
           <h4>Прочее</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger"
-                target="_blank">debugger</a> — открывает доступ к любому доступному в конкретном окружении отладочному
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger" target="_blank">debugger</a> — открывает доступ к любому доступному в конкретном окружении отладочному
               функционалу, например к установке
               точек останова (т.н. брейкпоинтов).</li>
           </ul>
@@ -343,33 +361,23 @@
         <h3 class="text__title">Выражения и операторы</h3>
 
         <div class="text__block">
-          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators"
-              target="_blank">MDN.Выражения и операторы</a></p>
+          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators" target="_blank">MDN.Выражения и операторы</a></p>
         </div>
 
         <div class="text__block">
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators"
-                target="_blank">Арифметические операции</a> — принимают в качестве операндов числовые значения (это
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" target="_blank">Арифметические операции</a> — принимают в качестве операндов числовые значения (это
               может быть и литерал и
               переменная) и возвращают результат в виде одного числового значения.</li>
-            <li><a
-                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B_%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F"
-                target="_blank">Операторы сравнения</a> —
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B_%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" target="_blank">Операторы сравнения</a> —
               имеются как строгие сравнения, так и сравнения с преобразованием типа операндов.</li>
-            <li><a
-                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B"
-                target="_blank">Логические
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B" target="_blank">Логические
                 операторы</a> — используются, как правило, с примитивами <b>Boolean</b> (логического) типа.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Assignment_Operators"
-                target="_blank">Операторы присваивания</a> — присваивает левому операнду значение, основанное на
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Assignment_Operators" target="_blank">Операторы присваивания</a> — присваивает левому операнду значение, основанное на
               значении правого операнда.</li>
-            <li><a
-                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"
-                target="_blank">Условный (тернарный) оператор</a> —
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80" target="_blank">Условный (тернарный) оператор</a> —
               единственный оператор в JavaScript, принимающий три операнда.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"
-                target="_blank">Приоритет операторов</a> — определяет порядок, в котором операторы выполняются.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank">Приоритет операторов</a> — определяет порядок, в котором операторы выполняются.</li>
           </ul>
         </div>
       </section>
@@ -379,8 +387,7 @@
 
         <div class="text__block">
           <p class="text__mdn">
-            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions"
-              target="_blank">MDN.Функции</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions" target="_blank">MDN.Функции</a>
             <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions" target="_blank">MDN.Функции в
               JavaScript</a>
           </p>
@@ -391,16 +398,14 @@
 
           <p>Два основных способа создания функций:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function"
-                target="_blank">Функциональное выражение</a> (Function Definition Expression) — объявление функции в
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function" target="_blank">Функциональное выражение</a> (Function Definition Expression) — объявление функции в
               контексте какого-либо выражения, например
               присваивания.
               <pre>var sum = function(a, b) {
   return a + b;
 }</pre>
             </li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function"
-                target="_blank">Объявление функции</a> (Function Declaration Statement) — функция, объявленная в
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function" target="_blank">Объявление функции</a> (Function Declaration Statement) — функция, объявленная в
               основном потоке кода.
               <pre>function sum(a, b) {
   return a + b;
@@ -421,8 +426,7 @@
             <li><strong>Локальная</strong> — параметры функции и переменные, объявленные в ней.</li>
             <li><strong>Родительская</strong> — область видимости, в которой объявлена функция. Если функция находится
               в другой функции, она будет видеть её параметры и переменные.</li>
-            <li><strong>Глобальная</strong> — набор значений доступный везде. Является объектом <a
-                href="https://developer.mozilla.org/ru/docs/Web/API/Window">window</a>, описывающим текущую вкладку
+            <li><strong>Глобальная</strong> — набор значений доступный везде. Является объектом <a href="https://developer.mozilla.org/ru/docs/Web/API/Window">window</a>, описывающим текущую вкладку
               браузера (исключая вложенные
               <b>&lt;iframe&gt;</b>, для каждого из них создается свой объект <b>window</b>).
             </li>
@@ -454,17 +458,13 @@ for (var i = 0; i &lt; buttons.length; i++) {
           <h4>Свойства и методы</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function"
-                target="_blank">Свойства и методы объекта Function</a></li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"
-                target="_blank">apply()</a> — вызывает функцию с указанным значением <b>this</b> и аргументами,
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Свойства и методы объекта Function</a></li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank">apply()</a> — вызывает функцию с указанным значением <b>this</b> и аргументами,
               предоставленными в виде массива (либо массивоподобного объекта).</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
-                target="_blank">bind()</a> — создаёт новую функцию, которая при вызове устанавливает в качестве
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank">bind()</a> — создаёт новую функцию, которая при вызове устанавливает в качестве
               контекста выполнения <b>this</b>
               предоставленное значение.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/call"
-                target="_blank">call()</a> — вызывает функцию с указанным значением <b>this</b> и индивидуально
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank">call()</a> — вызывает функцию с указанным значением <b>this</b> и индивидуально
               предоставленными аргументами.</li>
           </ul>
         </div>
@@ -473,20 +473,14 @@ for (var i = 0; i &lt; buttons.length; i++) {
           <h4>Прочее</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/IIFE"
-                target="_blank">IIFE</a> (Immediately Invoked Function Expression) — функция, которая выполняется сразу
+            <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/IIFE" target="_blank">IIFE</a> (Immediately Invoked Function Expression) — функция, которая выполняется сразу
               же после того, как она была определена.</li>
-            <li><a
-                href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
-                target="_blank">Функция обратного вызова</a> — функция, переданная в другую функцию в качестве
+            <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0" target="_blank">Функция обратного вызова</a> — функция, переданная в другую функцию в качестве
               аргумента, которая затем вызывается по завершению какого-либо действия.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/return"
-                target="_blank">return</a> — завершает выполнение текущей функции и возвращает её значение.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this"
-                target="_blank">this</a> — ключевое слово <b>this</b>, в большинстве случаев определяется тем, каким
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/return" target="_blank">return</a> — завершает выполнение текущей функции и возвращает её значение.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a> — ключевое слово <b>this</b>, в большинстве случаев определяется тем, каким
               образом вызвана функция.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/arguments"
-                target="_blank">arguments</a> — подобный массиву объект, который содержит аргументы, переданные в
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank">arguments</a> — подобный массиву объект, который содержит аргументы, переданные в
               функцию.</li>
           </ul>
         </div>
@@ -496,8 +490,7 @@ for (var i = 0; i &lt; buttons.length; i++) {
         <h3 class="text__title">Типы и структуры данных</h3>
 
         <div class="text__block">
-          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures"
-              target="_blank">MDN.Типы данных JavaScript и структуры данных</a></p>
+          <p class="text__mdn"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures" target="_blank">MDN.Типы данных JavaScript и структуры данных</a></p>
         </div>
 
         <div class="text__block">
@@ -505,49 +498,33 @@ for (var i = 0; i &lt; buttons.length; i++) {
 
           <p>Стандарт ECMAScript определяет 8 типов данных:</p>
           <ul class="text__list">
-            <li>7 типов данных являются <a
-                href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Primitive"
-                target="_blank">примитивами</a>:
+            <li>7 типов данных являются <a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Primitive" target="_blank">примитивами</a>:
               <ul class="text__list">
-                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Boolean"
-                    target="_blank">Boolean</a> (Булев, Логический тип)</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Null"
-                    target="_blank">Null</a> (Null тип)</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/undefined"
-                    target="_blank">undefined</a> (Неопределенный тип)</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Number"
-                    target="_blank">Number</a> (Число)</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A1%D1%82%D1%80%D0%BE%D0%BA%D0%B0"
-                    target="_blank">String</a> (Строка)</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Boolean" target="_blank">Boolean</a> (Булев, Логический тип)</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Null" target="_blank">Null</a> (Null тип)</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/undefined" target="_blank">undefined</a> (Неопределенный тип)</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Number" target="_blank">Number</a> (Число)</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A1%D1%82%D1%80%D0%BE%D0%BA%D0%B0" target="_blank">String</a> (Строка)</li>
                 <li><a href="https://developer.mozilla.org/ru/docs/Glossary/BigInt" target="_blank">BigInt</a></li>
-                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Symbol"
-                    target="_blank">Symbol</a> (в ECMAScript 6)</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Symbol" target="_blank">Symbol</a> (в ECMAScript 6)</li>
               </ul>
             </li>
-            <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Object"
-                target="_blank">Object</a> (Объект)</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Object" target="_blank">Object</a> (Объект)</li>
           </ul>
-          <p>Оператор <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof"
-              target="_blank">typeof</a> возвращает строку, указывающую тип операнда.</p>
+          <p>Оператор <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank">typeof</a> возвращает строку, указывающую тип операнда.</p>
         </div>
 
         <div class="text__block">
           <h4>Преобразование типов данных</h4>
 
           <ul class="text__list">
-            <li>Функция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt"
-                target="_blank">parseInt()</a> принимает строку в качестве аргумента и возвращает целое число в
+            <li>Функция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">parseInt()</a> принимает строку в качестве аргумента и возвращает целое число в
               соответствии с указанным
               основанием системы счисления.</li>
-            <li>Функция <a
-                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseFloat"
-                target="_blank">parseFloat()</a> принимает строку в качестве аргумента и возвращает десятичное число
+            <li>Функция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseFloat" target="_blank">parseFloat()</a> принимает строку в качестве аргумента и возвращает десятичное число
               (число с плавающей
               точкой).</li>
-            <li>Метод <a
-                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toString"
-                target="_blank">toString()</a> возвращает строку, представляющую объект.</li>
+            <li>Метод <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" target="_blank">toString()</a> возвращает строку, представляющую объект.</li>
           </ul>
         </div>
       </section>
@@ -557,10 +534,8 @@ for (var i = 0; i &lt; buttons.length; i++) {
 
         <div class="text__block">
           <p class="text__mdn">
-            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Working_with_Objects"
-              target="_blank">MDN.Работа с объектами</a>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B"
-              target="_blank">MDN.Основы объектов в JavaScript</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Working_with_Objects" target="_blank">MDN.Работа с объектами</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B" target="_blank">MDN.Основы объектов в JavaScript</a>
           </p>
         </div>
 
@@ -586,9 +561,7 @@ console.log(myObject); // Вернет { prop: 4 }</pre>
 
           <p>В объектах могут храниться любые типы данных, в том числе и функции. Такие свойства-функции называются
             методами объектов. Вызов метода записывается так: объект.метод().</p>
-          <p>Изнутри методов можно обращаться к свойствам и другим методам объекта с помощью ключевого слова <a
-              href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this"
-              target="_blank">this</a>. Оно указывает на текущий
+          <p>Изнутри методов можно обращаться к свойствам и другим методам объекта с помощью ключевого слова <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a>. Оно указывает на текущий
             объект и называется контекстом вызова.</p>
           <p>Важная деталь: пока функция не вызвана, <b>this</b> не содержит никакого значения, контекст появляется
             только в момент вызова функции.</p>
@@ -598,11 +571,9 @@ console.log(myObject); // Вернет { prop: 4 }</pre>
           <h4>Прочее</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Property_Accessors"
-                target="_blank">Property accessors</a> — доступ к свойствам объекта представляют <b>точечная</b> и
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Property_Accessors" target="_blank">Property accessors</a> — доступ к свойствам объекта представляют <b>точечная</b> и
               <b>скобочная</b> записи.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object"
-                target="_blank">Свойства и методы Object</a></li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Свойства и методы Object</a></li>
           </ul>
         </div>
       </section>
@@ -612,8 +583,7 @@ console.log(myObject); // Вернет { prop: 4 }</pre>
 
         <div class="text__block">
           <p class="text__mdn">
-            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array"
-              target="_blank">MDN.Array</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN.Array</a>
           </p>
         </div>
 
@@ -621,95 +591,66 @@ console.log(myObject); // Вернет { prop: 4 }</pre>
           <h4>Свойства и методы</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
-                target="_blank">from()</a> — создаёт новый экземпляр <b>Array</b> из массивоподобного или итерируемого
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank">from()</a> — создаёт новый экземпляр <b>Array</b> из массивоподобного или итерируемого
               объекта. (Не поддерживается ни
               одной версией браузера Internet Explorer)</li>
             <li>Методы изменения:
               <ul class="text__list">
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/length"
-                    target="_blank">length</a> — отражает количество элементов в массиве.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"
-                    target="_blank">pop()</a> — удаляет последний элемент из массива и возвращает его значение.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push"
-                    target="_blank">push()</a> — добавляет один или более элементов в конец массива и возвращает новую
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/length" target="_blank">length</a> — отражает количество элементов в массиве.</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" target="_blank">pop()</a> — удаляет последний элемент из массива и возвращает его значение.</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">push()</a> — добавляет один или более элементов в конец массива и возвращает новую
                   длину массива.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"
-                    target="_blank">shift()</a> — удаляет первый элемент из массива и возвращает его значение. Этот
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank">shift()</a> — удаляет первый элемент из массива и возвращает его значение. Этот
                   метод изменяет длину массива.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"
-                    target="_blank">unshift()</a> — добавляет один или более элементов в начало массива и возвращает
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift" target="_blank">unshift()</a> — добавляет один или более элементов в начало массива и возвращает
                   новую длину массива.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
-                    target="_blank">sort()</a> — на месте сортирует элементы массива и возвращает отсортированный
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">sort()</a> — на месте сортирует элементы массива и возвращает отсортированный
                   массив.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
-                    target="_blank">splice()</a> — изменяет содержимое массива, удаляя существующие элементы и/или
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">splice()</a> — изменяет содержимое массива, удаляя существующие элементы и/или
                   добавляя новые.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse"
-                    target="_blank">reverse()</a> — на месте обращает порядок следования элементов массива.</li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank">reverse()</a> — на месте обращает порядок следования элементов массива.</li>
               </ul>
             </li>
             <li>Методы доступа:
               <ul class="text__list">
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"
-                    target="_blank">concat()</a> — возвращает новый массив, состоящий из массива, на котором он был
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat()</a> — возвращает новый массив, состоящий из массива, на котором он был
                   вызван, соединённого с другими
                   массивами и/или значениями, переданными в качестве аргументов.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
-                    target="_blank">join()</a> — объединяет все элементы массива (или массивоподобного объекта) в
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank">join()</a> — объединяет все элементы массива (или массивоподобного объекта) в
                   строку.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"
-                    target="_blank">slice()</a> — возвращает новый массив, содержащий копию части исходного массива.
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank">slice()</a> — возвращает новый массив, содержащий копию части исходного массива.
                 </li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf"
-                    target="_blank">indexOf()</a> — возвращает первый индекс, по которому данный элемент может быть
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank">indexOf()</a> — возвращает первый индекс, по которому данный элемент может быть
                   найден в массиве или -1, если
                   такого индекса нет.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf"
-                    target="_blank">lastIndexOf()</a> — возвращает последний индекс, по которому данный элемент может
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf" target="_blank">lastIndexOf()</a> — возвращает последний индекс, по которому данный элемент может
                   быть найден в массиве или
                   -1, если такого индекса нет.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
-                    target="_blank">join()</a> — объединяет все элементы массива (или массивоподобного объекта) в
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank">join()</a> — объединяет все элементы массива (или массивоподобного объекта) в
                   строку.</li>
               </ul>
             </li>
             <li>Методы обхода:
               <ul class="text__list">
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
-                    target="_blank">forEach()</a> — выполняет указанную функцию один раз для каждого элемента в массиве.
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">forEach()</a> — выполняет указанную функцию один раз для каждого элемента в массиве.
                 </li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
-                    target="_blank">filter()</a> — создаёт новый массив со всеми элементами, прошедшими проверку,
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">filter()</a> — создаёт новый массив со всеми элементами, прошедшими проверку,
                   задаваемую в передаваемой функции.
                 </li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
-                    target="_blank">map()</a> — создаёт новый массив с результатом вызова указанной функции для каждого
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map()</a> — создаёт новый массив с результатом вызова указанной функции для каждого
                   элемента массива.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
-                    target="_blank">reduce()</a> (свёртка) — применяет функцию к аккумулятору и каждому значению массива
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">reduce()</a> (свёртка) — применяет функцию к аккумулятору и каждому значению массива
                   (слева-направо), сводя его к
                   одному значению.</li>
-                <li><a
-                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight"
-                    target="_blank">reduceRight()</a> (свёртка) — применяет функцию к аккумулятору и каждому значению
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight" target="_blank">reduceRight()</a> (свёртка) — применяет функцию к аккумулятору и каждому значению
                   массива (справа-налево),
                   сводя его к одному значению.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
-                    target="_blank">reduce()</a> — применяет функцию к аккумулятору и каждому значению массива
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">reduce()</a> — применяет функцию к аккумулятору и каждому значению массива
                   (слева-направо), сводя его к одному
                   значению.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every"
-                    target="_blank">every()</a> — проверяет, удовлетворяют ли все элементы массива условию, заданному в
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank">every()</a> — проверяет, удовлетворяют ли все элементы массива условию, заданному в
                   передаваемой функции.</li>
-                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some"
-                    target="_blank">some()</a> — проверяет, удовлетворяет ли хоть какой-нибудь элемент массива условию,
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank">some()</a> — проверяет, удовлетворяет ли хоть какой-нибудь элемент массива условию,
                   заданному в передаваемой
                   функции.</li>
               </ul>
@@ -753,9 +694,7 @@ console.log(numbers); // Выведет [3, 5, 7, 9, 10, 12];</pre>
 console.log([].map.call(headers, function (it) {
   return it.textContent;
 }));</pre>
-          <p>Использование <a
-              href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
-              target="_blank">from()</a></p>
+          <p>Использование <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank">from()</a></p>
           <pre>var headers = document.querySelectorAll('h1');
 
 console.log(Array.from(headers).map(function (it) {
@@ -771,48 +710,38 @@ console.log(Array.from(headers).map(function (it) {
           <p class="text__mdn">
             <a href="https://developer.mozilla.org/ru/docs/DOM/DOM_Reference" target="_blank">MDN.Руководство по DOM</a>
             <a href="https://developer.mozilla.org/ru/docs/DOM" target="_blank">MDN.DOM</a>
-            <a href="https://developer.mozilla.org/ru/docs/DOM/DOM_Reference/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"
-              target="_blank">MDN.Введение в DOM</a>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
-              target="_blank">MDN.Манипулирование документами</a>
+            <a href="https://developer.mozilla.org/ru/docs/DOM/DOM_Reference/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank">MDN.Введение в DOM</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents" target="_blank">MDN.Манипулирование документами</a>
           </p>
         </div>
 
         <div class="text__block">
           <h4>Document</h4>
 
-          <p>Каждая веб-страница, которая загружается в браузер, имеет свой собственный объект <a
-              href="https://developer.mozilla.org/ru/docs/Web/API/Document" target="_blank">document</a>. Интерфейс
+          <p>Каждая веб-страница, которая загружается в браузер, имеет свой собственный объект <a href="https://developer.mozilla.org/ru/docs/Web/API/Document" target="_blank">document</a>. Интерфейс
             документа служит точкой входа для получения содержимого веб-страницы (всего DOM - дерева, включая такие
             элементы как body и table), а также обеспечивает функциональность, которая является глобальной для
             документа, например, для получения URL-адреса страницы или создания новых элементов в документе).</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/getElementById"
-                target="_blank">getElementById()</a> — возвращает ссылку на элемент по его идентификатору (<b>ID</b>);
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/getElementById" target="_blank">getElementById()</a> — возвращает ссылку на элемент по его идентификатору (<b>ID</b>);
               идентификатор является строкой, которая может быть использована для идентификации элемента; она может быть
               определена при помощи атрибута <b>id</b> в HTML или из скрипта.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/getElementsByTagName"
-                target="_blank">getElementsByTagName()</a> — возвращает живую коллекцию элементов <b>HTMLCollection</b>,
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/getElementsByTagName" target="_blank">getElementsByTagName()</a> — возвращает живую коллекцию элементов <b>HTMLCollection</b>,
               учитывая <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/tagName" target="_blank">имя
                 тэга</a>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector"
-                target="_blank">querySelector()</a> — возвращает первый элемент (<b>Element</b>) документа, который
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelector" target="_blank">querySelector()</a> — возвращает первый элемент (<b>Element</b>) документа, который
               соответствует указанному селектору или группе селекторов. Если совпадений не найдено, возвращает значение
               <b>null</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll"
-                target="_blank">querySelectorAll()</a> — возвращает список элементов в пределах документа (поиск
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll" target="_blank">querySelectorAll()</a> — возвращает список элементов в пределах документа (поиск
               осуществляется в пределах указанного элемента), которые соответствуют указанной группе селекторов.
               Возвращает объект типа <b>NodeList</b>, содержащий все найденные элементы в том порядке, в котором они
               находятся в документе.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/activeElement"
-                target="_blank">activeElement</a> — возвращает текущий сфокусированный элемент, то есть элемент, на
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/activeElement" target="_blank">activeElement</a> — возвращает текущий сфокусированный элемент, то есть элемент, на
               котором будут вызываться события клавиатуры, если пользователь начнёт с неё ввод.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/DOM/document.createElement"
-                target="_blank">createElement</a> — создает указанный в аргументе элемент или <b>HTMLUnknownElement</b>,
+            <li><a href="https://developer.mozilla.org/ru/docs/DOM/document.createElement" target="_blank">createElement</a> — создает указанный в аргументе элемент или <b>HTMLUnknownElement</b>,
               если элемент неизвестен.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/createDocumentFragment"
-                target="_blank">createDocumentFragment()</a> — Создает новый пустой <b>DocumentFragment</b>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document/createDocumentFragment" target="_blank">createDocumentFragment()</a> — Создает новый пустой <b>DocumentFragment</b>.</li>
           </ul>
         </div>
 
@@ -824,13 +753,11 @@ console.log(Array.from(headers).map(function (it) {
             протестированными).</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/parentElement"
-                target="_blank">parentElement</a> — возвращает родителя узла <b>DOM Element</b>, или <b>null</b> если
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/parentElement" target="_blank">parentElement</a> — возвращает родителя узла <b>DOM Element</b>, или <b>null</b> если
               узел не имеет родителя, или его родитель не <b>DOM Element</b>.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/parentNode" target="_blank">parentNode</a> —
               возвращает родителя определенного элемента DOM дерева.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/previousSibling"
-                target="_blank">previousSibling</a> — возвращает узел предшедствующий указанному в родительском элементе
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/previousSibling" target="_blank">previousSibling</a> — возвращает узел предшедствующий указанному в родительском элементе
               <b>childNodes</b>, или <b>null</b>, если указанный узел первый в своём родителе.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/nextSibling" target="_blank">nextSibling</a>
               — возвращает узел, непосредственно следующий за данным узлом в списке <b>childNodes</b> его родительского
@@ -852,14 +779,11 @@ console.log(Array.from(headers).map(function (it) {
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/appendChild" target="_blank">appendChild</a>
               — добавляет элемент в конец списка дочерних элементов родителя. Если элемент уже существует он удаляется
               из текущего родителя и вставляется заново.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/insertBefore"
-                target="_blank">insertBefore()</a> — добавляет элемент в список дочерних элементов родителя перед
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/insertBefore" target="_blank">insertBefore()</a> — добавляет элемент в список дочерних элементов родителя перед
               указанным элементом.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node.replaceChild"
-                target="_blank">replaceChild</a> — заменяет дочерний элемент на выбранный. Возвращает замененный
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node.replaceChild" target="_blank">replaceChild</a> — заменяет дочерний элемент на выбранный. Возвращает замененный
               элемент.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/compareDocumentPosition"
-                target="_blank">compareDocumentPosition</a> — сравнивает позицию текущего узла и другого узла в любом
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/compareDocumentPosition" target="_blank">compareDocumentPosition</a> — сравнивает позицию текущего узла и другого узла в любом
               другом документе.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Node/cloneNode" target="_blank">cloneNode()</a> —
               возвращает дубликат узла, из которого этот метод был вызван.</li>
@@ -869,18 +793,14 @@ console.log(Array.from(headers).map(function (it) {
         <div class="text__block">
           <h4>NonDocumentTypeChildNode</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/NonDocumentTypeChildNode"
-              target="_blank">NonDocumentTypeChildNode</a> содержит методы, специфичные для объектов <b>Node</b>,
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/NonDocumentTypeChildNode" target="_blank">NonDocumentTypeChildNode</a> содержит методы, специфичные для объектов <b>Node</b>,
             которые могут иметь родителя, но не подходят для <b>DocumentType</b>.</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling"
-                target="_blank">previousElementSibling</a> — возвращает <b>Element</b> элемент стоящий перед
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling" target="_blank">previousElementSibling</a> — возвращает <b>Element</b> элемент стоящий перед
               применяемым, из списка дочерних элементов родителя или возвращает <b>null</b>, если таковых не имеется.
             </li>
-            <li><a
-                href="https://developer.mozilla.org/ru/docs/Web/API/NonDocumentTypeChildNode/NonDocumentTypeChildNode.nextElementSibling"
-                target="_blank">nextElementSibling</a> — возвращающее последующий элемент перед текущим, или
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/NonDocumentTypeChildNode/NonDocumentTypeChildNode.nextElementSibling" target="_blank">nextElementSibling</a> — возвращающее последующий элемент перед текущим, или
               <b>null</b>, если элемент является последним в своём родительском узле.</li>
           </ul>
         </div>
@@ -898,10 +818,8 @@ console.log(Array.from(headers).map(function (it) {
               возвращает HTML-тег элемента ("div", "p", "a" и т.д).</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/className" target="_blank">className</a>
               — отвечает за значение атрибута <b>class</b> элемента.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/getAttribute"
-                target="_blank">getAttribute()</a> — возвращает значение указанного атрибута элемента.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/setAttribute"
-                target="_blank">setAttribute()</a> — добавляет новый атрибут или изменяет значение существующего
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/getAttribute" target="_blank">getAttribute()</a> — возвращает значение указанного атрибута элемента.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/setAttribute" target="_blank">setAttribute()</a> — добавляет новый атрибут или изменяет значение существующего
               атрибута у выбранного элемента.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/classList" target="_blank">classList</a>
               — возвращает псевдомассив <b>DOMTokenList</b>, содержащий все классы элемента.
@@ -916,14 +834,11 @@ console.log(Array.from(headers).map(function (it) {
             </li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/innerHTML" target="_blank">innerHTML</a>
               — устанавливает или получает разметку дочерних элементов.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentHTML"
-                target="_blank">insertAdjacentHTML()</a> — разбирает указанный текст как HTML или XML и вставляет
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentHTML" target="_blank">insertAdjacentHTML()</a> — разбирает указанный текст как HTML или XML и вставляет
               полученные узлы (<b>nodes</b>) в DOM дерево в указанную позицию.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentText"
-                target="_blank">insertAdjacentText()</a> — помещает заданный текстовый узел в указанную позицию
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentText" target="_blank">insertAdjacentText()</a> — помещает заданный текстовый узел в указанную позицию
               относительно элемента, который передан в вызове метода.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/getBoundingClientRect"
-                target="_blank">getBoundingClientRect()</a> — возвращает размер элемента и его позицию относительно
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/getBoundingClientRect" target="_blank">getBoundingClientRect()</a> — возвращает размер элемента и его позицию относительно
               viewport (точки просмотра или ширины экрана в пикселях CSS в масштабе 100%.)</li>
           </ul>
         </div>
@@ -931,25 +846,18 @@ console.log(Array.from(headers).map(function (it) {
         <div class="text__block">
           <h4>HTMLElement</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement"
-              target="_blank">HTMLElement</a> представляет собой любой элемент HTML.</p>
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement" target="_blank">HTMLElement</a> представляет собой любой элемент HTML.</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/style"
-                target="_blank">HTMLElement.style</a> — используется для получения и установки инлайновых <a
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference"
-                target="_blank">стилей</a>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetTop"
-                target="_blank">offsetTop</a> — возвращает расстояние текущего элемента по отношению к верхней части
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/style" target="_blank">HTMLElement.style</a> — используется для получения и установки инлайновых <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference" target="_blank">стилей</a>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetTop" target="_blank">offsetTop</a> — возвращает расстояние текущего элемента по отношению к верхней части
               <b>offsetParent</b> узла.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetLeft"
-                target="_blank">offsetLeft</a> — возвращает смещение в пикселях верхнего левого угла текущего элемента
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetLeft" target="_blank">offsetLeft</a> — возвращает смещение в пикселях верхнего левого угла текущего элемента
               от родительского <b>offsetParent</b> узла.</li>
           </ul>
           <p>События:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event"
-                target="_blank">input</a> — срабатывает, когда значение элемента &lt;input&gt;, &lt;select&gt; или
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event" target="_blank">input</a> — срабатывает, когда значение элемента &lt;input&gt;, &lt;select&gt; или
               &lt;textarea&gt; было изменено.</li>
           </ul>
         </div>
@@ -965,29 +873,22 @@ console.log(Array.from(headers).map(function (it) {
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event" target="_blank">drag</a>
               — вызывается каждые несколько сотен миллисекунд, поскольку пользователь или элемент перетаскивает
               выделенный элемент или текст.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragend_event"
-                target="_blank">dragend</a> — вызывается, когда операция перетаскивания завершается (путем отпускания
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragend_event" target="_blank">dragend</a> — вызывается, когда операция перетаскивания завершается (путем отпускания
               кнопки мыши или нажатия клавиши выхода).</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragenter_event"
-                target="_blank">dragenter</a> — возникает, когда перетаскиваемый элемент или выделенный текст попадают в
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragenter_event" target="_blank">dragenter</a> — возникает, когда перетаскиваемый элемент или выделенный текст попадают в
               допустимую цель перетаскивания.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragexit_event"
-                target="_blank">dragexit</a> — вызывается, когда элемент больше не является целью немедленного выбора
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragexit_event" target="_blank">dragexit</a> — вызывается, когда элемент больше не является целью немедленного выбора
               операции перетаскивания.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragleave_event"
-                target="_blank">dragleave</a> — наступает, когда перетаскиваемый элемент или выделенный текст оставляет
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragleave_event" target="_blank">dragleave</a> — наступает, когда перетаскиваемый элемент или выделенный текст оставляет
               действительную цель перетаскивания.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event"
-                target="_blank">dragover</a> — вызывается, когда элемент или текстовое выделение перетаскивается через
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event" target="_blank">dragover</a> — вызывается, когда элемент или текстовое выделение перетаскивается через
               допустимую цель удаления (каждые несколько сотен миллисекунд).</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragstart_event"
-                target="_blank">dragstart</a> — вызывается, когда пользователь начинает перетаскивать выделенный элемент
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/dragstart_event" target="_blank">dragstart</a> — вызывается, когда пользователь начинает перетаскивать выделенный элемент
               или текст.</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event" target="_blank">drop</a>
               — вызывается, когда элемент или текстовый элемент отбрасывается на допустимую цель удаления.</li>
           </ul>
-          <p>Глобальный атрибут <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable"
-              target="_blank">draggable</a> указывает, можно ли перетаскивать элемент с использованием собственного
+          <p>Глобальный атрибут <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable" target="_blank">draggable</a> указывает, можно ли перетаскивать элемент с использованием собственного
             поведения браузера или API-интерфейса перетаскивания HTML.</p>
         </div>
 
@@ -995,18 +896,15 @@ console.log(Array.from(headers).map(function (it) {
           <h4>Прочее</h4>
 
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/template"
-                target="_blank">&lt;template&gt;</a> — механизм для отложенного рендера клиентского контента, который не
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/template" target="_blank">&lt;template&gt;</a> — механизм для отложенного рендера клиентского контента, который не
               отображается во время загрузки, но может быть инициализирован при помощи JavaScript.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/DocumentFragment"
-                target="_blank">DocumentFragment</a> — представляет собой минимальный объект документа, который не имеет
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/DocumentFragment" target="_blank">DocumentFragment</a> — представляет собой минимальный объект документа, который не имеет
               родителя. Пустой <b>DocumentFragment</b> может быть создан с помощью метода
               <b>document.createDocumentFragment</b> или конструктора.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/NodeList" target="_blank">NodeList</a> —
               коллекция узлов, возвращаемая такими методами, как <b>Node.childNodes</b> и
               <b>document.querySelectorAll</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLCollection"
-                target="_blank">HTMLCollection</a> — является обобщённой коллекцией (объектом, ведущим себя подобно
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLCollection" target="_blank">HTMLCollection</a> — является обобщённой коллекцией (объектом, ведущим себя подобно
               массиву) элементов (в порядке упоминания в документе) и предоставляет методы и свойства для получения
               хранящихся в нём элементов.</li>
           </ul>
@@ -1018,13 +916,11 @@ console.log(Array.from(headers).map(function (it) {
 
         <div class="text__block">
           <p class="text__mdn">
-            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F"
-              target="_blank">MDN.Введение в события</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/%D0%A1%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" target="_blank">MDN.Введение в события</a>
             <a href="https://developer.mozilla.org/ru/docs/DOM/DOM_Reference/Events" target="_blank">MDN.Events and the
               DOM</a>
             <a href="https://developer.mozilla.org/ru/docs/Web/Events" target="_blank">MDN.Типы событий</a>
-            <a href="https://developer.mozilla.org/ru/docs/Web/API/Event/Comparison_of_Event_Targets"
-              target="_blank">MDN.Сравнение Event Targets
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Event/Comparison_of_Event_Targets" target="_blank">MDN.Сравнение Event Targets
             </a>
           </p>
         </div>
@@ -1036,16 +932,13 @@ console.log(Array.from(headers).map(function (it) {
             представляет собой любое событие, которое происходит в DOM.</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/currentTarget"
-                target="_blank">currentTarget</a> — определяет элемент, в котором в данный момент обрабатывается
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/currentTarget" target="_blank">currentTarget</a> — определяет элемент, в котором в данный момент обрабатывается
               событие, при движении события внутри DOM.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/target" target="_blank">target</a> — ссылка
               на объект, который был инициатором события.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault"
-                target="_blank">preventDefault()</a> — отменяет событие, если оно отменяемое, без остановки дальнейшего
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault" target="_blank">preventDefault()</a> — отменяет событие, если оно отменяемое, без остановки дальнейшего
               распространения этого события.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/stopPropagation"
-                target="_blank">stopPropagation()</a> — прекращает дальнейшую передачу текущего события.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/stopPropagation" target="_blank">stopPropagation()</a> — прекращает дальнейшую передачу текущего события.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Event/eventPhase" target="_blank">eventPhase</a>
               — отображает текущую фазу процесса обработки события.</li>
           </ul>
@@ -1059,11 +952,9 @@ console.log(Array.from(headers).map(function (it) {
             события.</p>
           <p>Методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener"
-                target="_blank">addEventListener()</a> — регистрирует определенный обработчик события, вызванного на
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener" target="_blank">addEventListener()</a> — регистрирует определенный обработчик события, вызванного на
               <b>EventTarget</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener"
-                target="_blank">removeEventListener()</a> — удаляет обработчик события, который был зарегистрирован при
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener" target="_blank">removeEventListener()</a> — удаляет обработчик события, который был зарегистрирован при
               помощи <b>EventTarget.addEventListener()</b>.</li>
           </ul>
         </div>
@@ -1093,22 +984,15 @@ console.log(Array.from(headers).map(function (it) {
           </ul>
           <p>События:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event"
-                target="_blank">mouseover</a> — срабатывает, когда курсор появляется над элементом.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event"
-                target="_blank">mouseout</a> — срабатывает, когда курсор уходит из элемента.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event"
-                target="_blank">mousemove</a> — срабатывает при передвижении курсора.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event"
-                target="_blank">mouseenter</a> — срабатывает, когда курсор заходит на элемент, не учитываются переходы
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event" target="_blank">mouseover</a> — срабатывает, когда курсор появляется над элементом.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event" target="_blank">mouseout</a> — срабатывает, когда курсор уходит из элемента.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event" target="_blank">mousemove</a> — срабатывает при передвижении курсора.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event" target="_blank">mouseenter</a> — срабатывает, когда курсор заходит на элемент, не учитываются переходы
               внутри элемента, не всплывает.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/mouseleave_event"
-                target="_blank">mouseleave</a> — срабатывает, когда курсор уходит с элемента, не учитываются переходы
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/mouseleave_event" target="_blank">mouseleave</a> — срабатывает, когда курсор уходит с элемента, не учитываются переходы
               внутри элемента, не всплывает.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/mousedown_event"
-                target="_blank">mousedown</a> — срабатывает, когда кнопка курсора нажата над элементом.</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event"
-                target="_blank">mouseup</a> — срабатывает, когда кнопка курсора отпускается, когда указатель находится
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/Element/mousedown_event" target="_blank">mousedown</a> — срабатывает, когда кнопка курсора нажата над элементом.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event" target="_blank">mouseup</a> — срабатывает, когда кнопка курсора отпускается, когда указатель находится
               внутри элемента.</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event" target="_blank">click</a>
               — срабатывает, когда кнопка курсора одновременно нажата и отпущена, когда указатель находится внутри
@@ -1119,12 +1003,10 @@ console.log(Array.from(headers).map(function (it) {
         <div class="text__block">
           <h4>KeyboardEvent</h4>
 
-          <p>Объекты <a href="https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent"
-              target="_blank">KeyboardEvent</a> — описывают работу пользователя с клавиатурой.</p>
+          <p>Объекты <a href="https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent" target="_blank">KeyboardEvent</a> — описывают работу пользователя с клавиатурой.</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent/keyCode"
-                target="_blank">keyCode</a> (устарело) — возвращает <b>Number</b>, представляющее системный и зависящий
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent/keyCode" target="_blank">keyCode</a> (устарело) — возвращает <b>Number</b>, представляющее системный и зависящий
               от конкретной реализации числовой код, идентифицирущий немодифицированное значение нажатой клавиши.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent/code" target="_blank">code</a> —
               возвращает <b>DOMString</b> с кодом клавиши, представленного события.</li>
@@ -1139,49 +1021,38 @@ console.log(Array.from(headers).map(function (it) {
           <p class="text__mdn">
             <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms" target="_blank">MDN.Руководство по
               HTML-формам</a>
-            <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/%D0%A4%D0%BE%D1%80%D0%BC%D1%8B_%D0%B2_HTML"
-              target="_blank">MDN.Формы в HTML</a>
-            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form#attr-method"
-              target="_blank">MDN.&lt;form&gt;</a>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%8B"
-              target="_blank">MDN.Проверка данных формы</a>
-            <a href="https://developer.mozilla.org/ru/docs/HTML/HTML5/Constraint_validation"
-              target="_blank">MDN.Валидация форм</a>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0_%D0%B8_%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%84%D0%BE%D1%80%D0%BC%D1%8B"
-              target="_blank">MDN.Отправка данных формы</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/%D0%A4%D0%BE%D1%80%D0%BC%D1%8B_%D0%B2_HTML" target="_blank">MDN.Формы в HTML</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form#attr-method" target="_blank">MDN.&lt;form&gt;</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%8B" target="_blank">MDN.Проверка данных формы</a>
+            <a href="https://developer.mozilla.org/ru/docs/HTML/HTML5/Constraint_validation" target="_blank">MDN.Валидация форм</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Forms/%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0_%D0%B8_%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D1%84%D0%BE%D1%80%D0%BC%D1%8B" target="_blank">MDN.Отправка данных формы</a>
           </p>
         </div>
 
         <div class="text__block">
           <h4>HTMLFormElement</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement"
-              target="_blank">HTMLFormElement</a> предоставляет методы для создания и изменения элементов &lt;form&gt;.
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement" target="_blank">HTMLFormElement</a> предоставляет методы для создания и изменения элементов &lt;form&gt;.
           </p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement/reportValidity"
-                target="_blank">reportValidity()</a> — возвращает <b>true</b> если все дочерние элементы прошли
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement/reportValidity" target="_blank">reportValidity()</a> — возвращает <b>true</b> если все дочерние элементы прошли
               проверку. Когда возвращается <b>false</b>, по каждому дочернему элементу не прошедшему проверку
               генерируется событие <b>invalid</b> и пользователю сообщаются проблемы проверки.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement/reset"
-                target="_blank">reset()</a> — восстанавливает стандартные значения всем элементам формы.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement/reset" target="_blank">reset()</a> — восстанавливает стандартные значения всем элементам формы.</li>
           </ul>
           <p>События:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"
-                target="_blank">change</a> — вызывается для элементов &lt;input&gt;, &lt;select&gt; и &lt;textarea&gt;,
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event" target="_blank">change</a> — вызывается для элементов &lt;input&gt;, &lt;select&gt; и &lt;textarea&gt;,
               когда изменение фиксируется в значении элемента пользователем (когда состояние поля меняется).</li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event"
-                target="_blank">submit</a> — срабатывает при отправке &lt;form&gt;.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event" target="_blank">submit</a> — срабатывает при отправке &lt;form&gt;.</li>
           </ul>
         </div>
 
         <div class="text__block">
           <h4>HTMLInputElement</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement"
-              target="_blank">HTMLInputElement</a> предоставляет специальные свойства и методы для управления
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement" target="_blank">HTMLInputElement</a> предоставляет специальные свойства и методы для управления
             размещением и отображением элементов <b>input</b>.</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
@@ -1189,8 +1060,7 @@ console.log(Array.from(headers).map(function (it) {
           </ul>
           <p>События:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement/invalid_event"
-                target="_blank">invalid</a> — запускается, когда отправляемый элемент был проверен, но его содержимое не
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLInputElement/invalid_event" target="_blank">invalid</a> — запускается, когда отправляемый элемент был проверен, но его содержимое не
               удовлетворило установленные ограничения.</li>
           </ul>
         </div>
@@ -1198,15 +1068,12 @@ console.log(Array.from(headers).map(function (it) {
         <div class="text__block">
           <h4>HTMLSelectElement</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLSelectElement"
-              target="_blank">HTMLSelectElement</a> представляет элемент HTML &lt;select&gt;.</p>
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLSelectElement" target="_blank">HTMLSelectElement</a> представляет элемент HTML &lt;select&gt;.</p>
           <p>Свойства и методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLSelectElement/setCustomValidity"
-                target="_blank">setCustomValidity()</a> — устанавливает специальное сообщение для выбранного элемента.
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLSelectElement/setCustomValidity" target="_blank">setCustomValidity()</a> — устанавливает специальное сообщение для выбранного элемента.
             </li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity"
-                target="_blank">checkValidity()</a> — проверяет, есть ли у элемента какие-либо ограничения и
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity" target="_blank">checkValidity()</a> — проверяет, есть ли у элемента какие-либо ограничения и
               удовлетворяет ли он им. Если элемент не выполняет свои ограничения, браузер генерирует отменяемое
               недопустимое событие в элементе, а затем возвращает <b>false</b>.</li>
           </ul>
@@ -1215,8 +1082,7 @@ console.log(Array.from(headers).map(function (it) {
         <div class="text__block">
           <h4>ValidityState</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState"
-              target="_blank">ValidityState</a> — представляет состояния достоверности, в которых может находиться
+          <p>Интерфейс <a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState" target="_blank">ValidityState</a> — представляет состояния достоверности, в которых может находиться
             элемент, относительно проверки ограничения.</p>
           <p>Свойства:</p>
           <ul class="text__list">
@@ -1286,16 +1152,14 @@ console.log(Array.from(headers).map(function (it) {
           <p class="text__mdn">
             <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial" target="_blank">MDN.Руководство
               по Canvas</a>
-            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/canvas"
-              target="_blank">MDN.&lt;canvas&gt;</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/canvas" target="_blank">MDN.&lt;canvas&gt;</a>
           </p>
         </div>
 
         <div class="text__block">
           <h4>CanvasRenderingContext2D</h4>
 
-          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D"
-              target="_blank">CanvasRenderingContext2D</a> предоставляет контекст 2D рендеринга для поверхности
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a> предоставляет контекст 2D рендеринга для поверхности
             рисования элемента <b>&lt;canvas&gt;</b>.</p>
           <p>Размер канваса по умолчанию — 300×150px. Координатная сетка канваса изначально имеет такой же размер.</p>
           <p>Если изменить размеры канваса, используя <b>css</b>, то изменятся внешние размеры блока, а координатная
@@ -1307,22 +1171,16 @@ console.log(Array.from(headers).map(function (it) {
           <pre>&lt;canvas id="canvas" width="120" height="120"&gt;&lt;/canvas&gt;</pre>
           <p>Основы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillRect"
-                target="_blank">fillRect()</a> — рисует залитый прямоугольник в позиции (x, y), размер которого
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillRect" target="_blank">fillRect()</a> — рисует залитый прямоугольник в позиции (x, y), размер которого
               определяется аргументами <b>width</b> и <b>height</b>, и стиль которого определяется атрибутом
               <b>fillStyle</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillStyle"
-                target="_blank">fillStyle</a> — задает цвет или стиль, используемый при заливке фигур, вызывается перед
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillStyle" target="_blank">fillStyle</a> — задает цвет или стиль, используемый при заливке фигур, вызывается перед
               отрисовкой фигуры.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fill"
-                target="_blank">fill()</a> — заливает отрисованный контур, контур зальётся так, как это указано в
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fill" target="_blank">fill()</a> — заливает отрисованный контур, контур зальётся так, как это указано в
               свойстве <b>fillStyle</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeStyle"
-                target="_blank">strokeStyle</a> — задает цвет или стиль, используемый при выполнении обводки фигур.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/stroke"
-                target="_blank">stroke()</a> — обводит текущий или данный контур цветом <b>strokeStyle</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/clearRect"
-                target="_blank">clearRect()</a> — очищает холст, устанавливает прозрачный черный цвет для всех пикселей,
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeStyle" target="_blank">strokeStyle</a> — задает цвет или стиль, используемый при выполнении обводки фигур.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/stroke" target="_blank">stroke()</a> — обводит текущий или данный контур цветом <b>strokeStyle</b>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/clearRect" target="_blank">clearRect()</a> — очищает холст, устанавливает прозрачный черный цвет для всех пикселей,
               расположенных внутри прямоугольника, заданного начальной точкой (x, y) и размерами (width, height), таким
               образом стирая любое ранее нарисованное содержимое.</li>
           </ul>
@@ -1332,16 +1190,12 @@ console.log(Array.from(headers).map(function (it) {
           <p>Начало контура задается методом <b>beginPath</b>, конец контура <b>closePath</b>, все, что будет нарисовано
             между этими вызовами, будет считаться одной фигурой.</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/beginPath"
-                target="_blank">beginPath()</a> — запускает новый путь, опуская список подпутей.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/moveTo"
-                target="_blank">moveTo()</a> — перемещает начальную точку нового фрагмента контура в координаты (x, y).
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/beginPath" target="_blank">beginPath()</a> — запускает новый путь, опуская список подпутей.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/moveTo" target="_blank">moveTo()</a> — перемещает начальную точку нового фрагмента контура в координаты (x, y).
             </li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/lineTo"
-                target="_blank">lineTo()</a> — добавляет линию к текущему под пути с конечной точкой с короординатами
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/lineTo" target="_blank">lineTo()</a> — добавляет линию к текущему под пути с конечной точкой с короординатами
               (x, y).</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo"
-                target="_blank">bezierCurveTo()</a> — добавляет кубическую кривую Безье к контуру.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo" target="_blank">bezierCurveTo()</a> — добавляет кубическую кривую Безье к контуру.</li>
             <li><a href="" target="_blank">closePath()</a> — добавляет в путь линию от текущей до первоначальной точки
               под пути и закрывает сам путь (давая возможность инициализировать новый).</li>
           </ul>
@@ -1354,21 +1208,16 @@ ctx.stroke(); // рисует обводку
 ctx.fill(); // заливает отрисованный контур</pre>
           <p>Вывод текста:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillText"
-                target="_blank">fillText()</a> — рисует (заливает) заданнный текст в заданной позиции (x, y).</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeText"
-                target="_blank">strokeText()</a> — выполняет обводку заданного текста в заданной позиции (x, y).</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillText" target="_blank">fillText()</a> — рисует (заливает) заданнный текст в заданной позиции (x, y).</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/strokeText" target="_blank">strokeText()</a> — выполняет обводку заданного текста в заданной позиции (x, y).</li>
           </ul>
           <pre>ctx.fillText('Привет', 0, 10); // выводит залитый текст
 ctx.strokeText('Привет', 0, 10); // выводит обведённый текст</pre>
           <p>Параметры текста:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/font"
-                target="_blank">font</a> — определяющет текущие стили рисуемого текста.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textBaseline"
-                target="_blank">textBaseline</a> — указывающее на текущую базовую линию при рисовании текста.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillText"
-                target="_blank">fillText()</a> — рисует (заливает) заданнный текст в заданной позиции (x, y).</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/font" target="_blank">font</a> — определяющет текущие стили рисуемого текста.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/textBaseline" target="_blank">textBaseline</a> — указывающее на текущую базовую линию при рисовании текста.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/CanvasRenderingContext2D/fillText" target="_blank">fillText()</a> — рисует (заливает) заданнный текст в заданной позиции (x, y).</li>
           </ul>
           <pre>ctx.font = '30px Tahoma';
 ctx.textBaseline = 'hanging'; // выравнивает текст
@@ -1383,10 +1232,8 @@ ctx.fillText('Текст', 0, 10);</pre>
           <p class="text__mdn">
             <a href="https://developer.mozilla.org/ru/docs/Learn/How_the_Internet_works" target="_blank">MDN.Как
               работает Интернет</a>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data"
-              target="_blank">MDN.Получение данных с сервера</a>
-            <a href="https://developer.mozilla.org/ru/docs/Learn/Server-side/First_steps/Client-Server_overview"
-              target="_blank">MDN.Клиент-сервер</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data" target="_blank">MDN.Получение данных с сервера</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/Server-side/First_steps/Client-Server_overview" target="_blank">MDN.Клиент-сервер</a>
           </p>
         </div>
 
@@ -1394,21 +1241,17 @@ ctx.fillText('Текст', 0, 10);</pre>
           <h4>JSON</h4>
 
           <p class="text__mdn">
-            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/JSON"
-              target="_blank">MDN.Работа с JSON</a>
+            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/JSON" target="_blank">MDN.Работа с JSON</a>
           </p>
 
-          <p>Объект <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON"
-              target="_blank">JSON</a> (JavaScript Object Notation) — текстовый формат обмена данными, основанный на
+          <p>Объект <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank">JSON</a> (JavaScript Object Notation) — текстовый формат обмена данными, основанный на
             JavaScript объектах.</p>
           <p>Методы:</p>
           <ul class="text__list">
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"
-                target="_blank">JSON.parse()</a> — разбирает строку <b>JSON</b>, возможно с преобразованием получаемого
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank">JSON.parse()</a> — разбирает строку <b>JSON</b>, возможно с преобразованием получаемого
               в процессе разбора значения.
             </li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"
-                target="_blank">JSON.stringify()</a> — преобразует значение JavaScript в строку <b>JSON</b>, возможно с
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank">JSON.stringify()</a> — преобразует значение JavaScript в строку <b>JSON</b>, возможно с
               заменой значений, если
               указана функция замены, или с включением только определённых свойств, если указан массив замены.</li>
           </ul>
@@ -1481,18 +1324,14 @@ ctx.fillText('Текст', 0, 10);</pre>
               инициализирует запрос.</li>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/send" target="_blank">send()</a> —
               отправляет запрос.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/responseText"
-                target="_blank">responseText</a> — возвращает текст ответа от сервера на отправленный
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/responseText" target="_blank">responseText</a> — возвращает текст ответа от сервера на отправленный
               запрос.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/response"
-                target="_blank">response</a> — возвращает содержимое тела ответа в виде
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/response" target="_blank">response</a> — возвращает содержимое тела ответа в виде
               <b>ArrayBuffer</b>, <b>ArrayBuffer</b>, <b>Document</b>,
               <b>JavaScript Object</b> или <b>DOMString</b> в зависимости от значения свойства <b>responseType</b>.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/responseType"
-                target="_blank">responseType</a> — является перечислимым значением, которое возвращает
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/responseType" target="_blank">responseType</a> — является перечислимым значением, которое возвращает
               тип ответа.</li>
-            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/timeout"
-                target="_blank">timeout</a> — определяет количество миллисекунд, которое запрос будет
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/timeout" target="_blank">timeout</a> — определяет количество миллисекунд, которое запрос будет
               выполняться, до того, как будет автоматически прерван.
             </li>
           </ul>
@@ -1501,8 +1340,7 @@ ctx.fillText('Текст', 0, 10);</pre>
             <li><a href="https://developer.mozilla.org/ru/docs/Web/Events/load" target="_blank">load</a> — происходит
               когда ресурс и его зависимые ресурсы закончили загружаться.</li>
           </ul>
-          <p><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/XMLHttpRequest"
-              target="_blank">XMLHttpRequest()</a> — Конструктор, создаёт новый объект <b>XMLHttpRequest</b>.</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/XMLHttpRequest" target="_blank">XMLHttpRequest()</a> — Конструктор, создаёт новый объект <b>XMLHttpRequest</b>.</p>
           <p>Пример универсального кода по загрузке:</p>
           <pre>window.load = function (url, onSuccess, onError) {
       var xhr = new XMLHttpRequest();
@@ -1635,8 +1473,7 @@ window.util = (function () {
           <ol class="text__list">
             <li>Разделить файлы логически, по тому, что они делают  — сделать так, чтобы код решающий разные,
               непересекающиеся задачи, хранился в разных файлах.</li>
-            <li>Найти повторяющийся код внутри модулей, вынести в функцию  — принцип <a
-                href="https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself" target="_blank">DRY</a> — не нужно
+            <li>Найти повторяющийся код внутри модулей, вынести в функцию  — принцип <a href="https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself" target="_blank">DRY</a> — не нужно
               писать один и тот же код несколько раз. Если задача уже
               была решена, можно воспользоваться готовым решением.</li>
             <li>Eсли один и тот же код используется в нескольких файлах — вынести его в отдельный модуль  (расширение
@@ -1659,8 +1496,7 @@ window.util = (function () {
         <div class="text__block">
           <h4>Подключение скриптов на страницу</h4>
 
-          <p>Скрипты подключаются к странице с помощью тега <a
-              href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/script" target="_blank">&lt;script&gt;</a>
+          <p>Скрипты подключаются к странице с помощью тега <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/script" target="_blank">&lt;script&gt;</a>
             двумя способами:</p>
           <ul class="text__list">
             <li>Инлайновый код пишется внутри тега <b>script</b>.
@@ -1707,8 +1543,7 @@ window.util = (function () {
         <div class="text__block">
           <h4>Отладка</h4>
 
-          <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger"
-              target="_blank">debugger</a> — открывает доступ к любому доступному в конкретном окружении отладочному
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger" target="_blank">debugger</a> — открывает доступ к любому доступному в конкретном окружении отладочному
             функционалу, например к установке точек останова (т.н. брейкпоинтов).</p>
         </div>
 
@@ -1716,18 +1551,52 @@ window.util = (function () {
           <h4>Прочее</h4>
 
           <p class="text__mdn">
-            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar"
-              target="_blank">MDN.Лексический синтаксис</a>
-            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode"
-              target="_blank">MDN.Strict mode</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar" target="_blank">MDN.Лексический синтаксис</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode" target="_blank">MDN.Strict mode</a>
           </p>
         </div>
       </section>
     </div>
   </main>
 
-  <include src="source/html-blocks/footer.html"></include>
-  <include src="source/html-blocks/js.html"></include>
+  <footer class="footer">
+  <ul class="footer__list">
+    <li class="footer__item">
+      <a class="footer__link" href="https://github.com/sokolovav2016">
+        <svg width="32" height="32">
+          <use xlink:href="img/sprite.svg#github-logo"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="footer__item">
+      <a class="footer__link" href="https://htmlacademy.ru/profile/id853603">
+        <svg width="26.943" height="34.09">
+          <use xlink:href="img/sprite.svg#html-academy-logo"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="footer__item">
+      <a class="footer__link" href="https://vk.com/sokolovav2016">
+        <svg width="34" height="19">
+          <use xlink:href="img/sprite.svg#vk-logo"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</footer>
+
+  <script src="js/svg4everybody.js"></script>
+<script>
+  svg4everybody();
+</script>
+<script src="js/toggle.js"></script>
+<script src="js/drag.js"></script>
+<script src="js/canvas.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/site.js"></script>
+
 </body>
 
 </html>
