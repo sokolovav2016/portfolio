@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta name="description" content="Карманный справочник по JavaScript">
+  <title>JavaScript</title>
+  <include src="source/html-blocks/head.html"></include>
+</head>
+
+<body>
+  <include src="source/html-blocks/header.html"></include>
+
+  <main class="main-handbook">
+    <div class="heading heading--handbook heading--margin">
+      <div class="heading__wrapper">
+        <h1 class="heading__title heading__title--handbook">Карманный справочник по JavaScript</h1>
+      </div>
+    </div>
+
+    <div class="sidebar sidebar--nojs">
+      <ul class="sidebar__list">
+        <li class="sidebar__item"><a class="sidebar__link" href="#basics">Основы</a>
+          <ul class="sidebar__list sidebar__list--inner">
+            <li class="sidebar__item"><a href="#variables-and-constants">Переменные и константы</a></li>
+            <li class="sidebar__item"><a href="#main-operators">Основные операторы</a></li>
+            <li class="sidebar__item"><a href="#conditional-statements-and-constructions">Условные операторы и конструкции</a></li>
+            <li class="sidebar__item"><a href="#cycles">Циклы</a></li>
+            <li class="sidebar__item"><a href="#functions">Функции</a></li>
+            <li class="sidebar__item"><a href="#miscellanea">Разное</a></li>
+          </ul>
+        </li>
+
+        <li class="sidebar__item"><a class="sidebar__link" href="#data-types">Типы данных</a>
+          <ul class="sidebar__list sidebar__list--inner">
+            <li class="sidebar__item"><a href="#data-types-in-brief">Коротко о типах данных</a></li>
+            <li class="sidebar__item"><a href="#arrays">Массивы</a></li>
+            <li class="sidebar__item"><a href="#objects">Объекты</a></li>
+          </ul>
+        </li>
+
+        <li class="sidebar__item"><a class="sidebar__link" href="#dom">DOM</a>
+          <ul class="sidebar__list sidebar__list--inner">
+            <li class="sidebar__item"><a href="#dom-tree">DOM-дерево</a></li>
+            <li class="sidebar__item"><a href="#parent-elements">Родительские элементы</a></li>
+            <li class="sidebar__item"><a href="#neighboring-elements">Соседние элементы</a></li>
+            <li class="sidebar__item"><a href="#internal-elements">Внутренние элементы</a></li>
+            <li class="sidebar__item"><a href="#element-name">Имя элемента</a></li>
+            <li class="sidebar__item"><a href="#finding-items-in-the-dom">Поиск элементов в DOM</a></li>
+            <li class="sidebar__item"><a href="#dom-elements-attribute">Атрибуты DOM-элемента</a></li>
+            <li class="sidebar__item"><a href="#dom-elements-content">Содержимое DOM-элемента</a></li>
+            <li class="sidebar__item"><a href="#templates">Шаблонизация</a></li>
+            <li class="sidebar__item"><a href="#developments">События</a></li>
+            <li class="sidebar__item"><a href="#forms-and-validation">Формы и валидация</a></li>
+            <li class="sidebar__item"><a href="#moving-element">Перемещение элемента</a></li>
+          </ul>
+        </li>
+
+        <li class="sidebar__item"><a class="sidebar__link" href="#other">Прочее</a>
+          <ul class="sidebar__list sidebar__list--inner">
+            <li class="sidebar__item"><a href="#debugging">Отладка</a></li>
+            <li class="sidebar__item"><a href="#in-the-browser">JavaScript в браузере</a></li>
+            <li class="sidebar__item"><a href="#canvas-text">Canvas</a></li>
+            <li class="sidebar__item"><a href="#algorithms">Алгоритмы</a></li>
+            <li class="sidebar__item"><a href="#modules">Модули</a></li>
+            <li class="sidebar__item"><a href="#network">Сеть</a></li>
+          </ul>
+        </li>
+
+        <li class="sidebar__item sidebar__item--up"><a href="#header">Наверх</a></li>
+      </ul>
+    </div>
+
+    <div class="text" id="basics">
+      <h2 class="text__heading"><span>Основы</span></h2>
+
+      <section class="text__section" id="variables-and-constants">
+        <h3 class="text__title">Переменные и константы</h3>
+
+        <div class="text__block">
+          <h4>Переменные</h4>
+          <p>Позволяют сохранять, получать и изменять данные.</p>
+          <p>В JavaScript переменные можно создавать командой <strong>var</strong>, за которой следует имя переменной:</p>
+          <pre>var x;              // Объявляем переменную
+console.log(x);     // Выведет undefined</pre>
+          <pre>x = 20;             // Присваиваем одно значение
+console.log(x);     // Выведет 20</pre>
+          <pre>x = 'сорок';         // Переопределение значения переменной
+console.log(x);     // Выведет строку "сорок"</pre>
+          <p>Способы записи названия переменной:</p>
+          <ul class="text__list">
+            <li><strong>camelCase</strong> (верблюжья нотация) — все слова в названии переменной пишутся слитно и каждое новое слово начинается с большой буквы (myNumber, userName).</li>
+            <li><strong>snake_case</strong> (змеиная нотация) — все слова разделяются нижним подчёркиванием (my_number, my_name).</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Константы</h4>
+          <p>Переменные которые не должны изменяться после объявления.</p>
+          <p>Именуются особенным образом: заглавными буквами с разделением слов через змеиный регистр (snake_case).</p>
+          <pre>var EARTH_RADIUS = 6731; </pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="main-operators">
+        <h3 class="text__title">Основные операторы</h3>
+
+        <div class="text__block">
+          <p>Минимальная единица языка, команда. Оператор принимает несколько значений, преобразует их и возвращает новое значение.</p>
+          <p>Операторы делятся по количеству принимаемых значений:</p>
+          <ul class="text__list">
+            <li>Унарные — операторы, которые работают с одним значением.</li>
+            <li>Бинарные — операторы, работающие с двумя значениями.</li>
+            <li>Тернарный — единственный в языке оператор, принимает на вход три значения. Возвращающий второе или третье переданное значение в зависимости от истинности первого.
+              <pre>var result = true ? 1 : 0; // Вернет 1</pre>
+            </li>
+          </ul>
+          <p>Операторы делятся по типу возвращаемого значения на математические, строковые, логические (сравнения и булевой логики) и служебные.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Арифметические операторы</h4>
+          <ul class="text__list">
+            <li><strong>+</strong> cложение</li>
+            <li><strong>-</strong> вычитание</li>
+            <li><strong>*</strong> умножение</li>
+            <li><strong>/</strong> деление</li>
+            <li><strong>%</strong> остаток от деления</li>
+            <li>Инкремент (увеличение на единицу)
+              <pre>i<strong>++</strong> // i = i + 1</pre>
+            </li>
+            <li>Декремент (уменьшение на единицу)
+              <pre>i<strong>--</strong> // i = i - 1</pre>
+            </li>
+            <li>Сложение, совмещённое с присваиванием
+              <pre>i <strong>+=</strong> 2	// i = i + 2</pre>
+            </li>
+            <li>Вычитание, совмещённое с присваиванием
+              <pre>i <strong>-=</strong> 2	// i = i - 2</pre>
+            </li>
+            <li>Умножение, совмещённое с присваиванием
+              <pre>i <strong>*=</strong> 2	// i = i * 2</pre>
+            </li>
+            <li>Деление, совмещённое с присваиванием
+              <pre>i <strong>/=</strong> 2	// i = i / 2</pre>
+            </li>
+            <li>Вычисление остатка от деления, совмещённое с присваиванием
+              <pre>i <strong>%=</strong> 2	// i = i % 2</pre>
+            </li>
+          </ul>
+          <p>Если в операции сложения участвует строка, результат будет приведён к строке. Сложение строк — конкатенация.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Операторы сравнения</h4>
+          <ul class="text__list">
+            <li><strong>&gt;</strong> — больше</li>
+            <li><strong>&lt;</strong> — меньше</li>
+            <li><strong>&gt;=</strong> — больше или равно</li>
+            <li><strong>&lt;=</strong> — меньше или равно</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Операторы равенства</h4>
+          <ul class="text__list">
+            <li><strong>==</strong> — нестрогое равенство (с приведением типов). Сравнивает два значения, перед этим приводит одно из значений к типу другого. Если значения равны, возвращает true.</li>
+            <li><strong>===</strong> — строгое равенство (без приведения типов). Сравнивает два значения. Если типы значений разные или значения не равны, возвращает false.</li>
+            <li><strong>!=</strong> — неравенство (с приведением типов). Сравнивает два значения, перед этим приводит одно из значений к типу другого. Если значения не равны, возвращает true.</li>
+            <li><strong>!==</strong> — строгое неравенство (без приведения типов). Сравнивает два значения. Если типы значений разные или значения не равны, возвращает true.</li>
+          </ul>
+          <p>Любые значения внутри проверок приводятся к булеву типу. Все числа кроме 0 — true, при этом 0 — false. Все строки, кроме пустой строки — true, пустая строка — false.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Логические операторы</h4>
+          <ul class="text__list">
+            <li><strong>&&</strong> — «логическое И», возвращает true только в том случае, если оба условия, слева и справа от него, возвращают true.</li>
+            <li><strong>||</strong> — «логическое ИЛИ», возвращает true если любое из условий слева или справа от него, возвращают true.</li>
+            <li><strong>!</strong> — «логическое отрицание», меняет булево значение выражения справа от него на противоположное.</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Математические методы</h4>
+          <ul class="text__list">
+            <li><strong>Math.round()</strong> — округляет до целого к ближайшему целому.</li>
+            <li><strong>Math.floor()</strong> — округляет до целого в меньшую сторону.</li>
+            <li><strong>Math.ceil()</strong> — округляет до целого в большую сторону.</li>
+            <li><strong>Math.random()</strong> — возвращает псевдослучайное число с плавающей запятой из диапазона [0, 1), то есть, от 0 (включительно) до 1 (но не включая 1).</li>
+            <li><strong>Math.sqrt()</strong> — возвращает квадратный корень числа.</li>
+            <li><strong>Math.pow(base, exponent)</strong> — возвращает base, возведённое в степень exponent.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text__section" id="conditional-statements-and-constructions">
+        <h3 class="text__title">Условные операторы и конструкции</h3>
+
+        <div class="text__block">
+          <h4>Условный оператор if</h4>
+          <p>Условные операторы — конструкция языка, выполняющая определенный набор действий только при выполнении некоего логического выражения</p>
+          <p>Условие:</p>
+          <pre>if (условие) {
+  действия;
+}</pre>
+          <p>Условие с альтернативным действием:</p>
+          <pre>if (условие) {
+  действия;
+} else {
+  другие действия;
+}</pre>
+          <p>Вложенные условия:</p>
+          <pre>if (условие1) {
+  if (условие2) {
+    действия;
+  }
+}</pre>
+          <p>Здесь «условие» — это выражение, возвращающее true или false, а «действия» внутри фигурных скобок — это команды, которые выполняются, если условие удовлетворено.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Оператор вопросительный знак „?“</h4>
+          <p>Вопросительный знак – единственный оператор, у которого есть три аргумента, поэтому его называют «тернарный оператор».</p>
+          <p>Тернарный оператор состоит из трех частей:</p>
+          <pre>условие ? значение1 : значение2</pre>
+          <p>Проверяется условие, затем если оно верно – возвращается значение1, если неверно – значение2, например:</p>
+          <pre>access = (age > 14) ? true : false;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>switch</h4>
+          <p>Инструкция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">switch</a> сравнивает выражение со случаями, перечисленными внутри неё, а затем выполняет соответствующие инструкции.
+          </p>
+          <p>Хорошим тоном является практика кидать ошибку при неизвестном значении перечисления, при условии что это уместно.</p>
+          <pre>var getCloth = function (season) {
+  switch (season) {
+    case 'Осень':
+      return 'Зонт';
+    case 'Зима':
+      return 'Варежки';
+    case 'Лето':
+      return 'Майку';
+    case 'Весна':
+      return 'Плащ';
+    default:
+      throw new Error('Неизвестное время года: «' + season + '»');
+  }
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>try...catch</h4>
+          <p>Конструкция <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank">try...catch</a> помечает блок инструкций как <b>try</b>, и в зависимости от того, произошла ошибка или нет,
+            вызывает дополнительный блок инструкций <b>catch</b>.</p>
+        </div>
+      </section>
+
+      <section class="text__section" id="cycles">
+        <h3 class="text__title">Циклы</h3>
+
+        <div class="text__block">
+          <h4>Цикл for</h4>
+          <p>Выполняет действия из тела цикла снова и снова, пока условие возвращает true.</p>
+          <pre>for (var i = 0; i &lt; 10; i++) {
+  // повторяющиеся команды
+}</pre>
+          <p>Синтаксис</p>
+          <ul class="text__list">
+            <li><b>var i = 0;</b> — подготовительная часть, исходное значение для счётчика. Задаётся с помощью var, как обычная переменная.</li>
+            <li><b>i &lt; 10;</b> — проверочная часть. Если условие возвращает true, цикл делает ещё одну итерацию иначе прекращает свою работу.</li>
+            <li><b>i++</b> — дополняющая часть, запускается на каждой итерации после выполнения кода из тела цикла. Меняет
+              значение счётчика.</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Цикл while</h4>
+          <p>Действия будут выполняться снова и снова пока условие не вернёт false.</p>
+          <pre>while (условие) {
+  действия
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Оператор break</h4>
+          <p>Прерывает выполнение цикла.</p>
+          <pre>while (total &lt; victoryPoints) {
+  if (misses &gt;= 3) {
+    break
+  }
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Оператор continue</h4>
+          <p>Переход к следующей итерации цикла.</p>
+        </div>
+      </section>
+
+      <section class="text__section" id="functions">
+        <h3 class="text__title">Функции</h3>
+
+        <div class="text__block">
+          <p>Функция — кусок кода, который можно написать один раз, а затем многократно использовать. Функция не просто содержит в себе значение, как переменная, а выполняет какое-то действие и решает какую-то задачу: считает, сравнивает, ищет.</p>
+          <pre>var calculateSum = function (numberFirst, numberSecond) {
+  var sum = numberFirst + numberSecond;
+  return sum;
+};
+
+или
+
+function calculateSum(numberFirst, numberSecond) {
+  var sum = numberFirst + numberSecond;
+  return sum;
+}
+
+calculateSum(); // Вернёт NaN
+calculateSum(2); // Вернёт NaN
+calculateSum(2, 5); // Вернёт 7
+calculateSum(9, 5); // Вернёт 14</pre>
+          <ul class="text__list">
+            <li><b>calculateSum</b> — имя, по которому можно обратиться к функции.</li>
+            <li><b>numberFirst, numberSecond</b> — параметры функции.</li>
+            <li><b>return sum;</b> — место кода, где происходит возвращение sum и выход из функции.</li>
+            <li><b>calculateSum(2, 5);</b> — аргументы, которые передаются в функции при вызове. Порядок аргументов такой же, как у параметров функции. Первый аргумент 2 записывается в первый параметр numberFirst, аргумент 5 записывается в параметр
+              numberSecond. Важно соблюдать порядок параметров при вызове функции, чтобы избежать неочевидных ошибок.</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Возвращение из функции</h4>
+          <p>Функция может выполнить код и отдать результат операций для дальнейшей работы с этим результатом. Он подставится в то место кода, где мы вызвали функцию.</p>
+          <pre>var increaseByTwo = function (number) {
+  var sum = 2 + number;
+  <strong>return</strong> sum;
+};
+
+increaseByTwo(1); // Функция вернёт 3
+increaseByTwo(2); // Функция вернёт 4</pre>
+          <p>Несколько вещей, которые нужно знать:</p>
+          <ul class="text__list">
+            <li>Код, написанный на новой строке после <strong>return</strong>, не выполняется.</li>
+            <li>Функция не может вернуть сразу много значений, она возвращает только один результат.</li>
+            <li>Если внутри функции нет <strong>return</strong> или после <strong>return</strong> не указано, какое значение нужно вернуть, функция вернёт <strong>undefined</strong>, иными словами, ничего.</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Области видимости</h4>
+          <p>У каждой функции есть область видимости — все значения, доступные для этой функции.</p>
+          <p>Область видимости ограничена функцией, поэтому снаружи нельзя получить локальные переменные и параметры функции.</p>
+          <p>Области видимости:</p>
+          <ul class="text__list">
+            <li><strong>Локальная</strong> — в нее входят параметры функции и переменные, объявленные в ней.</li>
+            <li><strong>Родительская</strong> — область видимости, в которой объявлена функция. Если функция находится в другой функции, она будет видеть её параметры и переменные.</li>
+            <li><strong>Глобальная</strong> — набор значений доступный везде. Является объектом <strong>window</strong>, описывающим текущую вкладку браузера (исключая вложенные <strong>&lt;iframe&gt;</strong>, для каждого из них создается свой
+              объект <strong>window</strong>).</li>
+          </ul>
+          <p>Если внутри функции обратиться не к локальной переменной, JavaScript будет искать переменную снаружи, переходя наверх от уровня к уровню, пока не найдёт переменную. Если переменной не будет ни внутри функции ни снаружи, будет ошибка.
+          </p>
+          <p>Так как функция может использовать переменные, объявленные снаружи, их можно переопределять.</p>
+          <pre>function makeFunc() {
+  var name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+};
+
+var myFunc = makeFunc();
+myFunc(); // Выведет "Mozilla"</pre>
+          <pre>function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+};
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12</pre>
+          <p>Области видимости создаются только функциями. Поэтому, если переменная была создана в другой конструкции, например, в цикле, она будет доступна для чтения из функции.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Замыкания</h4>
+          <p>Функция, которая помнит о своём окружении. Это функция + все значения вне локальной области видимости, которые она использует.</p>
+          <p>Благодаря замыканиям мы можем зафиксировать какое-то значение в функции, а использовать саму функцию позже.</p>
+          <pre>var collectContainer = function (food) {
+  return function () {
+    console.log('Поел ' + food);
+  };
+};
+
+var schoolkid = collectContainer('макароны');
+schoolkid(); // Выведет 'Поел макароны'</pre>
+          <p><strong>Потеря окружения</strong> — ситуация, в которой функция-замыкание обращается к внешним переменным, которые были изменены или удалены.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Замыкания и асинхронность</h4>
+          <p>Некоторые функции выполняются асинхронно, поэтому в момент выполнения кода значение переменной может уже измениться. Чтобы избавиться от этой проблемы, нужно создать отдельную область видимости. Так все переменные будут под контролем и
+            замыкания не позволят потерять необходимые значения.</p>
+          <pre>var thumbnails = document.querySelectorAll('.gallery__photo-preview');
+var fullPhoto = document.querySelector('.full-photo');
+
+var addThumbnailClickHandler = function (thumbnail, photo) {
+  thumbnail.addEventListener('click', function () {
+    fullPhoto.src = photo;
+  });
+};
+
+for (var i = 0; i &lt; thumbnails.length; i++) {
+  addThumbnailClickHandler(thumbnails[i], photos[i]);
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>IIFE</h4>
+          <p>Immediately Invoked Function Expression - это JavaScript функция, которая выполняется сразу же после того, как она была определена.</p>
+          <p>Функция становится мгновенно выполняющимся функциональным выражением. Переменные внутри функции не могут быть использованы за пределами ее области видимости.</p>
+          <pre>(function () {
+    statements
+})();</pre>
+          <p>Переменная, которой присвоено <strong>IIFE</strong>, хранит в себе результат выполнения функции, но не саму функцию.</p>
+          <pre>var result = (function () {
+    var name = "Barry";
+    return name;
+})();
+// Immediately creates the output:
+result; // "Barry"</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Потеря окружения</h4>
+          <p>Пример потери окружения:</p>
+          <pre>var buttons = document.querySelectorAll('button');
+
+for (var i = 0; i &lt; buttons.length; i++) {
+  var button = buttons[i];
+  button.addEventListener('click', function (evt) {
+    console.log(button.value); // button === buttons.length
+  });
+}</pre>
+          <p>Решение 1. Cоздание изолированной области видимости:</p>
+          <pre>var buttons = document.querySelectorAll('button');
+
+var addClickListener = function (button) {
+  button.addEventListener('click', function (evt) {
+    console.log(button.value);
+  });
+}
+
+for (var i = 0; i &lt; buttons.length; i++) {
+  var button = buttons[i];
+  addClickListener(button);
+}</pre>
+          <p>Решение 2. Создание IIFE функции для ограничения области видимости:</p>
+          <pre>var buttons = document.querySelectorAll('button');
+
+for (var i = 0; i &lt; buttons.length; i++) {
+  (function (button) {
+    button.addEventListener('click', function (evt) {
+      console.log(button.value);
+    });
+  })(buttons[i]);
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Функция обратного вызова (Callback)</h4>
+          <p><a href="https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
+              target="_blank">Функция обратного вызова</a> - это функция, переданная в другую функцию в качестве аргумента, которая затем вызывается по завершению какого-либо действия.</p>
+          <pre>var createButton = function(name, clickHandler) {
+  var button = document.createElement('button');
+
+  button.addEventListener('click', clickHandler);
+  button.textContent = name;
+
+  return button;
+};
+
+var logButton = createButton('log', function() {
+  console.log('click!');
+});
+var alertButton = createButton('alert', function() {
+  alert('click!');
+});
+
+
+document.body.insertBefore(logButton, document.body.children[0]);
+document.body.insertBefore(alertButton, document.body.children[0]);</pre>
+          <p><a href="http://callbackhell.ru/" target="_blank">Ад обратных вызовов</a></p>
+          <p><a href="https://learn.javascript.ru/custom-events" target="_blank">Коллбэки и события на компонентах</a></p>
+        </div>
+      </section>
+
+      <section class="text__section" id="miscellanea">
+        <h3 class="text__title">Разное</h3>
+
+        <div class="text__block">
+          <h4>API</h4>
+          <p>ApplicaMon Public Interface — набор доступных свойств и методов для решения определенной задачи. Часто реализуется в виде объектов. Как правило, свойства задают параметры решения, а методы определяют действия.</p>
+          <p>Примеры API:</p>
+          <ul class="text__list">
+            <li>DOM — работа с элементами страницы (в том числе SVG-графикой)</li>
+            <li>BOM — работа с браузером</li>
+            <li>Canvas — создание графики</li>
+            <li>XMLHppRequest — отправка запросов на сервер</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>console.log()</h4>
+          <p>Выводит в консоль результаты операций: числа, строки (их надо заключать в кавычки).</p>
+          <pre>console.log(x + 50);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.toLowerCase()</h4>
+          <p>Возвращает значение строки, на которой он был вызван, преобразованное в нижний регистр.</p>
+          <pre>str.toLowerCase()</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.toUpperCase()</h4>
+          <p>Возвращает значение строки, на которой он был вызван, преобразованное в верхний регистр.</p>
+          <pre>str.toUpperCase()</pre>
+        </div>
+      </section>
+    </div>
+
+    <div class="text" id="data-types">
+      <h2 class="text__heading"><span>Типы данных</span></h2>
+
+      <section class="text__section" id="data-types-in-brief">
+        <h3 class="text__title">Коротко о типах данных</h3>
+
+        <div class="text__block">
+          <p>Набор допустимых значений и действия,  которые с ними можно производить.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Примитивные типы данных</h4>
+
+          <p>Числа <strong>(number)</strong> — формат данных для представления числовой информации: целых, дробных чисел, бесконечности и неизвестного числового значения.</p>
+          <ul class="text__list">
+            <li>Записываются без дополнительных символов.</li>
+            <li>Поддерживается работа с целыми и дробными числами, дробная часть отделяется точкой.</li>
+            <li>Существует два дополнительных значения: Infinity и NaN.</li>
+            <li>Целые числа могут быть записаны в десятеричном или в шестнадцатеричном формате 0xFF.</li>
+          </ul>
+
+          <p>Строки <strong>(string)</strong> — формат данных для представления текстовой информации.</p>
+          <ul class="text__list">
+            <li>Записываются внутри одинарных или двойных кавычек. </li>
+            <li>Называются строками, потому что переносы, пробелы и отступы являются обычными символами, поэтому весь текст хранится в виде одной длинной последовательности символов.</li>
+            <li>В случае, если в строке нужно использовать специальный символ, используется экранирование.
+              <pre>'\tHello, I\'m a string\n\n';</pre>
+            </li>
+            <li>Для строк существует только одна операция — строковое сложение или конкатенация. Для сложения строк используется оператор +.</li>
+          </ul>
+
+          <p>Логический <strong>(boolean)</strong> тип данных — результат логических выражений. Имеет только два значения — истина (true) и ложь (false).</p>
+
+          <p><strong>undefined</strong> — указывает, что значение не установлено.</p>
+
+          <p><strong>null</strong> — указывает на неопределенное значение.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Сложные (составные) типы данных</h4>
+          <p>Составные типы содержат несколько значений.</p>
+          <p>Объект <strong>(object)</strong> — состоит из множества пар «ключ-значение», порядок этих пар не важен.</p>
+          <pre>{month: 'june', day: 15} // Объект</pre>
+          <pre>console.log({month: 'june', day: 15}); // Вывод объекта в консоль</pre>
+          <p>Массив <strong>(array)</strong> — <strong>разновидность объекта</strong>, хранит последовательность значений и порядок этих значений важен.</p>
+          <pre>[1, 2, 3, 4, 5] // Массив</pre>
+          <pre>console.log([1, 2, 3, 4, 5]); // Вывод массива в консоль</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Приведение типов</h4>
+          <p>JavaScript — язык программирования сценариев (script)  со слабой типизацией и динамическим приведением типов.</p>
+          <p>Приведение типов — если операнды переданные оператору разного типа, они автоматически приводятся к типу, в котором операцию можно выполнить. Тип, в который будут приведены операнды зависит от оператора</p>
+        </div>
+
+        <div class="text__block">
+          <h4>toString()</h4>
+          <p>Приводит числовое значение к строковому типу.</p>
+          <pre>var number = 1;
+
+console.log(number.toString()); // Выведет строку: "1" (string)</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>parseInt()</h4>
+          <p>Приводит строку к числовому значению.</p>
+          <pre>var string = '10';
+
+console.log(parseInt(string, 10)); // выведет число: 10 (number)</pre>
+          <p>Второй аргумент — основание системы счисления, в которую переводим число.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>parseFloat()</h4>
+          <p>Приводит строку к числовому значению (число с плавающей точкой).</p>
+          <pre>var string = '10.2';
+
+console.log(parseFloat(string)); // выведет число: 10.2 (number)</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>typeof</h4>
+          <p>Возвращает тип аргумента в виде строки.</p>
+          <pre>typeof undefined // "undefined"
+
+typeof 0 // "number"
+
+typeof true // "boolean"
+
+typeof "foo" // "string"
+
+typeof {} // "object"</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="arrays">
+        <h3 class="text__title">Массивы</h3>
+
+        <div class="text__block">
+          <p>Разновидность объекта, тип данных, который представляет собой упорядоченный набор (список) элементов, у каждого из которых есть свой порядковый номер.</p>
+          <p>В массиве можно хранить любые данные: строки, булевы значения, выражения, числа и даже другие массивы. Значения массива перечисляются через запятую. Каждая запятая создаёт новый элемент. Если поставить запятую и не указать значение, то
+            образуется «дырка» — элемент которых содержит undefined.</p>
+          <p></p>
+          <pre>var numbers = [1, 2, 3, 4, 5];</pre>
+          <p>Чтобы получить элемент массива, нужно в квадратных скобках указать порядковый номер или индекс этого элемента.</p>
+          <pre>var numbers = [1, 2, 3, 4, 5];
+
+console.log(numbers[1]); // Выведет в консоль 2</pre>
+          <p>Нумерация элементов в массиве начинается с нуля: первый элемент массива идёт под номером ноль, второй — под номером один, третий — два и так далее.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Длина массива (или строки)</h4>
+          <p>Для того что бы узнать длинну массива (или строки) используется команда <strong>.length</strong>, которая знает о количестве элементов в массиве (строке):</p>
+          <pre>var numbers = [1, 2, 3, 4];
+
+console.log(numbers.length); // Выведет в консоль 4</pre>
+          <p>С помощью обращения к length можно получить последний элемент массива, даже если вы не знаете, сколько элементов в нём хранится:</p>
+          <pre>someBigArray[someBigArray.length - 1];</pre>
+          <p>Также можно узнать и длинну строки:</p>
+          <pre>var string = 'Массив'; // Записывает строку в переменную
+
+string.length; // Вернёт 6</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Запись в массив по индексу</h4>
+          <p>Запись в массив происходит так же, как и чтение — через обращение к элементу с помощью квадратных скобок:</p>
+          <pre>var numbers = [];
+var index = 1;
+
+numbers[0] = 1;
+numbers[index] = 2;
+
+console.log(numbers); // Выведет [1,2]</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Сортировка массива</h4>
+          <pre>var numbers = [12, 3, 7, 9, 10, 5];
+
+for (var i = 0; i &lt;= numbers.length - 2; i++) {
+  var minValue = numbers[i];
+
+  for (var j = i + 1; j &lt;= numbers.length - 1; j++) {
+    if (numbers[j] &lt; minValue) {
+      minValue = numbers[j];
+      var swap = numbers[i];
+      numbers[i] = minValue;
+      numbers[j] = swap;
+    }
+  }
+}
+
+console.log(numbers); // Выведет [3, 5, 7, 9, 10, 12];</pre>
+          <p>Массив с числами numbers сортируется по возрастанию элементов. На каждой итерации мы сравниваем minValue с остальными элементами массива. Если какой-то из них окажется меньше, чем minValue, он запишется в minValue, перезаписав старое
+            значение, и переместится в начало массива. Переменная swap — вспомогательная переменная, с помощью, которой мы можем поменять элементы местами.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>push()</h4>
+          <p>Позволяет добавлять элементы в конец массива.</p>
+          <pre>var names = [];
+
+names.push('Кекс');
+console.log(names); // Выведет ['Кекс']
+
+var catName = 'Снежок';
+names.push(catName);
+console.log(names); // Выведет ['Кекс', 'Снежок']</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>indexOf()</h4>
+          <p>Возвращает первый индекс, по которому данный элемент может быть найден в массиве или -1, если такого индекса нет. Такая операция называется поиском подстроки.</p>
+          <pre>arr.indexOf(searchElement[, fromIndex = 0])</pre>
+          <ul class="text__list">
+            <li><b>searchElement</b> — Искомый элемент в массиве.</li>
+            <li><b>fromIndex</b> — Индекс, с которого начинать поиск. Если индекс больше или равен длине массива, возвращается -1, что означает, что массив даже не просматривается. Если индекс является отрицательным числом, он трактуется как смещение
+              с конца массива. Обратите внимание: если индекс отрицателен, массив всё равно просматривается от начала к концу. Если рассчитанный индекс оказывается меньше 0, поиск ведётся по всему массиву. Значение по умолчанию равно 0, что означает,
+              что просматривается весь массив.</li>
+          </ul>
+          <p>Метод <strong>indexOf()</strong> сравнивает искомый элемент <strong>searchElement</strong> с элементами в массиве, используя строгое сравнение (===).</p>
+          <p>Можем найти строку из одного символа, если обратиться ко всей строке, используя индекс:</p>
+          <pre>var string = 'Меня зовут Кекс'; // Записываем строку в переменную
+
+console.log(string[0]); // Ищем самый первый элемент в строке, вернёт 'М'
+
+console.log(string[5]); // Ищем шестой элемент в строке, вернёт 'з'</pre>
+          <p>Посмотрим, как работает команда indexOf():</p>
+          <pre>string.indexOf('Кекс') // Ищем, есть ли в строке подстрока 'Кекс', вернёт 11
+
+string.indexOf('Снежок') // Ищем, есть ли в строке подстрока 'Снежок', вернёт -1, такой подстроки нет
+
+var searchString = 'Меня зовут'; // Ищем, есть ли в строке подстрока 'Меня зовут'
+
+string.indexOf(searchString) // Вернёт 0</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="objects">
+        <h3 class="text__title">Объекты</h3>
+
+        <div class="text__block">
+          <p>Тип данных, который хранит в себе информацию в виде пар «ключ-значение». Каждый элемент сопоставлен со своим ключом и порядок элементов совсем неважен.</p>
+          <p>Ключи объектов должны быть строками.</p>
+          <p>Кавычки у ключей ставить необязательно, если ключ это одно слово.</p>
+          <p>Пара «ключ-значение» — называется свойством объекта. Свойства именуются по имени ключа. У термина свойство есть два синонима — поле и атрибут</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Working_with_Objects" target="_blank">Работа с объектами</a></p>
+          <pre>var cat = {
+  name: 'Кекс',
+  age: 5
+};
+
+console.log(cat.name); // Выведет в консоль 'Кекс'
+console.log(cat.age); // Выведет в консоль 5
+console.log(cat.color); // Выведет undefined, такого ключа в объекте нет
+
+cat.age++; // Увеличили возраст кота на 1
+console.log(cat.age) // Выведет в консоль 6
+
+cat.name = 'Рокки'; // Заменили снаружи значение свойства name
+console.log(cat.name); // Выведет в консоль 'Рокки'</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Передача по ссылке</h4>
+          <p>Объект всегда один, в памяти не создаётся новое место под копию объекта. Каждая переменная содержит не новую отдельную сущность, а ссылку на один-единственный объект. Поэтому когда мы меняем что-то в объекте через одну из переменных, в
+            которой содержится ссылка на него, изменения видны во всех других переменных, будь их хоть двадцать или сорок. Это важная особенность объектов, которую надо запомнить. Она так и называется — передача объектов по ссылке.</p>
+          <pre>var increaseBy2 = function(obj) { 
+obj.prop += 2; 
+return obj;  }; 
+
+var myObject = { prop: 2 }; 
+
+console.log(increaseBy2(myObject)); // Вернет { prop: 4 }
+console.log(myObject); // Вернет { prop: 4 }</pre>
+          <p>Объект внутри функции increaseBy2 — тот же объект, что используется снаружи. При передаче объекта в функцию была передана ссылка на него, т.о. функция изменила исходный объект</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Методы объектов</h4>
+          <p>В объектах могут храниться любые типы данных, в том числе и функции. Такие свойства-функции называются методами объектов. Вызов метода записывается так: объект.метод().</p>
+          <p>Изнутри методов можно обращаться к свойствам и другим методам объекта с помощью ключевого слова <strong>this</strong>. Оно указывает на текущий объект и называется контекстом вызова.</p>
+          <p>Важная деталь: пока функция не вызвана, this не содержит никакого значения, контекст появляется только в момент вызова функции.</p>
+          <pre>var cat = {
+  name: 'Кекс',
+  color: 'рыжий',
+  age: 5,
+
+  getGreeting: function() {
+    return 'Мяу, привет! Меня зовут ' + this.name;
+  }
+};
+
+console.log(cat.getGreeting()); // Выведет 'Мяу, привет! Меня зовут Кекс'</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Скобочная и точечная нотация</h4>
+          <p>Доступ к отдельным свойствам объектов осуществляется двумя способами — через точку или квадратные скобки.</p>
+          <p><strong>Точечная нотация</strong></p>
+          <pre>var man = {
+  name: 'Илья',
+  age: 17
+};
+
+console.log(man.name);  // Выведет: Илья
+
+man.age = 50; //Свойства можно не только читать, но и записывать.
+console.log(man.age); // Выведет: 50</pre>
+          <p><strong>Скобочная нотация</strong></p>
+          <p>Обращение через квадратные скобки отличается от обращения через точку тем, что в квадратные скобки нужно передавать строковое значение.</p>
+          <pre>var man = {
+  name: 'Илья',
+  age: 17
+};
+
+console.log(man['name']);  // Выведет: Илья
+
+man['age'] = 50; // Свойства можно не только читать, но и записывать.
+console.log(man.age); // Выведет: 50</pre>
+          <p>Скобочная нотация позволяет прочитать из объекта свойство, название которого записано в переменную:</p>
+          <pre>var name = 'Кекс';
+
+var catsFavoriteFood = {
+  Кекс: 'рыба'
+};
+
+console.log(catsFavoriteFood.name); // Выведет в консоль undefined
+
+console.log(catsFavoriteFood[name]); // Выведет в консоль 'рыба'</pre>
+          <p>В качестве ключей в объекте можно использовать любые строки, даже строки с пробелами:</p>
+          <pre>var cat = {
+  'favorite food': 'Сметана'
+};
+
+console.log(cat.favorite food); // Вызовет ошибку
+
+console.log(cat['favorite food']); // Отработает нормально</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Мапы</h4>
+
+          <p><strong>Мапы</strong> или словари очень удобны в использовании. В нашем примере они хранят соотношение имени кота и лакомства, которое по вкусу именно ему.</p>
+          <pre>var catsFavoriteFood = {
+  Кекс: 'рыба',
+  Рудольф: 'котлета',
+  Снежок: 'сметана'
+};
+
+var printFavoriteFood = function (name) {
+  return 'Моя любимая еда — ' + catsFavoriteFood[name]; // Используем скобочную нотацию
+};
+
+console.log(printFavoriteFood('Снежок')); // Выведет 'Моя любимая еда — сметана'</pre>
+        </div>
+      </section>
+    </div>
+
+    <div class="text" id="dom">
+      <h2 class="text__heading"><span>DOM</span></h2>
+
+      <section class="text__section" id="dom-tree">
+        <h3 class="text__title">DOM-дерево</h3>
+
+        <div class="text__block">
+          <p>Document Object Model или объектная модель документа — способ представления разметки страницы в виде связанных между собой объектов.</p>
+          <p>Каждому элементу на странице — тегу, текстовому блоку, комментарию — в JS ставится в соответствие объект. Каждый из объектов знает про свой родительский объект, соседние объекты и объекты, расположенные внутри него (дочерние элементы).
+          </p>
+          <p>В каждом DOM-дереве есть корневой объект, из которого «растут» все остальные объекты, он называется <strong>document</strong>. Этот глобальный объект доступен во всех программах, которые работают в браузере. <strong>document</strong> —
+            это страница, которая
+            содержит все элементы разметки (объекты).</p>
+          <p>DOM-дерево состоит из:</p>
+          <ul class="text__list">
+            <li><strong>узел</strong> — любой элемент дерева</li>
+            <li><strong>родитель</strong> — элемент, из которого растет узел</li>
+            <li><strong>дети</strong> — элементы, которые растут из узла</li>
+            <li><strong>корень</strong> — элемент из которого растет дерево, элемент без родителей</li>
+            <li><strong>лист</strong> — элемент дерева, который не имеет детей</li>
+          </ul>
+          <p>Дерево может иметь только один корень. У каждого элемента должно быть не более одного родителя</p>
+          <p>Виды обхода деревьев:</p>
+          <ul class="text__list">
+            <li><strong>Depth-First Search</strong> — поиск в глубину</li>
+            <li><strong>Breadth-First Search</strong> — поиск в ширину</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text__section" id="parent-elements">
+        <h3 class="text__title">Родительские элементы</h3>
+
+        <div class="text__block">
+          <h4>.parentElement</h4>
+          <p>Возвращает родителя узла DOM Element, или null если узел не имеет родителя, или его родитель не DOM Element.</p>
+          <pre>parentElement = node.parentElement; // parentElement — родительский элемент текущего узла</pre>
+          <pre>if (node.parentNode) {
+  // удаляем элемент из дерева
+  node.parentNode.removeChild(node);
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.parentNode</h4>
+          <p>Возвращает родителя определенного элемента DOM дерева.</p>
+          <pre>parentNode = node.parentNode; // parentNode — родитель текущего элемента</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="neighboring-elements">
+        <h3 class="text__title">Соседние элементы</h3>
+
+        <div class="text__block">
+          <h4>.previousElementSibling</h4>
+          <p>Возвращает элемент стоящий перед применяемым, из списка дочерних элементов родителя или возвращает null, если таковых не имеется.</p>
+          <pre>prevNode = elementNodeReference.previousElementSibling;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.previousSibling</h4>
+          <p>Возвращает узел предшедствующий указанному в родительском элементе childNodes, или null, если указанный узел первый в своём родителе.</p>
+          <pre>previousNode = node.previousSibling;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.nextElementSibling</h4>
+          <p>Возвращает последующий элемент перед текущим, или null, если элемент является последним в своём родительском узле.</p>
+          <pre>var nextNode = elementNodeReference.nextElementSibling;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.nextSibling</h4>
+          <p>Возвращает узел, непосредственно следующий за данным узлом в списке childNodes его родительского элемента, или null если данный узел последний в этом списке.</p>
+          <pre>nextNode = node.nextSibling;</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="internal-elements">
+        <h3 class="text__title">Внутренние элементы</h3>
+
+        <div class="text__block">
+          <h4>.children</h4>
+          <p>Возвращает динамическую коллекцию <strong>HTMLCollection</strong> дочерних элементов узла. Структура данных, в которой хранятся дети children очень похожа на массив — у неё есть индексы и поле length.</p>
+          <pre>// elList - живая коллекция, состоящая из дочерних элементов узла elementNodeReferencevar
+elList = elementNodeReference.children;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.childNodes</h4>
+          <p>Возвращает динамическую коллекцию <strong>NodeList</strong> дочерних элементов данного элемента. В отличие от <strong>.children</strong>, который содержит только элементы, например HTML- и SVG-теги, <strong>.childNodes</strong> содержит
+            все возможные узлы — тексты,
+            комментарии и пр.</p>
+          <pre>// ndList - упорядоченная коллекция объектов элементов, которые являются детьми данного элемента.
+var ndList = elementNodeReference.childNodes;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.contains</h4>
+          <p>Указывает, является ли узел потомком данного узла.</p>
+          <pre>node.contains( otherNode ) </pre>
+          <ul class="text__list">
+            <li><b>node</b> — элемент который сравнивается.</li>
+            <li><b>otherNode</b> — элемент с которым производится сравнение.</li>
+          </ul>
+          <p>Возвращает true если <b>otherNode</b> является потомком <b>node</b>, или непосредственно самим <b>node</b>. В противном случае возвращает false.</p>
+        </div>
+      </section>
+
+      <section class="text__section" id="element-name">
+        <h3 class="text__title">Имя элемента</h3>
+
+        <div class="text__block">
+          <h4>.tagName</h4>
+          <p>Возвращает HTML-тег элемента ("div", "p", "a" и т.д).</p>
+          <pre>// elementName это строка, содержащая название HTML-тега элемента element.
+var elementName = element.tagName;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.nodeName</h4>
+          <p>Возвращает имя текущего узла в виде строки.</p>
+          <pre>var str = node.nodeName;</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="finding-items-in-the-dom">
+        <h3 class="text__title">Поиск элементов в DOM</h3>
+
+        <div class="text__block">
+          <h4>.getElementById()</h4>
+          <p>Возвращает ссылку на элемент по его идентификатору (ID); может быть вызван только на всём документе; идентификатор является строкой, которая может быть использована для идентификации элемента; она может быть определена при помощи
+            атрибута id в HTML или из скрипта.</p>
+          <pre>element = document.getElementById(id);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.querySelector()</h4>
+          <p>Принимает любой CSS-селектор и возвращает первый элемент внутри документа (используется предупорядоченный обход узлов в глубину до первого найденного узла), который совпадает с определенной группой
+            селекторов.</p>
+          <pre>// Поиск элемента по тегу
+var list = document.querySelector('ul');
+
+// Поиск последнего элемента из списка
+var lastProduct = document.querySelector('li:last-child');
+
+// Поиск элемента по классу
+var price = document.querySelector('.price');
+
+// Поиск третьего элемента из списка товаров
+var thirdProduct = document.querySelector('.product:nth-child(3)');</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.querySelectorAll()</h4>
+          <p>Принимает любой CSS-селектор и возвращает статичную коллекцию списка элементов (поиск осуществляется в пределах указанного элемента), которые соответствуют указанной группе селекторов. Возвращает объект
+            типа <strong>NodeList</strong>, содержащий все найденные элементы в том порядке, в котором они находятся в документе.</p>
+          <pre>// Поиск всех элементов, подходящих по селектору
+var listItems = document.querySelectorAll('.product');</pre>
+          <p>Коллекция элементов DOM-дерева является живой коллекцией, т.е. любое изменение в DOM сразу же изменяет эту коллекцию.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.activeElement</h4>
+          <p>Возвращает текущий сфокусированный элемент, то есть элемент, на котором будут вызываться события клавиатуры, если пользователь начнёт с неё ввод. Этот атрибут доступен только для чтения.</p>
+          <pre>var curElement = document.activeElement;</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="dom-elements-attribute">
+        <h3 class="text__title">Атрибуты DOM-элемента</h3>
+
+        <div class="text__block">
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference" target="_blank">Большинство</a> HTML-атрибутов доступны в виде свойств DOM-элемента, и к ним можно обращаться напрямую. Исключения составляют те
+            атрибуты, названия которых являются ключевыми или зарезервированными для будущих версий словами JS, например <b>class</b> или <b>for</b> у лейблов. Чтобы обратиться к классу, нужно воспользоваться свойством <strong>className</strong>, а
+            чтобы
+            прочитать лейбл, нужно воспользоваться свойством <strong>htmlFor</strong>.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.style</h4>
+          <p>Используется для получения и установки инлайновых стилей. Стили не следует устанавливать непосредственно через свойство style (например elt.style = "color: blue;"), поскольку оно считается доступным только для чтения и атрибут style
+            возвращает объект CSSStyleDeclaration который доступен только для чтения. Вместо этого стили могут быть установлены путем присвоения значений свойствам style. Для добавления определенных стилей для элемента без изменения других свойств
+            стилей предпочтительно использовать отдельные свойства style (например elt.style.color = '...'). При использовании elt.style.cssText = '...' или elt.setAttribute('style','...') устанавливаются стили перезаписывая уже существующие.
+            Объявленные стили сбрасываются присваиванием значения null.</p>
+          <pre>// Устанавливает несколько стилей в одном выражении
+elt.style.cssText = "color: blue; border: 1px solid black";
+// Или
+elt.setAttribute("style", "color:red; border: 1px solid blue;");
+
+// Устанавливает определенный стиль оставляя другие значения стиля нетронутыми
+elt.style.color = "blue";</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.className</h4>
+          <p>Отвечает за значение атрибута class элемента.</p>
+          <pre>var pageHeading = document.querySelector('h1');
+pageHeading.className = 'myclass';</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.getAttribute()</h4>
+          <p>Возвращает значение указанного атрибута элемента.</p>
+          <pre>var pageHeading = document.querySelector('h1');
+console.log(pageHeading.getAttribute('class')); // Вернет название класса pageHeading</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.setAttribute()</h4>
+          <p>Добавляет новый атрибут или изменяет значение существующего атрибута у выбранного элемента.</p>
+          <pre>var pageHeading = document.querySelector('h1');
+pageHeading.setAttribute('style', 'background: red;');</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.classList</h4>
+          <p>Специальный объект для работы с классами. Возвращает псевдомассив, содержащий все классы элемента.</p>
+          <pre>var product = document.querySelector('.product'); // Когда ищем элемент по классу, используем точку
+product.classList.add('product--sale'); // Но когда добавляем класс, точки нет!</pre>
+          <pre>var popup = document.querySelector('.popup'); // Перед названием селектора ставим точку
+popup.classList.remove('popup--open'); // Перед названием класса точка не ставится</pre>
+          <p>Методы:</p>
+          <ul class="text__list">
+            <li><strong>classList.add()</strong> — Добавляет элементу указанные классы.</li>
+            <li><strong>classList.remove()</strong> — Удаляет у элемента указанные классы.</li>
+            <li><strong>classList.item()</strong> — Результат аналогичен вызову сlassList[Number].</li>
+            <li><strong>classList.toggle()</strong> — Если класс у элемента отсутствует - добавляет, иначе - убирает. Когда вторым параметром передано false - удаляет указанный класс, а если true - добавляет.</li>
+            <li><strong>classList.contains()</strong> — Проверяет, есть ли данный класс у элемента (вернет true или false).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text__section" id="dom-elements-content">
+        <h3 class="text__title">Содержимое DOM-элемента</h3>
+
+        <div class="text__block">
+          <h4>.textContent</h4>
+          <p>Позволяет задавать или получать текстовое содержимое элемента и его потомков.</p>
+          <pre>var text = element.textContent;
+element.textContent = "Это просто текст";</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.innerHTML</h4>
+          <p>Устанавливает или получает разметку дочерних элементов. Позволяет создавать новые элементы на странице. Все элементы удаляются и создаются вновь каждый раз, когда мы вставляем новую разметку.</p>
+          <pre>element.innerHTML = content;</pre>
+          <p>В случае с <strong>.innerHTML</strong> браузер будет рисовать текст как HTML разметку. В то время как <strong>.textContent</strong> вставляет текст как есть.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.insertAdjacentHTML()</h4>
+          <p>Разбирает указанный текст как HTML или XML и вставляет полученные узлы (nodes) в DOM дерево в указанную позицию (точечно). Данная функция не переписывает имеющиеся элементы, что предовращает дополнительную сериализацию и поэтому работает
+            быстрее, чем манипуляции с innerHTML.</p>
+          <pre>element.insertAdjacentHTML(position, text);</pre>
+          <p><b>position</b> указывает положение element, и может принимать одно из следующих значений:</p>
+          <ul class="text__list">
+            <li><b>'beforebegin'</b> — Перед element.</li>
+            <li><b>'afterbegin'</b> — Внутри element, перед первым дочерним элементом (потомком).</li>
+            <li><b>'beforeend'</b> — Внутри element, после последнего дочернего элемента.</li>
+            <li><b>'afterend'</b> — После element.</li>
+          </ul>
+          <p><b>text</b> — строка, которая будет проанализирована как HTML или XML и вставлена в DOM дерево документа.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>insertAdjacentText()</h4>
+          <p> Помещает заданный текстовый узел в указанную позицию относительно элемента, который передан в вызове метода.</p>
+          <pre>element.insertAdjacentText(position, text);</pre>
+          <p><b>position</b> — позиция для вставки текста относительно элемента <b>element</b>. Указывается по аналогии с <strong>.insertAdjacentHTML()</strong>.</p>
+          <p><b>text</b> — текст, который будет помещен в заданную позицию.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.createElement()</h4>
+          <p>Принимает на вход строку с именем тега и возвращает созданный DOM-элемент. Созданный элемент по умолчанию не находится в DOM-дереве и не отображается на странице.</p>
+          <pre>var newDiv = document.createElement("div"); // создаем новый элемент div
+newDiv.innerHTML = "&lt;h1&gt;Привет!&lt;/h1&gt;"; // и добавляем в него немного контента</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.removeChild</h4>
+          <p>Удаляет дочерний элемент из DOM. Возвращает удаленный элемент.</p>
+          <pre>var oldChild = element.removeChild(child);
+element.removeChild(child);</pre>
+          <ul class="text__list">
+            <li><b>child</b> — дочерний элемент который будет удален из DOM.</li>
+            <li><b>element</b> — родительский элемент удаляемого <b>child</b>.</li>
+            <li><b>oldChild</b> — ссылка на удаляемый дочерний элемент. <b>oldChild</b> === <b>child</b>.</li>
+          </ul>
+          <p>Удаленный дочерний элемент остается в памяти, но больше не является частью DOM. Вы можете повторно использовать удаленный элемент с помощью ссылки на объект - <b>oldChild</b>.</p>
+          <pre>&lt;div id="top" align="center"&gt;
+  &lt;div id="nested"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+// Удаление элемента с известным родителем
+var d = document.getElementById("top");
+var d_nested = document.getElementById("nested");
+var throwawayNode = d.removeChild(d_nested);
+
+// Удаление элемента без указания его родителя
+var node = document.getElementById("nested");
+if (node.parentNode) {
+  node.parentNode.removeChild(node);
+}
+
+// Удаление всех дочерних элементов
+var element = document.getElementById("top");
+while (element.firstChild) {
+  element.removeChild(element.firstChild);
+}</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.remove()</h4>
+          <p>Удаляет узел из дерева DOM.</p>
+          <p>То, что элемент удален из DOM, еще не значит, что он удален совсем! Он остался объектом и исчезнет только тогда, когда исчезнут все ссылки на него.</p>
+          <pre>Node.remove();</pre>
+          <p><b>Node</b> - любой узел DOM</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.appendChild()</h4>
+          <p>Добавляет элемент в конец списка дочерних элементов родителя. Если элемент уже существует он удаляется из текущего родителя и вставляется заново. Возвращает ссылку на добавленный узел(элемент).</p>
+          <pre>var list = document.querySelector('.cards');
+
+var card = document.createElement('li'); // Создаём новый элемент
+
+card.classList.add('card');
+
+list.appendChild(card); // После вызова этого метода новый элемент отрисуется на странице</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.insertBefore()</h4>
+          <p>Добавляет элемент в список дочерних элементов родителя перед указанным элементом. Если вторым параметром передать null, то добавляемый элемент встанет в конец блока.</p>
+          <pre>var insertedElement = parentElement.insertBefore(newElement, referenceElement);</pre>
+          <ul class="text__list">
+            <li><b>insertedElement</b> — Вставленный элемент.</li>
+            <li><b>parentElement</b> — Родитель для нового элемента.</li>
+            <li><b>newElement</b> — Элемент для вставки.</li>
+            <li><b>referenceElement</b> — Элемент, перед которым будет вставлен <b>newElement</b>.</li>
+          </ul>
+          <pre>&lt;div id="parentElement"&gt;
+  &lt;span id="childElement"&gt;foo bar&lt;/span&gt;
+&lt;/div&gt;
+
+// Создаем новый &lt;span&gt;
+var sp1 = document.createElement("span");
+
+// Получаем ссылку на элемент, перед которым мы хотим вставить sp1
+var sp2 = document.getElementById("childElement");
+//Получаем ссылку на родителя sp2
+var parentDiv = sp2.parentNode;
+
+// Вставляем sp1 перед sp2
+parentDiv.insertBefore(sp1, sp2);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.replaceChild</h4>
+          <p>Заменяет дочерний элемент на выбранный. Возвращает замененный элемент.</p>
+          <pre>replacedNode = parentNode.replaceChild(newChild, oldChild);</pre>
+          <ul class="text__list">
+            <li><b>newChild</b> — элемент на который будет заменен <b>oldChild</b>. В случает если он уже есть в DOM, то сначала он будет удален.</li>
+            <li><b>oldChild</b> — элемент который будет заменен.</li>
+            <li><b>replacedNode</b> — замененный элемент. Тоже самое что и <b>oldChild</b>.</li>
+          </ul>
+          <pre>&lt;div&gt;
+ &lt;span id="childSpan"&gt;foo bar&lt;/span&gt;
+&lt;/div&gt;
+
+// Создаем новый пустой элемент
+// without an ID, any attributes, or any content
+var sp1 = document.createElement("span");
+
+// Присваиваем ему id 'newSpan'
+sp1.setAttribute("id", "newSpan");
+
+// Создаем строку.
+var sp1_content = document.createTextNode("new replacement span element.");
+
+// Добавляем контент в созданный нами узел
+sp1.appendChild(sp1_content);
+
+// создаем ссылку на существующий элемент который будем заменять
+var sp2 = document.getElementById("childSpan");
+var parentDiv = sp2.parentNode;
+
+// заменяем существующий элемент sp2 на созданный нами sp1
+parentDiv.replaceChild(sp1, sp2);
+
+// Результат:
+&lt;div&gt;
+ &lt;span id="newSpan"&gt;new replacement span element.&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.compareDocumentPosition</h4>
+          <p>Сравнивает позицию текущего узла и другого узла в любом другом документе.</p>
+          <pre>node.compareDocumentPosition(otherNode);</pre>
+          <ul class="text__list">
+            <li><b>node</b> — это узел, который сравнивается.</li>
+            <li><b>otherNode</b> — это узел, с которым идет сравнение.</li>
+          </ul>
+          <p>Возвращаемое значение (битовая маска) вычисляется как отношение, которое имеется между <b>otherNode</b> и <b>node</b>.</p>
+        </div>
+      </section>
+
+      <section class="text__section" id="templates">
+        <h3 class="text__title">Шаблонизация</h3>
+
+        <div class="text__block">
+          <h4>.createDocumentFragment()</h4>
+          <p>Создает новый пустой DocumentFragment. Позволяет сгруппировать однотипные или разнотипные элементы и вставить их все вместе.</p>
+          <pre>var fragment = document.createDocumentFragment();</pre>
+          <p><b>fragment</b> это ссылка на пустой объект DocumentFragment.</p>
+          <pre>// Создаем 6 элементов и вставляем их за 1 раз
+var firstPool = document.querySelector('.pool');
+
+var fragment = document.createDocumentFragment();
+
+for (var i = 0; i &lt; 6; i++) {
+  var newElement = document.createElement('div');
+  newElement.className = 'el';
+  newElement.innerHTML = '&lt;span&gt;' + i + '&lt;/span&gt;';
+
+  fragment.appendChild(newElement);
+}
+
+firstPool.appendChild(fragment);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>cloneNode</h4>
+          <p>Возвращает дубликат узла, из которого этот метод был вызван.</p>
+          <pre>var dupNode = node.cloneNode(deep);</pre>
+          <ul class="text__list">
+            <li><b>node</b> — Узел, который будет клонирован.</li>
+            <li><b>dupNode</b> — Новый узел, который будет клоном <b>node</b>.</li>
+            <li><b>deep</b> (необязательный) — true, если дети узла должны быть клонированы или false для того, чтобы был клонирован только указанный узел.</li>
+          </ul>
+          <pre>var p = document.getElementById("para1");
+var p_prime = p.cloneNode(true);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>&lt;template&gt;</h4>
+          <p>Позволяет создавать элементы на основе шаблона, копировать структуру и заполнять её необходимыми данными. Имеет свойство <strong>content</strong>, которое хранит элемент DocumentFragment всего содержимого.</p>
+          <pre>&lt;template id="element-template"&gt;
+    &lt;p class="text"&gt;&lt;/p&gt;
+&lt;/template&gt;</pre>
+          <pre>// Находим элемент для вставки в него копии шаблона
+var div = document.querySelector('.div');
+
+// Создаем элемент из шаблона
+var template = document.querySelector('#element-template').<strong>content</strong>.querySelector('div');
+
+// Клонируем шаблон с вложенным содержимым
+var element = template.cloneNode(true);
+
+// Вставляем склонированный шаблон
+div.appendChild(element);</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="developments">
+        <h3 class="text__title">События</h3>
+
+        <div class="text__block">
+          <p>События — это механизм, который позволяет описать реакцию на определённые асинхронные действия пользователя или браузера. Например, ввод данных пользователем, окончание загрузки или наступление ошибки.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Всплытие и перехват</h4>
+          <p>Существует три стадии прохода события:</p>
+          <ul class="text__list">
+            <li>Стадия перехвата (<strong>capturing stage</strong>) — событие сначала идет сверху вниз.</li>
+            <li>Стадия цели (<strong>target stage</strong>) — событие достигло целевого элемента.</li>
+            <li>Стадия всплытия (<strong>bubbling stage</strong>) — после этого событие начинает всплывать.</li>
+          </ul>
+          <p>То есть, при клике событие путешествует по цепочке родителей сначала вниз к элементу («погружается»), а потом наверх («всплывает»), по пути задействуя обработчики.</p>
+          <p>В современных браузерах по умолчанию все обработчики событий регистрируются в фазе всплытия.</p>
+          <p>Всплытие идёт прямо наверх, до элемента &lt;html&gt;, а затем до <strong>document</strong>, а иногда даже до <strong>window</strong>, вызывая все обработчики на своем пути.</p>
+          <p>Всплывают почти все события. Например, события <strong>focus</strong>, <strong>blur</strong>, <strong>invalid</strong> не всплывают.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Event.stopPropagation()</h4>
+          <p>Прекращает дальнейшую передачу (всплытие) текущего события. <strong>Event.stopPropagation()</strong> препятствует продвижению события дальше, но на текущем элементе все обработчики отработают.</p>
+          <pre>evt.stopPropagation();</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Event.eventPhase</h4>
+          <p>Отображает текущую фазу процесса обработки события (погружение = 1, всплытие = 3).</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Делегирование</h4>
+          <p>Заключается в том, что если у нас есть много элементов, события на которых нужно обрабатывать похожим образом, то вместо того, чтобы назначать обработчик каждому – мы ставим один обработчик на их общего предка. Из него можно получить
+            целевой элемент <strong>event.target</strong>, понять на каком именно потомке произошло событие и обработать его.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Event</h4>
+          <p>Представляет собой любое <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">событие</a>, которое происходит в DOM; некоторые из них генерируемые пользователем (клик мышью или нажатие клавиши на клавиатуре), а
+            некоторые - генерируемые API (события, обозначающие завершение процесса анимации, приостановка видео и т.д.). Существует много типов событий, некоторые из них используют интерфейсы, базирующиеся на главном интерфейсе <a
+              href="https://developer.mozilla.org/ru/docs/Web/API/Event" target="_blank">Event</a>. Содержит общие свойства и методы для всех событий.</p>
+
+          <p>Объект <strong>Event</strong> — также называемый <strong>объект события</strong>, параметр функции-обработчика. Он всегда передаётся браузером в функцию <strong>.addEventListener()</strong> в момент наступления события.</p>
+          <p>Чтобы использовать <strong>Event</strong>, достаточно указать этот объект параметром функции-обработчика и написать инструкции. Принято называть параметр сокращённо — <strong>evt</strong>.</p>
+          <p>Сравнение разных <a href="https://developer.mozilla.org/ru/docs/Web/API/Event/Comparison_of_Event_Targets" target="_blank">Event Targets</a></p>
+        </div>
+
+        <div class="text__block">
+          <h4>Event.target</h4>
+          <p>Ссылка на объект (элемент), который был инициатором события. Он может отличаться от <strong>event.currentTarget</strong>, если обработчик события вызывается во время всплытия (bubbling) или захвата события.</p>
+          <pre>// Предполагается, что есть переменная 'list', содержащая экземляр элемента &lt;ul&gt;
+function hide(evt) {
+  evt.target.style.visibility = 'hidden';
+}
+
+list.addEventListener('click', hide, false);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Event.currentTarget</h4>
+          <p>Определяет элемент, в котором в данный момент обрабатывается событие, при движении события внутри DOM. Всегда совпадает с текущим элементом, в отличие от свойства <strong>event.target</strong>, идентифицируещее элемент, на котором
+            событие
+            возникло.</p>
+          <p><strong>Event.currentTarget</strong> === <strong>this</strong></p>
+        </div>
+
+        <div class="text__block">
+          <h4>Event.preventDefault()</h4>
+          <p>Отменяет действие элемента по умолчанию.</p>
+          <pre>link.addEventListener('click', function(evt) {
+  evt.preventDefault(); // Отменяем действие по умолчанию
+  console.log('Произошёл клик'); // Добавляем инструкции для события клика
+});</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.addEventListener()</h4>
+          <p>Регистрирует определенный обработчик события, вызванный на <strong>EventTarget</strong>. <strong>EventTarget</strong> должен быть либо существующим элементом в документе, либо <strong>Document</strong>, либо <strong>Window</strong>, либо
+            любым другим объектом, который
+            поддерживает события.<strong>Обработчик события</strong> — это функция, которая будет запущена, когда наступит соответствующее событие.</p>
+          <pre>button.addEventListener("click", function, true);</pre>
+          <p><strong>.addEventListener()</strong> принимает на вход три параметра:</p>
+          <ul class="text__list">
+            <li>Первый параметр <b>'click'</b> — строковое название (тип) события. Названия всех событий можно посмотреть <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">здесь</a>.</li>
+            <li>Второй параметр <b>function</b> — функция-обработчик (может быть анонимной), которая создаётся в момент выполнения функции <strong>.addEventListener()</strong>, в ней записаны инструкции, которые выполнятся, только когда произойдёт
+              событие.
+            </li>
+            <li>Третий параметр — аргумент <b>true</b> (событие будет перехвачено по дороге вниз) или <b>false</b> (по умолчанию, событие будет поймано при всплытии).</li>
+            <li>button — элемент, на котором мы хотим «слушать» событие.</li>
+            <li>addEventListener — функция добавления обработчика события на элемент.</li>
+          </ul>
+          <p>Существует два способа <strong>именования</strong> обработчиков:</p>
+          <ul class="text__list">
+            <li>В первом способе обработчик именуется как объект + событие + Handler. Например buttonClickHandler — этот обработчик реагирует на клики (click) по объекту кнопки (button).</li>
+            <li>Второй вариант именования обработчиков — on + объект + событие. Например onButtonClick.</li>
+          </ul>
+          <p>Стоит помнить разницу между обращением к функции и запуском ее кода. Для того, чтобы обратиться к функции, достаточно просто написать ее название. Если же за названием следуют круглые скобки — код функции выполнится немедленно, и в
+            качестве обработчика в <strong>.addEventListener()</strong> будет передан результат работы этой функции.</p>
+          <p>Функции, которые создаются в момент передачи и не имеют имени, называются анонимными функциями.</p>
+          <p>С помощью метода <strong>.addEventListener()</strong> можно регистрировать сколько угодно обработчиков одного и того же события на одном и том же элементе. Обе функции будут выполняться при щелчке элемента:</p>
+          <pre>myElement.addEventListener('click', functionA);
+myElement.addEventListener('click', functionB);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.removeEventListener()</h4>
+          <p>Удаляет обработчик события, который был зарегистрирован при помощи <strong>.addEventListener()</strong>. Обработчик определяется типом события, самой функцией обработки события, и дополнительными параметрами, переданными при регистрации
+            обработчика.</p>
+          <p>Анонимную функцию-обработчик удалить невозможно, чтобы корректно удалить обработчик, нужно обратиться к той же самой функции, которая была передана в качестве параметра в <strong>.addEventListener()</strong>. Это возможно только в том
+            случае, если
+            функция была создана заранее и не является анонимной.</p>
+          <pre>var onPopupEscPress = function(evt) {
+  if (evt.keyCode === 27) {
+    closePopup();
+  }
+};
+
+var closePopup = function() {
+  setup.classList.add('hidden');
+  document.removeEventListener('keydown', onPopupEscPress);
+};</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>'click'</h4>
+          <p>Событие <strong>click</strong> срабатывает, когда кнопка указывающего устройства (например, основная кнопка мыши) одновременно нажата и отпущена, когда указатель находится внутри элемента. Т.е. когда произошло <strong>mousedown</strong>
+            и затем <strong>mouseup</strong>.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>KeyboardEvent</h4>
+          <p>Объекты <a href="https://developer.mozilla.org/ru/docs/Web/API/KeyboardEvent" target="_blank">KeyboardEvent</a> описывают работу пользователя с клавиатурой. Каждое событие описывает клавишу; тип события (<strong>keydown</strong>,
+            <strong>keypress</strong>
+            или <strong>keyup</strong>) определяет произведённый тип действия.</p>
+          <p>Событие «нажатие на клавишу» носит название — <strong>'keydown'</strong>. Такое событие срабатывает при нажатии на <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode" target="_blank">любую клавишу</a>.
+            Слушать это событие можно только на элементах, которые имеют состояние фокуса: поля ввода, кнопки,
+            элементы с атрибутом <strong>tabindex</strong>, документ. При нажатии фокус должен находиться на соответствующем элементе.</p>
+          <p>Если необходимо поймать нажатие какой-то конкретной клавиши, можно обратиться к свойству <strong>keyCode</strong> объекта <strong>event</strong>. Это свойство содержит код нажатой клавиши.</p>
+          <pre>document.addEventListener('keydown', function(evt) {
+  if (evt.keyCode === 27) { // Проверяем, что код клавиши равен 27
+    // Код отсюда выполнится только при нажатии ESC
+  }
+});</pre>
+          <p>В настоящий момент свойство <strong>keyCode</strong> устарело, вместо него стоит использовать <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code" target="_blank">KeyboardEvent.code</a>.</p>
+          <p>Для встроенных активных элементов (<b>input</b>, <b>button</b>, <b>a</b>), не нужно описывать дополнительно поведение работы с клавиатурой, достаточно просто добавить обработчик события <strong>'click'</strong>.</p>
+        </div>
+      </section>
+
+      <section class="text__section" id="forms-and-validation">
+        <h3 class="text__title">Формы и валидация</h3>
+
+        <div class="text__block">
+          <p>Интерфейс <a href="https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement" target="_blank">HTMLFormElement</a> предоставляет методы для создания и изменения элементов &lt;form&gt; он наследуется от свойств и методов
+            интерфейса<strong>HTMLElement</strong>.</p>
+          <p>Методы:</p>
+          <ul class="text__list">
+            <li><strong>.reset()</strong> — восстанавливает стандартные значения всем элементам формы. Данный метод выполняет действие идентичное нажатию кнопки имеющей тип reset.
+              <pre>document.getElementById('myform').reset();</pre>
+            </li>
+            <li><strong>.reportValidity()</strong> — возвращает <b>true</b> если все дочерние элементы прошли проверку. Когда возвращается <b>false</b>, по каждому дочернему элементу не прошедшему проверку генерируется событие <b>invalid</b> и
+              пользователю
+              сообщаются проблемы проверки.
+              <pre>HTMLFormElement.reportValidity()</pre>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>&lt;input&gt;</h4>
+          <p>Используется для создания интерактивных элементов управления в веб-формах для принятия данных от пользователя.</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/input">Атрибуты</a></p>
+        </div>
+
+        <div class="text__block">
+          <h4>value</h4>
+          <p>Для получения текста из поля ввода нужно обратиться к свойству поля ввода <strong>value</strong>. Оно хранит информацию, введённую в поле.</p>
+          <pre>// Находим input
+var newItemTitle = newItemForm.querySelector('.add-form-input');
+
+// Сохраняем введенный текст
+var taskText = newItemTitle.value;</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>'change'</h4>
+          <p>Событие <strong>'change'</strong> вызывается для элементов &lt;input&gt;, &lt;select&gt; и &lt;textarea&gt;, когда изменение фиксируется в значении элемента пользователем (когда состояние поля меняется). В отличие от входного события,
+            событие
+            изменения не обязательно запускается для каждого изменения значения элемента.</p>
+          <pre>element.addEventListener('change', function () {
+  …
+});</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>'submit'</h4>
+          <p>Событие <strong>'submit'</strong> срабатывает при отправке &lt;form&gt;.</p>
+          <pre>element.addEventListener('submit', function () {
+  …
+});</pre>
+          <p>Событие <strong>'submit'</strong> запускается для самого элемента &lt;form&gt;, а не для любого элемента &lt;button&gt; или &lt;input type = "submit"&gt; внутри него.</p>
+          <p>Событие <strong>'submit'</strong> срабатывает только тогда, когда пользователь нажимает кнопку отправки (&lt;button&gt; или &lt;input type = "submit"&gt;) в форме. Событие не вызывается при непосредственном вызове метода form.submit().
+          </p>
+          <p>Если не нужно отправлять форму в каких-то случаях, отмените действие по умолчанию с помощью preventDefault.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>'invalid'</h4>
+          <p>Событие <strong>'invalid'</strong> запускается, когда отправляемый элемент был проверен, но его содержимое не удовлетворило установленные ограничения. Валидность отправляемого элемента проверяется до отправления формы или после вызова
+            метода<strong>checkValidity()</strong> на элементе.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>'input'</h4>
+          <p>Событие <strong>'input'</strong> срабатывает, когда значение элемента &lt;input&gt;, &lt;select&gt; или &lt;textarea&gt; было изменено.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>ValidityState</h4>
+          <p>Представляет состояния достоверности, в которых может находиться элемент, относительно проверки ограничения. Вместе они помогают объяснить, почему значение элемента не проверяется, если оно недопустимо.</p>
+          <p>Возможные значения <a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState" target="_blank">ValidityState</a>:</p>
+          <ul class="text__list">
+            <li><strong>tooLong</strong> — Возвращает <strong>true</strong> если значение элемента больше заданной атрибутом <strong>maxlength</strong> максимальной длины элемента; иначе будет <strong>false</strong>. Если возвращает
+              <strong>true</strong>, элемент будет соответствовать
+              <strong>:invalid</strong> и CSS псевдоклассу <strong>:out-of-range</strong>.</li>
+            <li><strong>tooShort</strong> — Возвращает <strong>true</strong> если значение элемента меньше заданной атрибутом <strong>minlength</strong> минимальной длины элемента; иначе будет <strong>false</strong>.</li>
+            <li><strong>valueMissing</strong> — Возвращает <strong>true</strong> если элемент не имеет значения, но является обязательным полем; в противном случае <strong>false</strong>. Если возвращает <strong>true</strong>, элемент будет
+              соответствовать CSS псевдоклассу <strong>:invalid</strong>.
+            </li>
+            <li><strong>badInput</strong> — введено неправильное значение</li>
+            <li><strong>customError</strong> — задано кастомное сообщение об ошибке</li>
+            <li><strong>patternMismatch</strong> — не соответствует паттерну</li>
+            <li><strong>rangeOverflow</strong> — больше значения max</li>
+            <li><strong>rangeUnderflow</strong> — меньше значения min</li>
+            <li><strong>stepMismatch</strong> — значение не попадает в step</li>
+            <li><strong>typeMismatch</strong> — не совпадает тип</li>
+            <li><strong>valid</strong> — валидно ли поле</li>
+          </ul>
+          <pre>userNameInput.addEventListener('invalid', function (evt) {
+  if (userNameInput.validity.tooShort) {
+    userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
+  } else if (userNameInput.validity.tooLong) {
+    userNameInput.setCustomValidity('Имя не должно превышать 25-ти символов');
+  } else if (userNameInput.validity.valueMissing) {
+    userNameInput.setCustomValidity('Обязательное поле');
+  } else {
+    userNameInput.setCustomValidity(''); // сбрасываем значение поля, если оно стало корректно
+  }
+});</pre>
+          <p>Можно не только переопределять стандартное поведение валидации, а также расширять его и добавлять свои собственные обработчики форм.</p>
+          <pre>userNameInput.addEventListener('input', function (evt) {
+  var target = evt.target;
+  if (target.value.length &lt; 2) {
+    target.setCustomValidity('Имя должно состоять минимум из 2-х символов');
+  } else {
+    target.setCustomValidity('');
+  }
+});</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>.setCustomValidity()</h4>
+          <p>Устанавливает специальное сообщение для выбранного элемента. Если элемент не имеет пользовательской ошибки в параметре укажите пустую строку.</p>
+          <pre>selectElt.setCustomValidity(string);</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="moving-element">
+        <h3 class="text__title">Перемещение элемента</h3>
+
+        <div class="text__block">
+          <h4>Drag and drop</h4>
+          <p>Позволяют использовать функции перетаскивания. Например, пользователь может выбрать перетаскиваемые элементы с помощью мыши, перетащить элементы в сбрасываемый элемент и отбросить эти элементы, отпустив кнопку мыши. Полупрозрачное
+            представление перетаскиваемых элементов следует за указателем мыши во время операции перетаскивания.</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Drag_and_drop" target="_blank">Drag and drop</a> (на русском)</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" target="_blank">HTML Drag and Drop API</a> (на английском)</p>
+        </div>
+
+        <div class="text__block">
+          <h4>MouseEvent</h4>
+          <p>Представляет собой <a href="https://developer.mozilla.org/ru/docs/Web/API/MouseEvent" target="_blank">событие</a>, которое происходит в результате взаимодествия пользователя с манипулятором (например, мышью). Наиболее частые из таких
+            событий: <strong>click</strong>, <strong>dblclick</strong>, <strong>mouseup</strong>, <strong>mousedown</strong>.</p>
+          <p>Свойства:</p>
+          <ul class="text__list">
+            <li><strong>.clientX</strong> — является горизонтальной координатой в пределах клиентской области приложения, на которой произошло событие (в отличие от координат внутри страницы).
+              <pre>var x = evt.clientX</pre>
+            </li>
+            <li><strong>.clientY</strong> — является вертикальной координатой в пределах клиентской области приложения, на которой произошло событие (в отличие от координат внутри страницы).</li>
+            <li><strong></strong> — </li>
+            <li><strong></strong> — </li>
+            <li><strong></strong> — </li>
+            <li><strong></strong> — </li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>'mousedown'</h4>
+          <p>Событие <strong>mousedown</strong> срабатывает, когда кнопка указывающего устройства (к примеру, мыши) нажата над элементом.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>'mousemove'</h4>
+          <p>Событие <strong>mousemove</strong> вызывается для элемента, когда указательное устройство (обычно мышь) перемещается, когда в нем находится курсор.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>'mouseup'</h4>
+          <p>Событие <strong>mouseup</strong> вызывается у <strong>Element</strong>, когда кнопка указательного устройства (такого как мышь или трекпад) отпускается, когда указатель находится внутри него.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.offsetTop</h4>
+          <p>Возвращает расстояние текущего элемента по отношению к верхней части узла.</p>
+          <pre>topPos = element.offsetTop;</pre>
+          <p><strong>topPos</strong> - количество пикселей на которые делается отступ с верху, отсносительно родительского элемента.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>.offsetLeft</h4>
+          <p>Возвращает смещение в пикселях верхнего левого угла текущего элемента от родительского узла.</p>
+        </div>
+
+        <div class="text__block">
+          <h4></h4>
+          <p></p>
+          <ul class="text__list">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4></h4>
+          <p></p>
+          <ul class="text__list">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+
+      </section>
+    </div>
+
+    <div class="text" id="other">
+      <h2 class="text__heading"><span>Прочее</span></h2>
+
+      <section class="text__section" id="debugging">
+        <h3 class="text__title">Отладка</h3>
+
+        <div class="text__block">
+          <p>Часть процесса программирования, во время которой разработчик пытается найти и устранить ошибки в программе.</p>
+          <ul class="text__list">
+            <li><strong>debugger</strong> — программа, проверяющая процесс выполнения кода. Показывает состояние программы по мере выполнения каждого выражения.</li>
+            <li><strong>breakpoint</strong> — точка останова. Указание отладчику с какого момента начинать слежение за выполнением программы. Ставится на строку.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text__section" id="in-the-browser">
+        <h3 class="text__title">JavaScript в браузере</h3>
+
+        <div class="text__block">
+          <h4>Подключение скриптов на страницу</h4>
+          <p>Скрипты подключаются к странице с помощью тега <strong>script</strong> двумя способами:</p>
+          <ul class="text__list">
+            <li>Инлайновый код. Код пишется внутри тега <strong>script</strong>.
+              <pre>&lt;body&gt;
+  …
+  &lt;script&gt;console.log('Я — инлайновый скрипт');&lt;/script&gt;
+&lt;/body&gt;</pre>
+            </li>
+            <li>Внешний файл с кодом. Тегу script добавляется атрибут src, в котором указывается путь до файла со скриптом.
+              <pre>&lt;body&gt;
+  …
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</pre>
+            </li>
+          </ul>
+          <p>Эти два способа не сочетаются друг с другом. Если у тега <strong>script</strong> указан атрибут <strong>src</strong>, инлайновый код игнорируется и не выполняется, поэтому он должен находиться в другом теге <strong>script</strong>.</p>
+          <p>Скрипты выполняются по мере подключения на страницу. Если за тегом <strong>script</strong> находится разметка, она не отрисуется пока не выполнится скрипт (в случае с инлайновым кодом) или пока он не скачается с внешнего ресурса и не
+            будет выполнен
+            (при подключении внешнего файла).</p>
+          <p>Синхронное и асинхронное подключение скриптов:</p>
+          <ul class="text__list">
+            <li>Если у тега script указан атрибут <strong>async</strong>, то скрипт не блокирует выполнение страницы. Скрипт с таким атрибутом начинает загружаться сразу как встретится в разметке, а выполнится как только загрузка закончится.</li>
+            <li>Атрибут <strong>defer</strong> работает как async с той разницей, что код выполняется после полной загрузки страницы.</li>
+          </ul>
+          <p>Локальные скрипты приложения, которые работают с разметкой, лучше подключать внизу страницы, перед закрывающим тегом &lt;/body&gt; потому что на момент их исполнения, элементы из DOM-дерева будут отрисованы и доступны.</p>
+          <p>Библиотеки, счетчики и прочие внешние ресурсы, как правило, подключаются в &lt;/head&gt;.
+            Это гарантирует, что библиотека всегда будет доступна для других скриптов, вне зависимости от того, где и как они были подключены.</p>
+        </div>
+      </section>
+
+      <section class="text__section" id="canvas-text">
+        <h3 class="text__title">Canvas</h3>
+
+        <div class="text__block">
+          <canvas id="canvas" width="290" height="250"></canvas>
+        </div>
+
+        <div class="text__block">
+          <h4>&lt;canvas&gt;</h4>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Документация</a></p>
+          <p>Тег предназначенный для отрисовки графики в браузере. Чтобы начать с ним работу, нужно добавить этот тег в разметку.</p>
+          <pre>&lt;canvas id="canvas"&gt;&lt;/canvas&gt;</pre>
+          <p>Для начала, нужно получить доступ к самому тегу &lt;canvas&gt;, и получить «контекст отрисовки».</p>
+          <pre>// DOM-элемент канваса
+var canvas = document.getElementById('canvas');
+
+// Контекст отрисовки
+var ctx = canvas.getContext('2d');</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>fillRect</h4>
+          <p>Отрисовывает закрашенный прямоугольник.</p>
+          <p>Первые два параметра задают координаты левого верхнего угла, третий и четвёртый — ширину и высоту объекта.</p>
+          <pre>ctx.fillRect(0, 0, 300, 150);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>fillStyle</h4>
+          <p>Задает стиль заливки, вызывается перед отрисовкой фигуры.</p>
+          <p>Цвет заливки задается так же, как это делается в CSS — с помощью названия цвета, HEX-кода, rgb или rgba.</p>
+          <pre>ctx.fillStyle = 'blue';</pre>
+          <p>Последний заданный fillStyle будет применён ко всем вызовам fill (или к отрисовке заранее закрашенных фигур). Чтобы залить следующую фигуру другим цветом, нужно переопределить fillStyle.</p>
+          <pre>ctx.fillStyle = 'blue';
+ctx.fillRect(0, 0, 200, 150); // Закрасит синим
+
+ctx.fillStyle = 'lightgreen';
+ctx.fillRect(210, 40, 30, 30); // Закрасит светлозеленым</pre>
+          <p>Для заливки фигуры градиентом в fillStyle нужно записать объект, полученный с помощью метода контекста ctx.createLinearGradient или ctx.createRadialGradient. Цвета градиентов задаются с помощью метода addColorStop у объекта градиента.
+          </p>
+          <pre>var gradient = ctx.createLinearGradient(0, 0, 300, 150);
+gradient.addColorStop(0, 'green');
+gradient.addColorStop(1, 'rgba(0, 255, 0, 0)');
+
+ctx.fillStyle = gradient;
+ctx.fillRect(0, 0, 300, 150);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>fill</h4>
+          <p>Заливает отрисованный контур. Контур зальётся так, как это указано в свойстве fillStyle.</p>
+          <pre>ctx.fill();</pre>
+          <p>Существуют два способа заливки:</p>
+          <ul class="text__list">
+            <li><strong>'nonzero'</strong> — по умолчанию, закрашивается все, что находится внутри фигуры.</li>
+            <li><strong>'evenodd'</strong> — закрашивается только та часть фигуры, которая не пересекает сама себя.</li>
+          </ul>
+          <pre>ctx.fill('nonzero');
+ctx.fill('evenodd');</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>strokeStyle</h4>
+          <p>Задает стиль обводки фигуры.</p>
+          <pre>ctx.strokeStyle = 'blue';</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>stroke</h4>
+          <p>Рисует обводку контура фигур цветом strokeStyle.</p>
+          <pre>ctx.stroke();</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>clearRect</h4>
+          <p>Используется для очистки холста.</p>
+          <pre>ctx.clearRect(0, 0, 300, 150);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Сложные фигуры</h4>
+          <p>Сложные фигуры рисуются с помощью контуров. Контур — это описание формы фигуры, без заливки или обводки. Контуры описываются с помощью простых фигур, а потом управление, например, заливка или обводка, производится целиком над фигурами.
+          </p>
+          <p>Начало контура задается методом beginPath, конец контура closePath, все, что будет нарисовано между этими вызовами, будет считаться одной фигурой.</p>
+          <pre>ctx.beginPath(); // начало контура
+ctx.moveTo(100, 100); // перемещает начальную точку нового фрагмента контура
+ctx.lineTo(150, 100); // рисует линию из последней точки
+ctx.bezierCurveTo(140, 90, 110, 90, 100, 100); //рисует кривую Безье
+ctx.closePath(); //конец контура
+ctx.stroke(); // рисует обводку
+ctx.fill(); // заливает отрисованный контур</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Работа с текстом</h4>
+          <p>Вывод текста осуществляется одним из двух методов: fillText или strokeText, которые выводят, соответственно, залитый или обведённый текст.</p>
+          <pre>ctx.fillText('Привет', 0, 10); // выводит залитый текст
+ctx.strokeText('Привет', 0, 10); // выводит обведённый текст</pre>
+          <p>Параметры текста задаются свойствами контекста font, textAlign и textBaseline.</p>
+          <pre>ctx.font = '30px Tahoma';
+ctx.textBaseline = 'hanging'; // выравнивает текст
+ctx.fillText('Текст', 0, 10);</pre>
+          <p>Особенность текстов на канвасе: они не переносятся.</p>
+          <p>Чтобы написать текст с переносами, нужно каждую новую строку вынести в отдельный вызов метода fillText (или strokeText). Можно автоматизировать этот процесс, написав функцию, разбивающую текст на строчки, если они не помещаются в
+            указанную
+            ширину.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>Размеры</h4>
+          <p>Размер канваса по умолчанию — 300×150px. Координатная сетка канваса изначально имеет такой же размер.</p>
+          <p>Если изменить размеры канваса, используя css, то изменятся внешние размеры блока, а координатная сетка останется прежней — 300×150px.</p>
+          <p>Чтобы изменить и размеры канваса и координатную сетку, нужно воспользоваться свойствами width и height DOM-элемента канваса.</p>
+          <pre>&lt;canvas id="canvas" width="120" height="120"&gt;&lt;/canvas&gt;</pre>
+        </div>
+      </section>
+
+      <section class="text__section" id="algorithms">
+        <h3 class="text__title">Алгоритмы</h3>
+
+        <div class="text__block">
+          <p>Законченный и упорядоченный набор действий, которые нужно предпринять, чтобы достигнуть прогнозируемого результата</p>
+        </div>
+
+        <div class="text__block">
+          <h4></h4>
+          <p></p>
+          <pre></pre>
+          <p></p>
+          <ul class="text__list">
+            <li> — </li>
+            <li> — </li>
+            <li> — </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text__section" id="modules">
+        <h3 class="text__title">Модули</h3>
+
+        <div class="text__block">
+          <h4>Модуль</h4>
+          <p>Обособленная часть программы (ограниченная в доступности к служебным переменным с помощью функций), которая может заменяться, использоваться повторно в разных  местах программы (или даже в нескольких проектах). Или же часть программы,
+            решающая узкий набор задач.</p>
+          <p>Модуль это:</p>
+          <ul class="text__list">
+            <li><strong>функция</strong> — отдельная часть файла, которая может несколько раз использоваться в одном файле</li>
+            <li><strong>узкоспециализированный код </strong> — код, который решает ровно одну задачу (например, валидация формы или работа всплывающего окна)</li>
+            <li><strong>несколько функций, записанных в объект </strong> — (неймспейс, пространство имен) например, объект Math. Набор функций и значений из одной области</li>
+            <li><strong>набор функций (библиотека) </strong> — полезный набор инструментов, который может переноситься из проекта в проект</li>
+          </ul>
+          <p>Области видимости в модулях:</p>
+          <ul class="text__list">
+            <li><strong>Локальная</strong> — используется для служебных функций и значений, которыми нельзя пользоваться снаружи</li>
+            <li><strong>Глобальная</strong> — интерфейс функции. То, чем можно пользоваться снаружи модуля</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Инкапсуляция</h4>
+          <p>Изоляция служебных переменных, объектов, функций с целью сокрытия доступа и предотвращения возможности управления ими.</p>
+          <ul class="text__list">
+            <li><strong>Локальные константы</strong> — служебные значения, которые используются только в одном модуле</li>
+            <li><strong>Вспомогательные функции </strong> — функции, которые используются во внутренних расчётах, но снаружи не нужны</li>
+            <li><strong>Служебные переменные </strong> — вспомогательные переменные, названия которых могут пересекаться с названиями переменных в других модулях</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>Экспорт</h4>
+          <p>Возможность использовать части модуля в других модулях, для этого они должны быть доступны снаружи.</p>
+          <p>Порядок подключения модулей: сначала подключаются модули, которые не зависят от других модулей и только потом подключаются зависимые модули.</p>
+          <p>Чтобы воспользоваться значениями одного модуля из другого необходимо <strong>экспортировать</strong> их в глобальную область видимости <strong>window</strong>.</p>
+          <p>Вариант 1:</p>
+          <pre>// Модуль util.js
+(function () {
+  var ESC_KEYCODE = 27;
+
+  window.util = {
+    isEscEvent: function (evt, action) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        action();
+      }
+    }
+  };
+})();</pre>
+          <p>Вариант 2:</p>
+          <pre>// Модуль util.js
+window.util = (function () {
+  var ESC_KEYCODE = 27;
+
+  return {
+    isEscEvent: function (evt, action) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        action();
+      }
+    }
+  };
+})();</pre>
+          <p>Затем, чтобы воспользоваться экспортированными значениями необходимо <strong>импортировать</strong> их из глобальной области видимости <strong>window</strong>.</p>
+          <pre>// Модуль dialog.js
+(function () {
+  console.log(window.util.ESC_KEYCODE);
+  console.log(window.util.ENTER_KEYCODE);
+})();</pre>
+          <p>Объекты для хранения значений именуются также как сам модуль. Если имя модуля состоит из нескольких слов, то они записываются через дефис, а объект в котором хранится экспортируемое значение записывается по правилам именования переменных
+            — через <strong>camelCase</strong>.</p>
+          <pre>// Модуль create-element.js
+(function () {
+  window.createElement = function() {
+    // здесь какой-то код
+  };
+})();</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>Алгоритм разделения проекта на модули</h4>
+          <ol class="text__list">
+            <li>Разделить файлы логически, по тому, что они делают  — сделать так, чтобы код решающий разные, непересекающиеся задачи, хранился в разных файлах.</li>
+            <li>Найти повторяющийся код внутри модулей, вынести в функцию  — принцип <a href="https://ru.wikipedia.org/wiki/Don%E2%80%99t_repeat_yourself" target="_blank">DRY</a> — не нужно писать один и тот же код несколько раз. Если задача уже
+              была решена, можно воспользоваться готовым решением.</li>
+            <li>Eсли один и тот же код используется в нескольких файлах — вынести его в отдельный модуль  (расширение принципа DRY на уровень проекта).</li>
+            <li>Убедиться, что в модулях используется пространство имен  (один модуль — одно значение).</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="text__section" id="network">
+        <h3 class="text__title">Сеть</h3>
+
+        <div class="text__block">
+          <h4>JSON</h4>
+          <p>Объект <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank">JSON</a> (JavaScript Object Notation) — текстовый формат обмена данными, основанный на JavaScript объектах.</p>
+          <p>Методы:</p>
+          <ul class="text__list">
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank">JSON.parse()</a> — разбирает строку <b>JSON</b>, возможно с преобразованием получаемого в процессе разбора значения.
+            </li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank">JSON.stringify()</a> — преобразует значение JavaScript в строку <b>JSON</b>, возможно с заменой значений, если
+              указана функция замены, или с включением только определённых свойств, если указан массив замены.</li>
+          </ul>
+        </div>
+
+        <div class="text__block">
+          <h4>JSONP</h4>
+          <p><a href="https://ru.wikipedia.org/wiki/JSONP" target="_blank">JSONP</a> (JSON with padding) — способ загрузки данных, основанный на подключении из кода тега <b>script</b>, который вызывает заранее определенную функцию.</p>
+          <pre>var CALLBACK_NAME = '__jsonpCallback';
+var DATA_URL = '//1510.dump.academy/code-and-magick/data';
+
+var renderItem = function (item) {
+  var dataDiv = document.createElement('div');
+  dataDiv.textContent = item.name;
+  document.body.appendChild(dataDiv);
+};
+
+window[CALLBACK_NAME] = function (data) {
+  for(var i = 0; i < data.length; i++) {
+    renderItem(data[i]);
+  }
+};
+
+var loader = document.createElement('script');
+loader.src = DATA_URL + '?callback=' + CALLBACK_NAME;
+document.body.append(loader);</pre>
+        </div>
+
+        <div class="text__block">
+          <h4>HTTP</h4>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/HTTP" target="_blank">HTTP</a> (Hypertext Transfer Protocol) — это прикладной протокол для передачи гипертекстовых документов, таких как <b>HTML</b>.</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Methods" target="_blank">Методы HTTP запроса</a> — указывают, какое желаемое действие выполнится для данного ресурса.</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Status" target="_blank">Коды ответа HTTP</a> — показывают, был ли успешно выполнен определённый <b>HTTP</b> запрос.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>XML</h4>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/XML/XML_introduction" target="_blank">XML</a> (Extensible Markup Language) — язык разметки подобный HTML.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>AJAX</h4>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/Guide/AJAX" target="_blank">AJAX</a> (Asynchronous JavaScript and XML) — способ загрузки данных асинхронно, без полного обновления страницы.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>XMLHttpRequest</h4>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest" target="_blank">XMLHttpRequest</a> — объект для работы с HTTP-запросами.</p>
+          <ul class="text__list">
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/XMLHttpRequest" target="_blank">XMLHttpRequest()</a> — Конструктор, создаёт новый объект <b>XMLHttpRequest</b>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/open" target="_blank">XMLHttpRequest.open()</a> — инициализирует запрос.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/send" target="_blank">XMLHttpRequest.send()</a> — отправляет запрос.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/responseText" target="_blank">XMLHttpRequest.responseText</a> — возвращает текст ответа от сервера на отправленный запрос.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/response" target="_blank">XMLHttpRequest.response</a> — возвращает содержимое тела ответа в виде <b>ArrayBuffer</b>, <b>ArrayBuffer</b>, <b>Document</b>,
+              <b>JavaScript Object</b> или <b>DOMString</b> в зависимости от значения свойства <b>responseType</b>.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/responseType" target="_blank">XMLHttpRequest.responseType</a> — является перечислимым значением, которое возвращает тип ответа.</li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/timeout" target="_blank">XMLHttpRequest.timeout</a> — определяет количество миллисекунд, которое запрос будет выполняться, до того, как будет автоматически прерван.
+            </li>
+          </ul>
+          <p>Пример универсального кода по загрузке:</p>
+          <pre>window.load = function (url, onSuccess, onError) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.responseType = 'json';
+
+    xhr.addEventListener('load', function () {
+      if (xhr.status === 200) {
+        onSuccess(xhr.response);
+      } else {
+        onError('Cтатус ответа: ' + xhr.status + ' ' + xhr.statusText);
+      }
+    });
+
+    xhr.addEventListener('error', function () {
+      onError('Произошла ошибка соединения');
+    });
+
+    xhr.addEventListener('timeout', function () {
+      onError('Запрос не успел выполниться за ' + xhr.timeout + 'мс');
+    });
+
+    xhr.timeout = 10000; // 10s
+
+    xhr.open('GET', url);
+    xhr.send();
+  }</pre>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank">MDN.Использование XMLHttpRequest</a></p>
+        </div>
+
+        <div class="text__block">
+          <h4>'load'</h4>
+          <p>Событие <a href="https://developer.mozilla.org/ru/docs/Web/Events/load" target="_blank">load</a> происходит когда ресурс и его зависимые ресурсы закончили загружаться.</p>
+        </div>
+
+        <div class="text__block">
+          <h4>JSON.parse()</h4>
+          <p>Метод <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank">JSON.parse()</a> разбирает строку <b>JSON</b>, возможно с преобразованием получаемого в процессе разбора значения.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <include src="source/html-blocks/footer.html"></include>
+  <include src="source/html-blocks/js.html"></include>
+</body>
+
+</html>

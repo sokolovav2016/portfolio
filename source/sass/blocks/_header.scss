@@ -1,0 +1,151 @@
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px $padding-mobile;
+  // border-bottom: 1px solid $border-color;
+}
+
+.header__logo {
+  display: block;
+  padding: 10px 10px 10px 0;
+
+  font-size: $title-small;
+  color: $title-color;
+
+  text-decoration: none;
+
+  transition-duration: $transition-hover;
+
+  &[href]:focus,
+  &[href]:hover {
+    background-image: linear-gradient(to top, #fdbb2d, #b21f1f, #1a2a6c);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
+.header__list {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__item {
+  position: relative;
+  border-bottom: 1px solid $border-color;
+}
+
+.header__inner-list {
+  position: absolute;
+  left: 5%;
+  top: 99%;
+
+  display: none;
+  min-width: 200px;
+  margin: 0;
+  padding: 10px 0;
+
+  list-style: none;
+  box-shadow: 0 5px 30px 5px rgba(69,79,91,0.2);
+  background-color: #ffffff;
+  z-index: 10;
+  border-radius: 5px;
+
+  a {
+    display: block;
+    padding: 12px 25px;
+
+    color: $title-color;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    border-left: 3px solid transparent;
+    transition-duration: $link-hover-fast;
+
+    &:hover {
+      color: #000000;
+
+      background-color: #f4f5f8;
+      border-left: 3px solid $blue-color;
+    }
+  }
+}
+
+.header__link {
+  display: block;
+  padding: 25px $padding-mobile;
+
+  font-size: $title-small;
+  color: $title-color;
+
+  text-decoration: none;
+
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+@media (max-width: $mobile-width-only) {
+  .header--nojs {
+    .toggle {
+      display: none;
+    }
+
+    .header__list {
+      display: block;
+    }
+  }
+
+  .header--open {
+    .header__list {
+      display: block;
+    }
+  }
+}
+@media (min-width: $tablet-width) {
+  // .header {
+  //   border-bottom: 1px solid $border-color;
+  // }
+
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px $padding-mobile;
+    box-sizing: border-box;
+  }
+
+  .header__top {
+    padding: 0;
+    border: 0;
+  }
+
+  .header__list {
+    display: flex;
+  }
+
+  .header__item {
+    border: 0;
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+
+    &--open-inner {
+      &:focus,
+      &:hover {
+        .header__inner-list {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .header__link {
+    padding: 10px 0 10px 10px;
+  }
+}
