@@ -34,7 +34,7 @@
 
 </head>
 
-<body>
+<body class="index">
   <header class="header header--nojs" id="header">
   <div class="header__wrapper">
 
@@ -47,58 +47,84 @@
     </div>
 
     <ul class="header__list">
+      <li class="header__item">
+        <a class="header__link" href="portfolio.html">Портфолио</a>
+      </li>
+
       <li class="header__item header__item--open-inner">
         <a class="header__link" href="notes.html">Конспекты</a>
         <ul class="header__inner-list">
+          <li><a href="notes.html#javascript">JavaScript</a></li>
           <li><a href="notes.html#html">HTML</a></li>
           <li><a href="notes.html#css">CSS</a></li>
-          <li><a href="notes.html#javascript">JavaScript</a></li>
         </ul>
       </li>
 
-      <li class="header__item">
+      <li class="header__item header__item--open-inner">
         <a class="header__link" href="https://sokolovav2016.github.io/useful-links-adaptive/" target="_blank">Ресурсы</a>
+        <ul class="header__inner-list">
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#testing-and-optimization" target="_blank">Тестирование и оптимизация</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#code-design-and-availability" target="_blank">Оформление кода и доступность</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#css-grids" target="_blank">CSS-сетки</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#graphics-and-fonts" target="_blank">Графика и шрифты</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#automation-and-tools" target="_blank">Автоматизация и инструменты</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#javascript" target="_blank">JavaScript</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#miscellanea" target="_blank">Разное</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#programs-and-pesources" target="_blank">Программы и ресурсы</a></li>
+          <li><a href="https://sokolovav2016.github.io/useful-links-adaptive/#learning" target="_blank">Обучение</a></li>
+        </ul>
       </li>
     </ul>
 
   </div>
 </header>
 
-
   <main>
-    <section class="examples">
-      <ul class="examples__list">
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="device.html">
-            <img class="card__img" src="img/device-600.jpg" srcset="img/device-1000.jpg 2x" alt="device">
-            <div class="card__hidden">
-              <h2>Девайс</h2>
-              <p>Интернет-магазин гаджетов</p>
-            </div>
-          </a>
-        </li>
+    <div class="heading heading--handbook heading--js heading--margin"></div>
 
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="technomart.html">
-            <img class="card__img" src="img/technomart-600.jpg" srcset="img/technomart-1000.jpg 2x" alt="technomart">
-            <div class="card__hidden">
-              <h2>Техномарт</h2>
-              <p>Интернет-магазин инструмента и стройматериалов</p>
-            </div>
-          </a>
-        </li>
+    <div class="about">
+      <section class="about__block about__block--index">
+        <h2>Обо мне</h2>
+        <p>Привет, меня зовут Алексей, я начинающий frontend-разработчик. Активно изучать frontend начал в
+          августе 2018 года.</p>
+        <p>Учусь по книгам, статьям, видео на YouTube, прошел 3 интенсивных
+          курса от <a class="about__link" href="https://htmlacademy.ru/" target="_blank">HTMLAcademy</a>.</p>
+        <p class="about__item">Примеры работ можно посмотреть <a class="about__link" href="portfolio.html">здесь</a>.</p>
+        <span><a class="about__link about__link--block" href="aboutme.html">Подробнее обо мне</a></span>
+      </section>
 
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="mishka.html">
-            <img class="card__img" src="img/mishka-600.jpg" srcset="img/mishka-1000.jpg 2x" alt="mishka">
-            <div class="card__hidden">
-              <h2>Мишка</h2>
-              <p>Интернет-магазин игрушек ручной работы</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </section>
+      <section class="about__block about__block--index">
+        <h2>Что я могу</h2>
+        <ul class="about__list about__list--stek">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript (ES5)</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>БЭМ</li>
+          <li>SCSS</li>
+          <li>Gulp</li>
+          <li>Adaptive</li>
+          <li>Responsive</li>
+          <li>Mobile first</li>
+          <li>Pixel Perfect</li>
+          <li>Retina</li>
+          <li>Codeguide</li>
+          <li>DOM</li>
+          <li>AJAX</li>
+        </ul>
+        <p class="about__item">Все что изучаю, <a class="about__link" href="notes.html">конспектирую</a>.</p>
+        <p class="about__item">Делаю подборку <a class="about__link" href="https://sokolovav2016.github.io/useful-links-adaptive/" target="_blank">полезных ресурсов</a>.</p>
+      </section>
+
+      <section class="about__block about__block--index">
+        <h2>Мои контакты</h2>
+        <p class="about__item">Профиль на <a class="about__link" href="https://github.com/sokolovav2016">GitHub</a>.</p>
+        <p class="about__item">Профиль на сайте <a class="about__link" href="https://htmlacademy.ru/profile/sokolovav2016">HTML
+            Academy</a>.</p>
+        <p><a class="about__link" href="mailto:sokolovav2016@gmail.com">sokolovav2016@gmail.com</a></p>
+      </section>
+    </div>
   </main>
 
   <footer class="footer">
