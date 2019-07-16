@@ -11,4 +11,5 @@
   window.drag.move(cards);
   window.sidebar.init();
   window.canvas.init();
+  window.dictionary.init(); 
 })();

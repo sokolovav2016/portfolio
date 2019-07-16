@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta name="description" content="Примеры верстки">
+  <title>Aleksey Sokolov</title>
+  <include src="source/html-blocks/head.html"></include>
+</head>
+
+<body>
+  <include src="source/html-blocks/header.html"></include>
+
+  <main>
+    <div class="heading heading--handbook heading--js heading--margin"></div>
+
+    <table class="dictionary">
+      <tr>
+        <th>Слово</th>
+        <th>Перевод</th>
+        <th>Часть речи</th>
+      </tr>
+    </table>
+
+    <template id="dict">
+      <tr class="dictionary__line">
+        <td class="dictionary__number"></td>
+        <td class="dictionary__word">
+          <a class="dictionary__link" href="" target="_blank"></a>
+        </td>
+        <td class="dictionary__translation"></td>
+        <td class="dictionary__part"></td>
+      </tr>
+    </template>
+
+  </main>
+
+  <include src="source/html-blocks/footer.html"></include>
+  <include src="source/html-blocks/js.html"></include>
+</body>
+
+</html>
