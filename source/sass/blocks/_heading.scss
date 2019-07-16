@@ -20,12 +20,12 @@
   &--handbook {
     padding: 30px 0;
 
-    background-image: linear-gradient(180deg, #ffffff 0%, #83d0f2 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, $mdn-color 100%);
   }
 }
 
 .heading__wrapper {
-  padding: 0 $padding-mobile;
+  // padding: 0 $padding-mobile;
 }
 
 .heading__title {
@@ -33,7 +33,7 @@
   padding: 0;
 
   font-size: $title-big;
-  font-weight: 400;
+  font-weight: 500;
 
   animation-name: show;
   animation-duration: $animation-duration;
@@ -52,7 +52,7 @@
   animation-name: show;
   animation-duration: $animation-duration;
   animation-fill-mode: backwards;
-  animation-delay: $animation-2;
+  animation-delay: $animation-heading;
 }
 
 @media (min-width: $tablet-width) {

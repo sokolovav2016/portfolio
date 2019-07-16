@@ -6,9 +6,9 @@
   margin-bottom: 35px;
 
   animation-name: show;
-  animation-duration: $animation-duration;
+  animation-duration: 1s;
   animation-fill-mode: backwards;
-  animation-delay: $animation-3;
+  animation-delay: $animation-review;
 }
 
 .review__text-block {
@@ -145,7 +145,7 @@
   animation-name: show;
   animation-duration: $animation-duration;
   animation-fill-mode: backwards;
-  animation-delay: $animation-2;
+  animation-delay: $animation-review;
 
   a {
     display: block;
