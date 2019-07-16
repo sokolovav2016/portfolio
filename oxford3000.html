@@ -2,8 +2,8 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Интернет-магазин инструмента и стройматериалов">
-  <title>Техномарт</title>
+  <meta name="description" content="Примеры верстки">
+  <title>Aleksey Sokolov</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
@@ -25,8 +25,9 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
+</head>
 
-</head><body>
+<body>
   <header class="header header--nojs" id="header">
   <div class="header__wrapper">
 
@@ -83,55 +84,27 @@
 </header>
 
   <main>
-    <div class="heading heading--technomart">
-      <div class="heading__wrapper">
-        <h1 class="heading__title">Техномарт</h1>
-        <p class="heading__description">Интернет-магазин инструмента и стройматериалов</p>
-      </div>
-    </div>
+    <div class="heading heading--handbook heading--js heading--margin"></div>
 
-    <section class="review">
-      <div class="review__description">
-        <div class="review__text-block">
-          <h2 class="review__title">Сверстанные страницы</h2>
-          <ul class="review__list">
-            <li class="review__item">
-              <a class="review__link" href="https://sokolovav2016.github.io/technomart/">Главная</a>
-            </li>
-            <li class="review__item">
-              <a class="review__link" href="https://sokolovav2016.github.io/technomart/catalog.html">Каталог</a>
-            </li>
-            <li class="review__item review__item--git">
-              <a class="review__link  review__link--git" href="https://github.com/sokolovav2016/technomart">Страница
-                проекта</a>
-            </li>
-          </ul>
-        </div>
+    <table class="dictionary">
+      <tr>
+        <th>Слово</th>
+        <th>Перевод</th>
+        <th>Часть речи</th>
+      </tr>
+    </table>
 
-        <div class="review__text-block">
-          <h2 class="review__title">Описание</h2>
-          <ul class="review__list">
-            <li class="review__item">Фиксированная верстка</li>
-            <li class="review__item">Открытие модальных окон при нажати на кнопку "Напишите нам" и Карту</li>
-          </ul>
-          <ul class="review__stack-list review__stack-list--technomart">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Pixel Perfect</li>
-            <li>Codeguide</li>
-          </ul>
-        </div>
-      </div>
+    <template id="dict">
+      <tr class="dictionary__line">
+        <td class="dictionary__number"></td>
+        <td class="dictionary__word">
+          <a class="dictionary__link" href="" target="_blank"></a>
+        </td>
+        <td class="dictionary__translation"></td>
+        <td class="dictionary__part"></td>
+      </tr>
+    </template>
 
-      <div class="review__img">
-        <a href="img/technomart-origin.jpg">
-          <img src="img/technomart-origin-600.jpg" srcset="img/technomart-origin-1000.jpg 2x" alt="technomart">
-        </a>
-      </div>
-
-    </section>
   </main>
 
   <footer class="footer">
