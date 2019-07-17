@@ -12,3 +12,8 @@ img {
   height: auto;
 }
 
+@media (min-width: $tablet-width) {
+  body {
+    padding-top: 78px;
+  }
+}

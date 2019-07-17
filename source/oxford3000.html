@@ -2,8 +2,9 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Примеры верстки">
-  <title>Aleksey Sokolov</title>
+  <meta name="description" content="3000 самых встречаемых английских слов по мнению
+  Оксфорда">
+  <title>Оксфорд 3000</title>
   <include src="source/html-blocks/head.html"></include>
 </head>
 
@@ -11,15 +12,26 @@
   <include src="source/html-blocks/header.html"></include>
 
   <main>
-    <div class="heading heading--handbook heading--js heading--margin"></div>
+    <div class="heading">
+      <div class="heading__wrapper">
+        <h1 class="heading__title">3000 самых встречаемых английских слов по мнению
+          Оксфорда</h1>
+        <p class="heading__description"></p>
+      </div>
+    </div>
 
-    <table class="dictionary">
-      <tr>
-        <th>Слово</th>
-        <th>Перевод</th>
-        <th>Часть речи</th>
-      </tr>
-    </table>
+    <div class="dictionary">
+      <table class="dictionary__table">
+        <tbody class="dictionary__container">
+          <tr>
+            <th>№</th>
+            <th>Слово</th>
+            <th>Перевод</th>
+            <th>Часть речи</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <template id="dict">
       <tr class="dictionary__line">

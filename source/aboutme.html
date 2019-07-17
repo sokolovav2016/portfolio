@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Примеры верстки">
+  <meta name="description" content="Обо мне">
   <title>Обо мне</title>
   <include src="source/html-blocks/head.html"></include>
 </head>
@@ -11,7 +11,11 @@
   <include src="source/html-blocks/header.html"></include>
 
   <main>
-    <div class="heading heading--handbook heading--js heading--margin"></div>
+    <div class="heading">
+      <div class="heading__wrapper">
+        <h1 class="heading__title">Обо мне</h1>
+      </div>
+    </div>
 
     <div class="about">
       <section class="about__block">
@@ -49,6 +53,7 @@
             <ul class="about__list">
               <li>БЭМ</li>
               <li>SCSS</li>
+              <li>NPM</li>
               <li>Gulp</li>
               <li>Git (консоль)</li>
               <li>Mobile first</li>
@@ -90,7 +95,7 @@
         <p class="about__item">В процессе изучения делаю подборку <a class="about__link"
             href="https://sokolovav2016.github.io/useful-links-adaptive/" target="_blank">полезных ресурсов по
             web-разработке</a>.</p>
-        <p>Также прочитано несколько книг:</p>
+        <p>Также прочел несколько книг:</p>
         <ul class="about__list">
           <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/149498854/?_bctx=CAUQu_AV"
               target="_blank">HTML и CSS.
@@ -98,8 +103,7 @@
           <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/140543672/" target="_blank">Javascript
               и jQuery.
               Интерактивная веб-разработка</a></li>
-          <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/138148848/" target="_blank">JavaScript
-              для детей.
+          <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/138148848/" target="_blank">JavaScript.
               Самоучитель по программированию</a></li>
         </ul>
 

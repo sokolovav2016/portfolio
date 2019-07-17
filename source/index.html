@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Примеры верстки">
+  <meta name="description" content="Aleksey Sokolov frontend-разработчик">
   <title>Aleksey Sokolov</title>
   <include src="source/html-blocks/head.html"></include>
 </head>
@@ -11,16 +11,22 @@
   <include src="source/html-blocks/header.html"></include>
 
   <main>
-    <div class="heading heading--handbook heading--js heading--margin"></div>
+    <div class="heading">
+      <div class="heading__wrapper">
+        <h1 class="heading__title">Привет!</h1>
+        <p class="heading__description">Меня зовут Алексей Соколов, я начинающий frontend-разработчик.</p>
+      </div>
+    </div>
 
     <div class="about">
       <section class="about__block about__block--index">
         <h2>Обо мне</h2>
-        <p>Привет, меня зовут Алексей, я начинающий frontend-разработчик. Активно изучать frontend начал в
+        <p>Активно изучать frontend начал в
           августе 2018 года.</p>
         <p>Учусь по книгам, статьям, видео на YouTube, прошел 3 интенсивных
           курса от <a class="about__link" href="https://htmlacademy.ru/" target="_blank">HTMLAcademy</a>.</p>
-        <p class="about__item">Примеры работ можно посмотреть <a class="about__link" href="portfolio.html">здесь</a>.</p>
+        <p class="about__item">Примеры работ можно посмотреть <a class="about__link" href="portfolio.html">здесь</a>.
+        </p>
         <span><a class="about__link about__link--block" href="aboutme.html">Подробнее обо мне</a></span>
       </section>
 
@@ -29,9 +35,10 @@
         <ul class="about__list about__list--stek">
           <li>HTML5</li>
           <li>CSS3</li>
-          <li>JavaScript (ES5)</li>
+          <li>JavaScript(ES5)</li>
           <li>Git</li>
           <li>GitHub</li>
+          <li>NPM</li>
           <li>БЭМ</li>
           <li>SCSS</li>
           <li>Gulp</li>

@@ -20,6 +20,7 @@ gulp.task("clean", function () {
 
 gulp.task("copy", function () {
   return gulp.src([
+      "source/fonts/**/*.{woff,woff2}",
       "source/img/**",
       "source/*.html"
     ], {
@@ -40,7 +41,7 @@ gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sass())
-    .pipe(postcss([autoprefixer() ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest("build/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
@@ -50,7 +51,9 @@ gulp.task("css", function () {
 gulp.task("js", function () {
   return gulp.src("source/js/*.js")
     // .pipe(jsmin())
-    // .pipe(rename({suffix: ".min"}))
+    .pipe(rename({
+      suffix: ".min"
+    }))
     .pipe(gulp.dest("build/js"));
 });
 

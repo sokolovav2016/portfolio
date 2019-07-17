@@ -19,11 +19,14 @@
         setAbsolute(arr[i]);
       }
 
+      element.style.zIndex = '10';
+
       function setAbsolute(elem) {
         var cardStartCoords = elem.getBoundingClientRect();
         elem.style.position = 'absolute';
         elem.style.top = cardStartCoords.top + 'px';
         elem.style.left = cardStartCoords.left + 'px';
+        elem.style.zIndex = '';
       }
 
       var startCoords = {
@@ -58,10 +61,11 @@
         document.removeEventListener('mouseup', onMouseUp);
 
         if (dragged) {
-          var onClickPreventDefault = function (evt) {
+          function onClickPreventDefault(evt) {
             evt.preventDefault();
-            element.removeEventListener('click', onClickPreventDefault)
-          };
+            element.removeEventListener('click', onClickPreventDefault);
+          }
+
           element.addEventListener('click', onClickPreventDefault);
 
           element.classList.add('card--arrow');
