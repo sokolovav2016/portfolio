@@ -613,26 +613,23 @@ img {
         margin-right: 10px; }
 
 .about__link {
+  position: relative;
   color: #3d7e9a;
   text-decoration: none; }
+  .about__link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: #3d7e9a;
+    transform: scaleX(0);
+    transition-duration: 300ms; }
   .about__link:focus, .about__link:hover {
-    text-decoration: underline; }
-  .about__link--block {
-    position: relative; }
-    .about__link--block:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      width: 100%;
-      height: 1px;
-      background-color: #3d7e9a;
-      transform: scaleX(0);
-      transition-duration: 300ms; }
-    .about__link--block:focus, .about__link--block:hover {
-      text-decoration: none; }
-      .about__link--block:focus:after, .about__link--block:hover:after {
-        transform: scaleX(1); }
+    text-decoration: none; }
+    .about__link:focus:after, .about__link:hover:after {
+      transform: scaleX(1); }
 
 .about__item:not(:last-child) {
   margin-bottom: 20px; }
@@ -831,12 +828,49 @@ img {
     .footer__link:focus svg, .footer__link:hover svg {
       fill: #3d7e9a; }
 
+.footer__footnote {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.footer__published,
+.footer__made {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 12px;
+  color: #424242; }
+  .footer__published a,
+  .footer__made a {
+    color: #3d7e9a; }
+
+.footer__made span {
+  font-weight: 500; }
+
+.footer__made span:nth-child(1) {
+  color: #E34F26; }
+
+.footer__made span:nth-child(2) {
+  color: #264DE4; }
+
+.footer__made span:nth-child(3) {
+  color: #F7DF1E; }
+
 @media (min-width: 768px) {
-  .footer__list {
+  .footer__wrapper {
+    position: relative;
     max-width: 960px;
     margin: 0 auto; }
   .footer__item:not(:last-child) {
-    margin-right: 40px; } }
+    margin-right: 40px; }
+  .footer__footnote {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    margin-top: -18px;
+    align-items: flex-start; }
+  .footer__made {
+    margin: 0; } }
 
 .heading {
   padding: 30px 0 70px;
@@ -1077,11 +1111,9 @@ img {
     position: absolute;
     left: 50%;
     top: 349px;
-    width: calc((100vw - 1040px)/2);
     margin: 0;
-    margin-left: 500px;
-    padding-top: 0;
-    padding-bottom: 0; }
+    margin-left: 490px;
+    padding: 0 10px 0 0; }
   .sidebar__list {
     display: block; }
     .sidebar__list--inner {

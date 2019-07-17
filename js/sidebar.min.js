@@ -4,7 +4,7 @@
   var sidebarElement = document.querySelector('.sidebar');
 
   function sidebarInit() {
-    
+
     function closeBlock(evt) {
       var sidebarLinksElement = document.querySelectorAll('.sidebar__link');
 
