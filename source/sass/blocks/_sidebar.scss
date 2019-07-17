@@ -82,11 +82,10 @@
     left: 50%;
     top: 349px;
 
-    width: calc((100vw - 1040px)/2);
+    // width: calc((100vw - 1040px)/2);
     margin: 0;
-    margin-left: 500px;
-    padding-top: 0;
-    padding-bottom: 0;
+    margin-left: 490px;
+    padding: 0 10px 0 0;
   }
 
   .sidebar__list {
