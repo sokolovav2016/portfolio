@@ -2,29 +2,41 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Примеры верстки">
+  <meta name="description" content="Обо мне">
   <title>Обо мне</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+<link rel="preload" href="fonts/Rubik-Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Rubik-Medium.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Rubik-Regular.woff2" as="font" crossorigin="anonymous">
+
 <link rel="stylesheet" href="css/style.min.css">
+
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   ym(54471787, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true
   });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
-
 </head>
 
 <body>
@@ -84,7 +96,11 @@
 </header>
 
   <main>
-    <div class="heading heading--handbook heading--js heading--margin"></div>
+    <div class="heading">
+      <div class="heading__wrapper">
+        <h1 class="heading__title">Обо мне</h1>
+      </div>
+    </div>
 
     <div class="about">
       <section class="about__block">
@@ -121,6 +137,7 @@
             <ul class="about__list">
               <li>БЭМ</li>
               <li>SCSS</li>
+              <li>NPM</li>
               <li>Gulp</li>
               <li>Git (консоль)</li>
               <li>Mobile first</li>
@@ -161,15 +178,14 @@
         <p class="about__item">Все что изучаю, <a class="about__link" href="notes.html">конспектирую здесь</a>.</p>
         <p class="about__item">В процессе изучения делаю подборку <a class="about__link" href="https://sokolovav2016.github.io/useful-links-adaptive/" target="_blank">полезных ресурсов по
             web-разработке</a>.</p>
-        <p>Также прочитано несколько книг:</p>
+        <p>Также прочел несколько книг:</p>
         <ul class="about__list">
           <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/149498854/?_bctx=CAUQu_AV" target="_blank">HTML и CSS.
               Разработка и дизайн веб-сайтов</a></li>
           <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/140543672/" target="_blank">Javascript
               и jQuery.
               Интерактивная веб-разработка</a></li>
-          <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/138148848/" target="_blank">JavaScript
-              для детей.
+          <li><a class="about__link" href="https://www.ozon.ru/context/detail/id/138148848/" target="_blank">JavaScript.
               Самоучитель по программированию</a></li>
         </ul>
 
@@ -220,17 +236,18 @@
   </ul>
 </footer>
 
-  <script src="js/svg4everybody.js"></script>
+  <script src="js/svg4everybody.min.js"></script>
 <script>
   svg4everybody();
 </script>
-<script src="js/toggle.js"></script>
-<script src="js/drag.js"></script>
-<script src="js/canvas.js"></script>
-<script src="js/sidebar.js"></script>
-<script src="js/oxford-data.js"></script>
-<script src="js/dictionary.js"></script>
-<script src="js/site.js"></script>
+
+<script src="js/toggle.min.js"></script>
+<script src="js/drag.min.js"></script>
+<script src="js/canvas.min.js"></script>
+<script src="js/sidebar.min.js"></script>
+<script src="js/oxford-data.min.js"></script>
+<script src="js/dictionary.min.js"></script>
+<script src="js/site.min.js"></script>
 
 </body>
 

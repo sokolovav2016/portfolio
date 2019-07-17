@@ -5,61 +5,61 @@
       word: 'a',
       translation: '',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/a_1',
-      parts: 'indefinite article'
+      part: 'indefinite article'
     },
     {
       word: 'abandon',
       translation: 'оставлять',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/abandon_1',
-      parts: 'verb'
+      part: 'verb'
     },
     {
       word: 'abandoned',
       translation: 'брошенный',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/abandoned',
-      parts: 'adjective'
+      part: 'adjective'
     },
     {
       word: 'ability',
       translation: 'способность',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/ability_1',
-      parts: 'noun'
+      part: 'noun'
     },
     {
       word: 'able',
       translation: 'способный',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/able',
-      parts: 'adjective'
+      part: 'adjective'
     },
     {
       word: 'about',
       translation: 'о',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/about_1',
-      parts: 'adverb'
+      part: 'adverb'
     },
     {
       word: 'above',
       translation: 'выше',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/above_1',
-      parts: 'preposition'
+      part: 'preposition'
     },
     {
       word: 'abroad',
       translation: 'за границей',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/abroad',
-      parts: 'adverb'
+      part: 'adverb'
     },
     {
       word: 'absence',
       translation: 'отсутствие',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/absence',
-      parts: 'noun'
+      part: 'noun'
     },
     {
       word: 'absent',
       translation: 'отсутствовать',
       link: 'https://www.oxfordlearnersdictionaries.com/definition/american_english/absent_1',
-      parts: 'adjective'
+      part: 'adjective'
     }
   ]
 })();

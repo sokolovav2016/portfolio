@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  var containerElement = document.querySelector('.dictionary');
+  var containerElement = document.querySelector('.dictionary__container');
 
   function getTr(obj, i) {
     var templateElement = document.querySelector('#dict')
@@ -26,12 +26,14 @@
     if (containerElement) {
       var fragment = document.createDocumentFragment();
       var data = window.oxfordData;
+      var numberOfWods = document.querySelector('.heading__description');
 
       for (var i = 0; i < data.length; i++) {
         fragment.appendChild(getTr(data[i], i));
       }
 
       containerElement.appendChild(fragment);
+      numberOfWods.textContent = 'Пока в словаре ' + data.length + ' слов';
     }
   }
 

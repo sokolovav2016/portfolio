@@ -2,29 +2,41 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Примеры верстки">
+  <meta name="description" content="Aleksey Sokolov frontend-разработчик">
   <title>Aleksey Sokolov</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+<link rel="preload" href="fonts/Rubik-Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Rubik-Medium.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Rubik-Regular.woff2" as="font" crossorigin="anonymous">
+
 <link rel="stylesheet" href="css/style.min.css">
+
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   ym(54471787, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true
   });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
-
 </head>
 
 <body class="index">
@@ -84,16 +96,22 @@
 </header>
 
   <main>
-    <div class="heading heading--handbook heading--js heading--margin"></div>
+    <div class="heading">
+      <div class="heading__wrapper">
+        <h1 class="heading__title">Привет!</h1>
+        <p class="heading__description">Меня зовут Алексей Соколов, я начинающий frontend-разработчик.</p>
+      </div>
+    </div>
 
     <div class="about">
       <section class="about__block about__block--index">
         <h2>Обо мне</h2>
-        <p>Привет, меня зовут Алексей, я начинающий frontend-разработчик. Активно изучать frontend начал в
+        <p>Активно изучать frontend начал в
           августе 2018 года.</p>
         <p>Учусь по книгам, статьям, видео на YouTube, прошел 3 интенсивных
           курса от <a class="about__link" href="https://htmlacademy.ru/" target="_blank">HTMLAcademy</a>.</p>
-        <p class="about__item">Примеры работ можно посмотреть <a class="about__link" href="portfolio.html">здесь</a>.</p>
+        <p class="about__item">Примеры работ можно посмотреть <a class="about__link" href="portfolio.html">здесь</a>.
+        </p>
         <span><a class="about__link about__link--block" href="aboutme.html">Подробнее обо мне</a></span>
       </section>
 
@@ -102,9 +120,10 @@
         <ul class="about__list about__list--stek">
           <li>HTML5</li>
           <li>CSS3</li>
-          <li>JavaScript (ES5)</li>
+          <li>JavaScript(ES5)</li>
           <li>Git</li>
           <li>GitHub</li>
+          <li>NPM</li>
           <li>БЭМ</li>
           <li>SCSS</li>
           <li>Gulp</li>
@@ -159,17 +178,18 @@
   </ul>
 </footer>
 
-  <script src="js/svg4everybody.js"></script>
+  <script src="js/svg4everybody.min.js"></script>
 <script>
   svg4everybody();
 </script>
-<script src="js/toggle.js"></script>
-<script src="js/drag.js"></script>
-<script src="js/canvas.js"></script>
-<script src="js/sidebar.js"></script>
-<script src="js/oxford-data.js"></script>
-<script src="js/dictionary.js"></script>
-<script src="js/site.js"></script>
+
+<script src="js/toggle.min.js"></script>
+<script src="js/drag.min.js"></script>
+<script src="js/canvas.min.js"></script>
+<script src="js/sidebar.min.js"></script>
+<script src="js/oxford-data.min.js"></script>
+<script src="js/dictionary.min.js"></script>
+<script src="js/site.min.js"></script>
 
 </body>
 

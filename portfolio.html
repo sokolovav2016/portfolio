@@ -6,25 +6,37 @@
   <title>Портфолио</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+<link rel="preload" href="fonts/Rubik-Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Rubik-Medium.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="fonts/Rubik-Regular.woff2" as="font" crossorigin="anonymous">
+
 <link rel="stylesheet" href="css/style.min.css">
+
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   ym(54471787, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true
   });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/54471787" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
-
 </head>
 
 <body>
@@ -84,7 +96,11 @@
 </header>
 
   <main>
-    <div class="heading heading--handbook heading--js heading--margin"></div>
+    <div class="heading">
+      <div class="heading__wrapper">
+        <p class="heading__description">Cards can be dragged (only on the desktop).</p>
+      </div>
+    </div>
 
     <section class="examples">
       <ul class="examples__list">
@@ -149,17 +165,18 @@
   </ul>
 </footer>
 
-  <script src="js/svg4everybody.js"></script>
+  <script src="js/svg4everybody.min.js"></script>
 <script>
   svg4everybody();
 </script>
-<script src="js/toggle.js"></script>
-<script src="js/drag.js"></script>
-<script src="js/canvas.js"></script>
-<script src="js/sidebar.js"></script>
-<script src="js/oxford-data.js"></script>
-<script src="js/dictionary.js"></script>
-<script src="js/site.js"></script>
+
+<script src="js/toggle.min.js"></script>
+<script src="js/drag.min.js"></script>
+<script src="js/canvas.min.js"></script>
+<script src="js/sidebar.min.js"></script>
+<script src="js/oxford-data.min.js"></script>
+<script src="js/dictionary.min.js"></script>
+<script src="js/site.min.js"></script>
 
 </body>
 
