@@ -15,12 +15,6 @@
 
       element.classList.remove('card--arrow');
 
-      for (var i = arr.length - 1; i >= 0; i--) {
-        setAbsolute(arr[i]);
-      }
-
-      element.style.zIndex = '10';
-
       function setAbsolute(elem) {
         var cardStartCoords = elem.getBoundingClientRect();
         elem.style.position = 'absolute';
@@ -28,6 +22,12 @@
         elem.style.left = cardStartCoords.left + 'px';
         elem.style.zIndex = '';
       }
+
+      for (var i = arr.length - 1; i >= 0; i--) {
+        setAbsolute(arr[i]);
+      }
+
+      element.style.zIndex = '10';
 
       var startCoords = {
         x: evt.clientX,

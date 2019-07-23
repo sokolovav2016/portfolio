@@ -17,6 +17,14 @@
   &--mishka {
     background-image: linear-gradient(180deg, #ffffff 0%, $mishka-color 100%);
   }
+
+  &--barbershop {
+    background-image: linear-gradient(180deg, #ffffff 0%, $barbershop-color 100%);
+  }
+
+  &--code {
+    background-image: linear-gradient(180deg, #ffffff 0%, $code-color 100%);
+  }
 }
 
 .heading__wrapper {
