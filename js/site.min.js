@@ -3,7 +3,6 @@
 (function () {
   var cardElements = document.querySelectorAll('.card');
   var headerElement = document.querySelector('.header');
-  var scrolled = window.pageYOffset;
 
   if (document.querySelector('.index')) {
     document.querySelector('.header__logo').removeAttribute('href');
@@ -20,10 +19,8 @@
     }
   })
 
-
-
   window.toggle.init();
-  window.drag.move(cardElements);
+  // window.drag.move(cardElements);
   window.sidebar.init();
   window.canvas.init();
   window.dictionary.init(); 

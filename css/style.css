@@ -696,15 +696,9 @@ img {
           animation-fill-mode: backwards;
   -webkit-animation-duration: 1s;
           animation-duration: 1s; }
-  .card:nth-child(2) {
+  .card:nth-child(4), .card:nth-child(5) {
     -webkit-animation-delay: 0.4s;
             animation-delay: 0.4s; }
-  .card:nth-child(3) {
-    -webkit-animation-delay: 0.8s;
-            animation-delay: 0.8s; }
-  .card:nth-child(4) {
-    -webkit-animation-delay: 1.2s;
-            animation-delay: 1.2s; }
 
 .card__link {
   position: relative;
@@ -768,36 +762,6 @@ img {
     margin-bottom: 50px;
     font-size: 25px;
     color: #2b2b2b; }
-
-@media (min-width: 960px) {
-  .card--arrow {
-    position: relative; }
-    .card--arrow::before, .card--arrow::after {
-      content: "";
-      position: absolute;
-      top: 45%;
-      border: 10px solid #c8c8c8;
-      border-top-color: transparent;
-      border-bottom-color: transparent;
-      opacity: 0;
-      -webkit-animation-duration: 2s;
-              animation-duration: 2s;
-      -webkit-animation-iteration-count: infinite;
-              animation-iteration-count: infinite;
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s; }
-    .card--arrow::before {
-      right: -23px;
-      border-right-color: transparent; }
-    .card--arrow::after {
-      left: -23px;
-      border-left-color: transparent; }
-    .card--arrow:focus::before, .card--arrow:hover::before {
-      -webkit-animation-name: shiftRight;
-              animation-name: shiftRight; }
-    .card--arrow:focus::after, .card--arrow:hover::after {
-      -webkit-animation-name: shiftLeft;
-              animation-name: shiftLeft; } }
 
 .footer {
   margin-top: auto;
@@ -884,6 +848,10 @@ img {
     background-image: linear-gradient(180deg, #ffffff 0%, #293449 100%); }
   .heading--mishka {
     background-image: linear-gradient(180deg, #ffffff 0%, #56c3b2 100%); }
+  .heading--barbershop {
+    background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%); }
+  .heading--code {
+    background-image: linear-gradient(180deg, #ffffff 0%, #da641a 100%); }
 
 .heading__wrapper {
   padding: 0 15px; }
@@ -1018,6 +986,10 @@ img {
     box-shadow: 0 0 0 1px black; }
   .review__stack-list--mishka li {
     box-shadow: 0 0 0 1px #56c3b2; }
+  .review__stack-list--barbershop li {
+    box-shadow: 0 0 0 1px #000000; }
+  .review__stack-list--code li {
+    box-shadow: 0 0 0 1px #da641a; }
 
 .review__img {
   -webkit-animation-name: show;
