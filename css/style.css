@@ -689,17 +689,6 @@ img {
     .examples__item:not(:nth-child(3n)) {
       margin-right: 30px; } }
 
-.card {
-  -webkit-animation-name: show;
-          animation-name: show;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s; }
-  .card:nth-child(4), .card:nth-child(5) {
-    -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s; }
-
 .card__link {
   position: relative;
   display: block;
