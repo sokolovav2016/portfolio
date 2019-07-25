@@ -14,8 +14,10 @@
 
     if (scrolled > 78) {      
       headerElement.style.boxShadow = '0px 5px 15px 0px rgba(0, 0, 0, 0.15)';
+      headerElement.style.borderBottom = '1px solid rgb(217, 217, 217)';
     } else if (scrolled <= 78) {
       headerElement.style.boxShadow = '';
+      headerElement.style.borderBottom = '';
     }
   })
 
