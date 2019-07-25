@@ -867,9 +867,7 @@ img {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+          animation-fill-mode: backwards; }
 
 @media (min-width: 768px) {
   .heading {
