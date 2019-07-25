@@ -693,7 +693,7 @@ img {
   position: relative;
   display: block;
   border-radius: 7px;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 0px 1px #d9d9d9;
   transition-duration: 500ms; }
   .card__link--handbook {
     display: flex;
@@ -709,11 +709,13 @@ img {
     .card__link--handbook:focus, .card__link--handbook:hover {
       opacity: 0.9; }
   .card__link:focus, .card__link:hover {
-    box-shadow: 0px 5px 15px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 0px 1px #d9d9d9, 0px 5px 15px 3px rgba(0, 0, 0, 0.15);
     transform: translateY(-10px); }
     .card__link:focus .card__hidden, .card__link:hover .card__hidden {
       opacity: 1; }
-      .card__link:focus .card__hidden h2, .card__link:focus .card__hidden p, .card__link:hover .card__hidden h2, .card__link:hover .card__hidden p {
+      .card__link:focus .card__hidden h2,
+      .card__link:focus .card__hidden p, .card__link:hover .card__hidden h2,
+      .card__link:hover .card__hidden p {
         transform: scale(1); }
 
 .card__img {
@@ -740,7 +742,8 @@ img {
   background-color: rgba(255, 255, 255, 0.8);
   opacity: 0;
   transition-duration: 500ms; }
-  .card__hidden h2, .card__hidden p {
+  .card__hidden h2,
+  .card__hidden p {
     margin: 0;
     padding: 0;
     font-size: 15px;
@@ -865,8 +868,8 @@ img {
           animation-duration: 1s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
 
 @media (min-width: 768px) {
   .heading {
@@ -899,8 +902,8 @@ img {
           animation-duration: 1s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s; }
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
 
 .review__text-block:not(:last-child) {
   margin-bottom: 35px; }
@@ -987,8 +990,8 @@ img {
           animation-duration: 1s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s; }
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; }
   .review__img a {
     display: block;
     border-radius: 7px;
