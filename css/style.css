@@ -612,35 +612,37 @@ img {
         margin-bottom: 15px;
         margin-right: 10px; }
 
-.about__link {
-  position: relative;
-  color: #3d7e9a;
-  text-decoration: none; }
-  .about__link:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 1px;
-    background-color: #3d7e9a;
-    transform: scaleX(0);
-    transition-duration: 300ms; }
-  .about__link:focus, .about__link:hover {
-    text-decoration: none; }
-    .about__link:focus:after, .about__link:hover:after {
-      transform: scaleX(1); }
-
 .about__item:not(:last-child) {
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .about__item span {
   margin-top: 5px; }
 
 .about__item ul {
-  margin: 0;
-  padding: 0 0 0 40px;
-  color: #424242; }
+  margin: 10px 0 0 0; }
+
+.about__link {
+  color: #3d7e9a;
+  text-decoration: none; }
+  .about__link:focus, .about__link:hover {
+    text-decoration: underline; }
+  .about__link--stretch {
+    position: relative;
+    color: #264DE4; }
+    .about__link--stretch:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #264DE4;
+      transform: scaleX(0);
+      transition-duration: 300ms; }
+    .about__link--stretch:focus, .about__link--stretch:hover {
+      text-decoration: none; }
+      .about__link--stretch:focus:after, .about__link--stretch:hover:after {
+        transform: scaleX(1); }
 
 .about__open {
   cursor: pointer;
@@ -796,9 +798,12 @@ img {
   padding: 0;
   font-size: 12px;
   color: #424242; }
-  .footer__published a,
-  .footer__made a {
-    color: #3d7e9a; }
+
+.footer__published a {
+  color: #3d7e9a;
+  text-decoration: none; }
+  .footer__published a:focus, .footer__published a:hover {
+    text-decoration: underline; }
 
 .footer__made span {
   font-weight: 500; }
@@ -844,6 +849,8 @@ img {
     background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%); }
   .heading--code {
     background-image: linear-gradient(180deg, #ffffff 0%, #da641a 100%); }
+  .heading--kekstagram {
+    background-image: linear-gradient(180deg, #ffffff 0%, #232321 100%); }
 
 .heading__wrapper {
   padding: 0 15px; }
@@ -980,6 +987,8 @@ img {
     box-shadow: 0 0 0 1px #000000; }
   .review__stack-list--code li {
     box-shadow: 0 0 0 1px #da641a; }
+  .review__stack-list--kekstagram li {
+    box-shadow: 0 0 0 1px #232321; }
 
 .review__img {
   -webkit-animation-name: show;

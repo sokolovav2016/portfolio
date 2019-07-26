@@ -2,8 +2,8 @@
 <html lang="ru">
 
 <head>
-  <meta name="description" content="Примеры верстки">
-  <title>Портфолио</title>
+  <meta name="description" content="Кекстаграм Сервис для загрузки и просмотра изображений">
+  <title>Кекстаграм</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -96,74 +96,60 @@
 </header>
 
   <main>
-    <div class="heading">
+    <div class="heading heading--kekstagram">
       <div class="heading__wrapper">
-        <h1 class="heading__title">Я сделал</h1>
+        <h1 class="heading__title heading__title--site">Кекстаграм</h1>
+        <p class="heading__description heading__description--site">Сервис для загрузки и просмотра изображений</p>
       </div>
     </div>
 
-    <section class="examples">
-      <ul class="examples__list">
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="device.html">
-            <img class="card__img" src="img/device-600.jpg" srcset="img/device-1000.jpg 2x" alt="device">
-            <div class="card__hidden">
-              <h2>Девайс</h2>
-              <p>Интернет-магазин гаджетов</p>
-            </div>
-          </a>
-        </li>
+    <section class="review">
+      <div class="review__description">
+        <div class="review__text-block">
+          <h2 class="review__title">Страницы</h2>
+          <ul class="review__list">
+            <li class="review__item">
+              <a class="review__link" href="https://sokolovav2016.github.io/853603-kekstagram-17/">Главная</a>
+            </li>
+            <li class="review__item review__item--git">
+              <a class="review__link  review__link--git" href="https://github.com/sokolovav2016/853603-kekstagram-17">Страница проекта</a>
+            </li>
+          </ul>
+        </div>
 
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="technomart.html">
-            <img class="card__img" src="img/technomart-600.jpg" srcset="img/technomart-1000.jpg 2x" alt="technomart">
-            <div class="card__hidden">
-              <h2>Техномарт</h2>
-              <p>Интернет-магазин инструмента и стройматериалов</p>
-            </div>
-          </a>
-        </li>
+        <div class="review__text-block">
+          <h2 class="review__title">Описание</h2>
+          <ul class="review__list">
+            <li class="review__item">Проект сделан в рамках обучения на курсе JavaScript, уровень 1 (от HTMLAcademy)
+            </li>
+            <li class="review__item">При заходе на сайт происходит загрузка и отрисовка 25 карточек изображений. После
+              успешной загрузки вверху страницы появляется возможность фильтрации изображений.</li>
+            <li class="review__item">При нажатие на изображение происходит его открытие в модальном окне, с подгрузкой и
+              отрисовкой полученных комментариев.</li>
+            <li class="review__item">При нажатии на кнопку "Загрузить" происходит открытие формы с выбранным
+              изображением, к которому можно применять фильтры, менять с помощью ползунка уровень насыщенности, менять
+              размер изображения с помощью кнопок "+" и "-" вверху формы.</li>
+            <li class="review__item">Можно оставить комментарий и хештеги к фото. Поля ввода имеют валидацию.</li>
+            <li class="review__item">При успешной отправки формы выводится сообщение.</li>
+          </ul>
+          <ul class="review__stack-list review__stack-list--kekstagram">
+            <li>JS (ES5)</li>
+            <li>Git</li>
+            <li>NPM</li>
+            <li>DOM</li>
+            <li>AJAX</li>
+            <li>HTTP</li>
+            <li>XMLHttpRequest</li>
+            <li>JSON</li>
+          </ul>
+        </div>
+      </div>
 
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="mishka.html">
-            <img class="card__img" src="img/mishka-600.jpg" srcset="img/mishka-1000.jpg 2x" alt="mishka">
-            <div class="card__hidden">
-              <h2>Мишка</h2>
-              <p>Интернет-магазин игрушек ручной работы</p>
-            </div>
-          </a>
-        </li>
-
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="barbershop.html">
-            <img class="card__img" src="img/barbershop-600.jpg" srcset="img/barbershop-1000.jpg 2x" alt="barbershop">
-            <div class="card__hidden">
-              <h2>Барбершоп</h2>
-              <p>Сайт мужской парикмахерской</p>
-            </div>
-          </a>
-        </li>
-
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="code.html">
-            <img class="card__img" src="img/code-600.jpg" srcset="img/code-1000.jpg 2x" alt="code">
-            <div class="card__hidden">
-              <h2>Код и Магия</h2>
-              <p>Промо-сайт мини-игры про магов и фаерболы</p>
-            </div>
-          </a>
-        </li>
-
-        <li class="card card--arrow examples__item">
-          <a class="card__link" href="kekstagram.html">
-            <img class="card__img" src="img/kekstagram-600.jpg" srcset="img/kekstagram-1000.jpg 2x" alt="kekstagram">
-            <div class="card__hidden">
-              <h2>Кекстаграм</h2>
-              <p>Сервис для загрузки и просмотра изображений</p>
-            </div>
-          </a>
-        </li>
-      </ul>
+      <div class="review__img">
+        <a href="img/kekstagram-origin.jpg">
+          <img src="img/kekstagram-origin-600.jpg" srcset="img/kekstagram-origin-1000.jpg 2x" alt="kekstagram">
+        </a>
+      </div>
     </section>
   </main>
 
