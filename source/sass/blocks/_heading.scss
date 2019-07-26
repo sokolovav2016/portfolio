@@ -25,6 +25,10 @@
   &--code {
     background-image: linear-gradient(180deg, #ffffff 0%, $code-color 100%);
   }
+
+  &--kekstagram {
+    background-image: linear-gradient(180deg, #ffffff 0%, $kekstagram-color 100%);
+  }
 }
 
 .heading__wrapper {

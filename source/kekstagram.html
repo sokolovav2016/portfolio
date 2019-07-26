@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta name="description" content="Кекстаграм Сервис для загрузки и просмотра изображений">
+  <title>Кекстаграм</title>
+  <include src="source/html-blocks/head.html"></include>
+</head>
+
+<body>
+  <include src="source/html-blocks/header.html"></include>
+
+  <main>
+    <div class="heading heading--kekstagram">
+      <div class="heading__wrapper">
+        <h1 class="heading__title heading__title--site">Кекстаграм</h1>
+        <p class="heading__description heading__description--site">Сервис для загрузки и просмотра изображений</p>
+      </div>
+    </div>
+
+    <section class="review">
+      <div class="review__description">
+        <div class="review__text-block">
+          <h2 class="review__title">Страницы</h2>
+          <ul class="review__list">
+            <li class="review__item">
+              <a class="review__link" href="https://sokolovav2016.github.io/853603-kekstagram-17/">Главная</a>
+            </li>
+            <li class="review__item review__item--git">
+              <a class="review__link  review__link--git"
+                href="https://github.com/sokolovav2016/853603-kekstagram-17">Страница проекта</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="review__text-block">
+          <h2 class="review__title">Описание</h2>
+          <ul class="review__list">
+            <li class="review__item">Проект сделан в рамках обучения на курсе JavaScript, уровень 1 (от HTMLAcademy)
+            </li>
+            <li class="review__item">При заходе на сайт происходит загрузка и отрисовка 25 карточек изображений. После
+              успешной загрузки вверху страницы появляется возможность фильтрации изображений.</li>
+            <li class="review__item">При нажатие на изображение происходит его открытие в модальном окне, с подгрузкой и
+              отрисовкой полученных комментариев.</li>
+            <li class="review__item">При нажатии на кнопку "Загрузить" происходит открытие формы с выбранным
+              изображением, к которому можно применять фильтры, менять с помощью ползунка уровень насыщенности, менять
+              размер изображения с помощью кнопок "+" и "-" вверху формы.</li>
+            <li class="review__item">Можно оставить комментарий и хештеги к фото. Поля ввода имеют валидацию.</li>
+            <li class="review__item">При успешной отправки формы выводится сообщение.</li>
+          </ul>
+          <ul class="review__stack-list review__stack-list--kekstagram">
+            <li>JS (ES5)</li>
+            <li>Git</li>
+            <li>NPM</li>
+            <li>DOM</li>
+            <li>AJAX</li>
+            <li>HTTP</li>
+            <li>XMLHttpRequest</li>
+            <li>JSON</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="review__img">
+        <a href="img/kekstagram-origin.jpg">
+          <img src="img/kekstagram-origin-600.jpg" srcset="img/kekstagram-origin-1000.jpg 2x" alt="kekstagram">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <include src="source/html-blocks/footer.html"></include>
+  <include src="source/html-blocks/js.html"></include>
+</body>
+
+</html>

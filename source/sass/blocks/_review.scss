@@ -151,6 +151,12 @@
       box-shadow: 0 0 0 1px $code-color;
     }
   }
+
+  &--kekstagram {
+    li {
+      box-shadow: 0 0 0 1px $kekstagram-color;
+    }
+  }
 }
 
 .review__img {
